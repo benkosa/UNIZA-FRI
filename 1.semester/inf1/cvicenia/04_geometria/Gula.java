@@ -23,4 +23,14 @@ public class Gula {
         return this.polomer;
     }
     
+    public double countObjem(){
+        return (4/3)*3.14*this.getPolomer()*this.getPolomer()*this.getPolomer();
+        
+    }
+    
+    public void vypisInfo(){
+        System.out.println("Gula");
+        System.out.println("Polomer: " + this.getPolomer() + "cm");
+    }
+    
 }
