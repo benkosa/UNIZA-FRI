@@ -33,11 +33,17 @@ public class Gula {
     }
         
     public void vypisInfo(){
-        System.out.println(this + "\nPolomer: " + this.getPolomer() + "cm\n");
+        System.out.println(this.hashCode() + " " + this + "\nPolomer: " + this.getPolomer() + "cm\n");
     }
+    
+    /**
+     * 
+    
     
     public String toString(){
         return "Gula";
     }
+    
+    */
     
 }
