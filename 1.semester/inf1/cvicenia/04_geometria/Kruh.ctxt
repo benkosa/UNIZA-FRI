@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Kruh
+comment1.params=stredX\ stredY\ polomer
+comment1.target=Kruh(double,\ double,\ double)
+comment2.params=
+comment2.target=double\ getStredX()
+comment3.params=
+comment3.target=double\ getStredY()
+comment4.params=
+comment4.target=double\ getPolomer()
+comment5.params=stredX
+comment5.target=void\ setStredX(double)
+comment6.params=stredY
+comment6.target=void\ setStredY(double)
+comment7.params=polomer
+comment7.target=void\ setPolomer(double)
+comment8.params=
+comment8.target=double\ obsah()
+comment9.params=
+comment9.target=double\ obvod()
+numComments=10
