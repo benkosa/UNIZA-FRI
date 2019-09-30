@@ -36,4 +36,8 @@ public class Gula {
         System.out.println(this + "\nPolomer: " + this.getPolomer() + "cm\n");
     }
     
+    public String toString(){
+        return "Gula";
+    }
+    
 }
