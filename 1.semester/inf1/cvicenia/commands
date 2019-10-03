@@ -23,6 +23,10 @@ git push -u origin master
 
 git status
 
+//reset actual git and download latest branch
+git reset --hard HEAD~1 
+git reset --hard HEAD  
+git pull
 
 songs
 
