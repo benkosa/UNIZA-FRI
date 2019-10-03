@@ -1,0 +1,56 @@
+//Adjist mouse sensitivity
+1
+xset m 1/2 8
+You can experiment with these values. Thus, your system might be more suited to:
+
+1
+xset m 1/2 4
+To reset default values:
+
+1
+xset m default
+That's it! The mouse is working perfectly now.
+
+//git
+git commands
+
+git add 
+
+git commit -m "Comment" file.name
+
+git push -u origin master
+
+
+git status
+
+
+songs
+
+hit and run instrumental
+
+
+//forget tracked file after gitignore update
+First:
+git rm -r --cached .
+git add .
+
+Then:
+git commit -am "Remove ignored files"
+
+//forced pull
+git fetch --all
+git reset --hard origin/new
+
+//change englih keyboard from qwerty zo qwertz
+sudo gedit /usr/share/X11/xkb/symbols/us
+rewrite data
+restart computer
+
+//battery saver
+sudo apt install tlp tlp-rdw//installation
+sudo tlp bat//make sure TLP is running in battery mode.
+
+//install shortcut creator
+sudo apt-get install --no-install-recommends gnome-panel
+//create shortcut
+gnome-desktop-item-edit ~/Desktop/ --create-new
