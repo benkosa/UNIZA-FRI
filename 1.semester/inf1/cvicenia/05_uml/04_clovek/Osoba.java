@@ -13,6 +13,8 @@ public class Osoba
     private int rokNarodenia;
     private boolean narokNaVlakyZadarmo;
     
+    public static final int AKTROK = 2019;
+    
 
     /**
      * Constructor for objects of class Osoba
@@ -32,7 +34,7 @@ public class Osoba
     
     
     public int getVek (){
-        return 2019 - this.rokNarodenia;
+        return AKTROK - this.rokNarodenia;
     }
     
     
