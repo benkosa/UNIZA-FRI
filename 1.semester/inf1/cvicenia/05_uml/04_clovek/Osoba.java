@@ -15,7 +15,11 @@ public class Osoba
     
     public static final int AKTROK = 2019;
     
-
+    public Osoba(){
+        Osoba ja = new Osoba("Ben", "Kosa", 1997, true);
+        ja.vypisInfo();
+    }
+    
     /**
      * Constructor for objects of class Osoba
      */
