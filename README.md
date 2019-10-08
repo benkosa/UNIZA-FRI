@@ -13,3 +13,8 @@
 <h2 align="center">
 	University of Žilina<br>Faculty of Management Science and Informatics<br>Informatics
 </h2>
+
+### [UNIZA-FRI](https://github.com/benkosa/UNIZA-FRI) 2019-?
+* **[1. Winter](https://github.com/benkosa/UNIZA-FRI/tree/master/1TERM)** 2019/2020
+	* [INF1](https://github.com/benkosa/UNIZA-FRI/tree/master/1TERM/inf1)
+		* [exercises](https://github.com/benkosa/UNIZA-FRI/tree/master/1TERM/inf1/exercises)
