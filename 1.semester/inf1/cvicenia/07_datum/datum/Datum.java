@@ -34,9 +34,9 @@ public class Datum {
     
     public void setRok(int rok){
         if (rok >= 1900)
-            this.den = den;
+            this.rok = rok;
         else
-            this.den = 1900;
+            this.rok = 1900;
     }
     
     public void setMesiac(int mesiac){
