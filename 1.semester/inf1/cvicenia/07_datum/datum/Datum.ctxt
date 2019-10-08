@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=Datum
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Datum\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=Datum()
+comment2.params=
+comment2.target=int\ getDen()
+comment3.params=
+comment3.target=int\ getMesiac()
+comment4.params=
+comment4.target=int\ getRok()
+comment5.params=rok
+comment5.target=void\ setRok(int)
+comment6.params=mesiac
+comment6.target=void\ setMesiac(int)
+comment7.params=den
+comment7.target=void\ setDen(int)
+numComments=8
