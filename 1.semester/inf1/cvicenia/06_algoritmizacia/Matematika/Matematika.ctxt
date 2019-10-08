@@ -1,10 +1,14 @@
 #BlueJ class context
 comment0.target=Matematika
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Matematika\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ Matematika\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=
 comment1.target=Matematika()
-comment2.params=atributA\ atributB
-comment2.target=Matematika(double,\ double)
+comment10.params=
+comment10.target=void\ vypisMax3()
+comment11.params=
+comment11.target=void\ swap()
+comment2.params=atributA\ atributB\ atributC
+comment2.target=Matematika(double,\ double,\ double)
 comment3.params=
 comment3.target=double\ getAtributA()
 comment4.params=
@@ -17,6 +21,6 @@ comment7.params=
 comment7.target=void\ vypis()
 comment8.params=
 comment8.target=void\ vypisMax()
-comment9.params=
-comment9.target=void\ swap()
-numComments=10
+comment9.params=atributA\ atributB
+comment9.target=double\ najdiMax(double,\ double)
+numComments=12

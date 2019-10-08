@@ -62,16 +62,12 @@ public class Matematika {
     public double najdiMax(double atributA, double atributB) {
         if(atributA > atributB)
             return atributA;
-          
+            
         return atributB;
     }
     
     public void vypisMax3(){
-        double max = najdiMax(this.atributA, this.atributB);
-        max = najdiMax(max, this.atributC);
-        
-        System.out.println(max);
-       
+        System.out.println(najdiMax(najdiMax(this.atributA, this.atributB), this.atributC));
     }
     
     public void swap(){

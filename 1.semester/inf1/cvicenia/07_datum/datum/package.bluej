@@ -1,3 +1,32 @@
 #BlueJ package file
-#Tue Oct 08 13:00:20 CEST 2019
+editor.fx.0.height=1053
+editor.fx.0.width=927
+editor.fx.0.x=993
+editor.fx.0.y=27
+objectbench.height=185
+objectbench.width=903
+package.divider.horizontal=0.6
+package.divider.vertical=0.8
+package.editor.height=761
+package.editor.width=797
+package.editor.x=67
+package.editor.y=27
+package.frame.height=1053
+package.frame.width=927
+package.numDependencies=0
+package.numTargets=1
+package.showExtends=true
+package.showUses=true
 project.charset=UTF-8
+readme.height=58
+readme.name=@README
+readme.width=47
+readme.x=10
+readme.y=10
+target1.height=50
+target1.name=Datum
+target1.showInterface=false
+target1.type=ClassTarget
+target1.width=80
+target1.x=70
+target1.y=10
