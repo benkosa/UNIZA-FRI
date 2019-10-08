@@ -9,9 +9,9 @@ public class Datum {
     /**
      * Constructor for objects of class Datum
      */
-    public int den;
-    public int mesiac;
-    public int rok;
+    private int den;
+    private int mesiac;
+    private int rok;
     
     public Datum() {
         this.rok = 2019;

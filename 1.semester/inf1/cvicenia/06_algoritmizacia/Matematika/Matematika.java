@@ -9,9 +9,9 @@ public class Matematika {
     /**
      * Constructor for objects of class Matematika
      */
-    public double atributA;
-    public double atributB;
-    public double atributC;
+    private double atributA;
+    private double atributB;
+    private double atributC;
     
     public Matematika() {
         this.atributA = 1;
@@ -52,14 +52,7 @@ public class Matematika {
         System.out.println(this.atributA + " \n" + this.atributB + " \n" + this.atributC);
     }
     
-    public void vypisMax(){
-        if(this.atributA > this.atributB)
-            System.out.println(this.atributA);
-        else
-            System.out.println(this.atributB);
-    }
-    
-    public double najdiMax(double atributA, double atributB) {
+    private double najdiMax(double atributA, double atributB) {
         if(atributA > atributB)
             return atributA;
             
