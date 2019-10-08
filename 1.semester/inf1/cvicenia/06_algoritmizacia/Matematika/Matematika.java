@@ -38,4 +38,8 @@ public class Matematika {
         this.atributB = atributB;
     }
     
+    public void vypis(){
+        System.out.println(this.atributA + " \n" + this.atributB);
+    }
+    
 }

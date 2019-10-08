@@ -13,4 +13,6 @@ comment5.params=atributA
 comment5.target=void\ setAtributA(double)
 comment6.params=atributB
 comment6.target=void\ setAtributB(double)
-numComments=7
+comment7.params=
+comment7.target=void\ vypis()
+numComments=8
