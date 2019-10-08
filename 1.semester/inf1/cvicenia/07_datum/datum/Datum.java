@@ -57,14 +57,14 @@ public class Datum {
             case 12:
                 if (den >= 0 && den <= 31)
                     this.den = den;
-                break;
+                return;
             case 4:
             case 8:
             case 9:
             case 11:
                 if (den >= 0 && den <= 30)
                     this.den = den;
-                break;
+                return;
             case 2:
                 //je priestupny
                 if((this.rok % 4 == 0) && ((this.rok % 100 != 0) || (this.rok % 400 == 0)))
@@ -73,7 +73,7 @@ public class Datum {
                 else
                     if (den >= 0 && den <= 28)
                         this.den = den;
-                break;
+                return;
         
         }
         this.den = 1;
