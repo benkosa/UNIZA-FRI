@@ -8,7 +8,7 @@
 </div>
 
 <h2 align="center">
-	University of Žilina<br>Faculty of Management Science and Informatics<br>Informatics
+	University of Žilina<br>Faculty of Management Science and Informatics
 </h2>
 
 ### [INFORMATICS](https://github.com/benkosa/UNIZA-FRI) 2019-?
