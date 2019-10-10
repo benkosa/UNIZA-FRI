@@ -14,8 +14,8 @@ public class Datum {
     
     public Datum() {
         this.rok = 2019;
-        this.mesiac = 10;
-        this.den = 10;
+        this.mesiac = 12;
+        this.den = 31;
         
     }
     
@@ -101,62 +101,17 @@ public class Datum {
     public Datum getZajtra(){
          Datum datumZajtra = new Datum();
          
+         datumZajtra.setRok(this.rok);
+         datumZajtra.setMesiac(this.mesiac);
+         datumZajtra.setDen(++this.den);
          
+         if(datumZajtra.den == 1)
+            datumZajtra.setMesiac(++this.mesiac);
          
-            switch (this.mesiac){
-            //30 dni
-            case 4:
-            case 6:
-            case 9:
-            case 11:
-                if(this.den >= 1 && this.den <= 30){
-                    datumZajtra.den = ++this.den;
-                    if(datumZajtra.den == 31){
-                        datumZajtra.den = 1;
-                        datumZajtra.mesiac = ++this.mesiac;
-                    }
-                }
-            //februar
-            case 2:
-                if(this.jePriestupny())
-                    if(this.den >= 1 && this.den <= 28){
-                    datumZajtra.den = ++this.den;
-                    if(datumZajtra.den == 29){
-                        datumZajtra.den = 1;
-                        datumZajtra.mesiac = ++this.mesiac;
-                    }
-                }
-                
-                if(this.den >= 1 && this.den <= 29){
-                    datumZajtra.den = ++this.den;
-                    if(datumZajtra.den == 30){
-                        datumZajtra.den = 1;
-                        datumZajtra.mesiac = ++this.mesiac;
-                    }
-                }
-
-            //31 dni
-            case 12:
-                if(this.den >= 1 && this.den <= 31){
-                    datumZajtra.den = ++this.den;
-                    if(datumZajtra.den == 32){
-                        datumZajtra.den = 1;
-                        datumZajtra.mesiac = 1;
-                        datumZajtra.rok = ++this.rok;
-                    }
-                }
-            
-            default:
-                if(this.den >= 1 && this.den <= 31){
-                    datumZajtra.den = ++this.den;
-                    if(datumZajtra.den == 32){
-                        datumZajtra.den = 1;
-                        datumZajtra.mesiac = ++this.mesiac;
-                    }
-                }
-        }
+         if(datumZajtra.mesiac == 1)
+            datumZajtra.setRok(++this.rok);
          
-         System.out.println(datumZajtra.den + " " + datumZajtra.mesiac + " " + datumZajtra.rok);
+         System.out.println(datumZajtra.den + "." + datumZajtra.mesiac + "." + datumZajtra.rok+"\n");
          return datumZajtra;
     }
 }
