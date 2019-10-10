@@ -14,8 +14,8 @@ public class Datum {
     
     public Datum() {
         this.rok = 2019;
-        this.mesiac = 12;
-        this.den = 31;
+        this.mesiac = 10;
+        this.den = 10;
         
     }
     
@@ -75,28 +75,32 @@ public class Datum {
     }
     
     public int getPocetDniOdZaciatkuRoka(){
+        
         int count = this.den;
         switch(this.mesiac){
-            case 12: count += 31;
-            case 11: count += 30;
-            case 10: count += 31;
-            case 9: count += 30;
-            case 8: count += 31;
-            case 7: count += 31;
-            case 6: count += 30;
-            case 5: count += 31;
-            case 4: count += 30;
-            case 3: count += 31;
-            case 2: count += 31;
-                if(this.jePriestupny())
-                    count += 29;
-                    
-                count += 28;
-            case 1: count += 31;
+            case 12: if(this.mesiac != 12)count += 31;
+            case 11: if(this.mesiac != 11)count += 30;
+            case 10: if(this.mesiac != 10)count += 31;
+            case 9: if(this.mesiac != 9)count += 30;
+            case 8: if(this.mesiac != 8)count += 31;
+            case 7: if(this.mesiac != 7)count += 31;
+            case 6: if(this.mesiac != 6)count += 30;
+            case 5: if(this.mesiac != 5)count += 31;
+            case 4: if(this.mesiac != 4)count += 30;
+            case 3: if(this.mesiac != 3)count += 31;
+            case 2:
+                if(this.jePriestupny()){
+                    if(this.mesiac != 2)count += 29;
+                }else{    
+                    if(this.mesiac != 2)count += 28;
+                }
+            case 1: if(this.mesiac != 1)count += 31;
         } 
         
         return count;        
     }
+   
+
     
     public Datum getZajtra(){
          Datum datumZajtra = new Datum();
