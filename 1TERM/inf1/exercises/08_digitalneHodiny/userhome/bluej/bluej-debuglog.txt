@@ -1,0 +1,37 @@
+BlueJ run started: Wed Oct 17 08:24:41 CEST 2018
+BlueJ version 4.1.2
+Java version 1.8.0_181
+Virtual machine: Java HotSpot(TM) 64-Bit Server VM 25.181-b13 (Oracle Corporation)
+Running on: Windows 10 10.0 (amd64)
+Java Home: C:\Program Files\Java\jdk1.8.0_181\jre
+----
+Detected language "slovak" based on iso639-2 code "slk"
+Internal error: Unable to load definitions file: C:\Program Files (x86)\BlueJ FRI Edition\lib\slovak\labels
+Internal error: Unable to load frame labels file: C:\Program Files (x86)\BlueJ FRI Edition\lib\slovak\frame-labels
+Opening project: F:\Inf1_04\digitalneHodiny
+1539757484604: Listening for JDWP connection on address: javadebug
+ExtensionWrapper.safeEventOccurred: Class=com.puppycrawl.tools.checkstyle.plugins.bluej.CheckstyleExtension Exception=null
+java.lang.NullPointerException
+	at javax.swing.SwingUtilities.getWindowAncestor(SwingUtilities.java:137)
+	at bluej.pkgmgr.PkgMgrFrame.getWindow(PkgMgrFrame.java:1523)
+	at bluej.extensions.BlueJ.getCurrentFrame(BlueJ.java:272)
+	at com.puppycrawl.tools.checkstyle.plugins.bluej.BlueJManager.getCurrentFrame(BlueJManager.java:233)
+	at com.puppycrawl.tools.checkstyle.plugins.bluej.BlueJManager.initAuditFrame(BlueJManager.java:492)
+	at com.puppycrawl.tools.checkstyle.plugins.bluej.CheckstyleExtension.buildAuditFrame(CheckstyleExtension.java:326)
+	at com.puppycrawl.tools.checkstyle.plugins.bluej.CheckstyleExtension.access$200(CheckstyleExtension.java:57)
+	at com.puppycrawl.tools.checkstyle.plugins.bluej.CheckstyleExtension$CheckstyleApplicationListener.blueJReady(CheckstyleExtension.java:184)
+	at bluej.extensions.BlueJ.delegateApplicationEvent(BlueJ.java:756)
+	at bluej.extensions.BlueJ.delegateEvent(BlueJ.java:919)
+	at bluej.extensions.ExtensionBridge.delegateEvent(ExtensionBridge.java:59)
+	at bluej.extmgr.ExtensionWrapper.safeEventOccurred(ExtensionWrapper.java:422)
+	at bluej.extmgr.ExtensionsManager.delegateEvent(ExtensionsManager.java:378)
+	at bluej.Main.processArgs(Main.java:235)
+	at bluej.Main.lambda$null$0(Main.java:131)
+	at com.sun.javafx.application.PlatformImpl.lambda$null$172(PlatformImpl.java:295)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.javafx.application.PlatformImpl.lambda$runLater$173(PlatformImpl.java:294)
+	at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$null$147(WinApplication.java:177)
+	at java.lang.Thread.run(Thread.java:748)
+Connected to debug VM via dt_shmem transport...
