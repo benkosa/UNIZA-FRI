@@ -1,8 +1,8 @@
 #BlueJ class context
-comment0.target=SSD
-comment0.text=\ 7-segmentovy\ displej\ s\ privatnymi\ metodami\r\n\ metoda\ -\ odpoved\ objektu\ na\ spravu\ zvonka\r\n\ \ Segmenty\:\r\n\ \ \ ---a---\r\n\ \ |\ \ \ \ \ \ \ |\r\n\ \ f\ \ \ \ \ \ \ b\r\n\ \ |\ \ \ \ \ \ \ |\r\n\ \ \ ---g---\r\n\ \ |\ \ \ \ \ \ \ |\r\n\ \ e\ \ \ \ \ \ \ c\r\n\ \ |\ \ \ \ \ \ \ |\r\n\ \ \ ---d---\r\n
+comment0.target=SSDpub
+comment0.text=\ 7-segmentovy\ displej\ -\ vsetko\ "public"\ metody\r\n\ \ Segmenty\:\r\n\ \ \ ---a---\r\n\ \ |\ \ \ \ \ \ \ |\r\n\ \ f\ \ \ \ \ \ \ b\r\n\ \ |\ \ \ \ \ \ \ |\r\n\ \ \ ---g---\r\n\ \ |\ \ \ \ \ \ \ |\r\n\ \ e\ \ \ \ \ \ \ c\r\n\ \ |\ \ \ \ \ \ \ |\r\n\ \ \ ---d---\r\n
 comment1.params=paLHX\ paLHY
-comment1.target=SSD(int,\ int)
+comment1.target=SSDpub(int,\ int)
 comment10.params=
 comment10.target=void\ zobraz6()
 comment11.params=

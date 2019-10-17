@@ -1,5 +1,4 @@
-/** 7-segmentovy displej s privatnymi metodami
- * metoda - odpoved objektu na spravu zvonka
+/** 7-segmentovy displej - vsetko "public" metody
  *  Segmenty:
  *   ---a---
  *  |       |
@@ -11,7 +10,7 @@
  *  |       |
  *   ---d---
  */
-public class SSD {
+public class SSDpub {
     private Segment aSegmentA;
     private Segment aSegmentB;
     private Segment aSegmentC;
@@ -20,7 +19,7 @@ public class SSD {
     private Segment aSegmentF;
     private Segment aSegmentG;
     
-    public SSD(int paLHX, int paLHY) {
+    public SSDpub(int paLHX, int paLHY) {
         this.aSegmentA = new Segment(50, 15, 15+paLHX, paLHY);
         this.aSegmentB = new Segment(15, 50, 65+paLHX, 15+paLHY);
         this.aSegmentC = new Segment(15, 50, 65+paLHX, 80+paLHY);
@@ -30,7 +29,7 @@ public class SSD {
         this.aSegmentG = new Segment(50, 15, 15+paLHX, 65+paLHY);
     }
     
-    private void zobrazVsetko() {
+    public void zobrazVsetko() {
         this.aSegmentA.rozsviet();
         this.aSegmentB.rozsviet();
         this.aSegmentC.rozsviet();
@@ -39,7 +38,7 @@ public class SSD {
         this.aSegmentF.rozsviet();
         this.aSegmentG.rozsviet();
     }
-    private void zhasniVsetko() {
+    public void zhasniVsetko() {
         this.aSegmentA.zhasni();
         this.aSegmentB.zhasni();
         this.aSegmentC.zhasni();
@@ -49,7 +48,7 @@ public class SSD {
         this.aSegmentG.zhasni();        
     }
     // CISLA
-    private void zobraz0() {
+    public void zobraz0() {
         this.aSegmentA.rozsviet();
         this.aSegmentB.rozsviet();
         this.aSegmentC.rozsviet();
@@ -58,7 +57,7 @@ public class SSD {
         this.aSegmentF.rozsviet();
         this.aSegmentG.zhasni();
     }
-    private void zobraz1() {
+    public void zobraz1() {
         this.aSegmentA.zhasni();
         this.aSegmentB.rozsviet();
         this.aSegmentC.rozsviet();
@@ -67,7 +66,7 @@ public class SSD {
         this.aSegmentF.zhasni();
         this.aSegmentG.zhasni();
     }
-    private void zobraz2() {
+    public void zobraz2() {
         this.aSegmentA.rozsviet();
         this.aSegmentB.rozsviet();
         this.aSegmentC.zhasni();
@@ -76,7 +75,7 @@ public class SSD {
         this.aSegmentF.zhasni();
         this.aSegmentG.rozsviet();
     }
-    private void zobraz3() {
+    public void zobraz3() {
         this.aSegmentA.rozsviet();
         this.aSegmentB.rozsviet();
         this.aSegmentC.rozsviet();
@@ -85,7 +84,7 @@ public class SSD {
         this.aSegmentF.zhasni();
         this.aSegmentG.rozsviet();
     }
-    private void zobraz4() {
+    public void zobraz4() {
         this.aSegmentA.zhasni();
         this.aSegmentB.rozsviet();
         this.aSegmentC.rozsviet();
@@ -94,7 +93,7 @@ public class SSD {
         this.aSegmentF.rozsviet();
         this.aSegmentG.rozsviet();
     }
-    private void zobraz5() {
+    public void zobraz5() {
         this.aSegmentA.rozsviet();
         this.aSegmentB.zhasni();
         this.aSegmentC.rozsviet();
@@ -103,7 +102,7 @@ public class SSD {
         this.aSegmentF.rozsviet();
         this.aSegmentG.rozsviet();
     }
-    private void zobraz6() {
+    public void zobraz6() {
         this.aSegmentA.rozsviet();
         this.aSegmentB.zhasni();
         this.aSegmentC.rozsviet();
@@ -112,7 +111,7 @@ public class SSD {
         this.aSegmentF.rozsviet();
         this.aSegmentG.rozsviet();
     }
-    private void zobraz7() {
+    public void zobraz7() {
         this.aSegmentA.rozsviet();
         this.aSegmentB.rozsviet();
         this.aSegmentC.rozsviet();
@@ -121,10 +120,10 @@ public class SSD {
         this.aSegmentF.zhasni();
         this.aSegmentG.zhasni();
     }
-    private void zobraz8() {
+    public void zobraz8() {
         this.zobrazVsetko();
     }
-    private void zobraz9() {
+    public void zobraz9() {
         this.aSegmentA.rozsviet();
         this.aSegmentB.rozsviet();
         this.aSegmentC.rozsviet();

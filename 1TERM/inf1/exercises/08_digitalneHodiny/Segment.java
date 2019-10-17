@@ -1,28 +1,19 @@
-
-/**
- * Write a description of class Segment here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Segment {
     private Obdlznik aObdlznik;
     
-    /**
-     * Constructor for objects of class Segment
-     */
-    public Segment(int dlzkaSegmentu, int hrubkaSegmentu, int poziciaX, int poziciaY) {
-        // initialise instance variables
+    public Segment(int paDlzkaSegmentu, int paHrubkaSegmentu, 
+                   int paPoziciaX, int paPoziciaY) {
         this.aObdlznik = new Obdlznik();
-        this.aObdlznik.zmenPolohu(poziciaX, poziciaY);
-        this.aObdlznik.zmenStrany(dlzkaSegmentu, hrubkaSegmentu);
+        this.aObdlznik.zmenPolohu(paPoziciaX, paPoziciaY);
+        this.aObdlznik.zmenStrany(paDlzkaSegmentu, paHrubkaSegmentu);
     }
     
-    public void rozsviet(){
+    public void rozsviet() {
         this.aObdlznik.zobraz();
     }
     
-    public void zhasni(){
+    public void zhasni() {
         this.aObdlznik.skry();
     }
 }
+

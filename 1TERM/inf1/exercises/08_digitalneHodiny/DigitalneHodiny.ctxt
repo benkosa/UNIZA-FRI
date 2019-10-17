@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=DigitalneHodiny
+comment1.params=
+comment1.target=DigitalneHodiny()
+comment2.params=
+comment2.target=void\ start()
+comment3.params=
+comment3.target=void\ stop()
+comment4.params=
+comment4.target=void\ zobrazAktualnyCas()
+comment5.params=hodina\ minuta\ sekunda
+comment5.target=void\ setCas(int,\ int,\ int)
+comment6.params=
+comment6.target=void\ tik()
+comment7.params=
+comment7.target=void\ pridajPriestupnuSekundu()
+numComments=8
