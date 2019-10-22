@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Banka
+comment1.params=
+comment1.target=Banka()
+comment2.params=
+comment2.target=java.lang.String\ getNazovBanky()
+comment3.params=novyNazov
+comment3.target=void\ setNazovBanky(java.lang.String)
+numComments=4
