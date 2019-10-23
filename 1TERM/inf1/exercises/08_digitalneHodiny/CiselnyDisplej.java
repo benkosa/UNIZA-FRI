@@ -27,9 +27,23 @@ public class CiselnyDisplej {
     public int getHodnota() {
         return this.hodnota;
     }
+    
+    public int getHornaHranica() {
+        return this.hornaHranica;
+    }
+    
     public void setHodnota(int hodnota) {
         if ((hodnota >= 0) && (hodnota < this.hornaHranica))
             this.hodnota = hodnota;
+    }
+    
+    public void setHodnotaDatum(int hodnota) {
+        if ((hodnota >= 0) && (hodnota <= this.hornaHranica))
+            this.hodnota = hodnota;
+    }
+    
+    public void setHronaHranica(int hornaHranica){
+        this.hornaHranica = hornaHranica;
     }
     
     public String getHodnotaAkoRetazec() {

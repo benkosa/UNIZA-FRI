@@ -38,7 +38,7 @@ public class Platno {
      */
     public static Platno dajPlatno() {
         if (Platno.platnoSingleton == null) {
-            Platno.platnoSingleton = new Platno("Digitalne hodiny", 1000, 650, 
+            Platno.platnoSingleton = new Platno("Digitalne hodiny", 1200, 650, 
                                          Color.white);
         }
         Platno.platnoSingleton.setVisible(true);
