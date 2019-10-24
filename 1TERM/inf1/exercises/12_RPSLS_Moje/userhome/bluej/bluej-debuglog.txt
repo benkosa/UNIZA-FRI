@@ -1,0 +1,18 @@
+BlueJ run started: Wed Oct 24 08:01:06 CEST 2018
+BlueJ version 4.1.2
+Java version 1.8.0_181
+Virtual machine: Java HotSpot(TM) 64-Bit Server VM 25.181-b13 (Oracle Corporation)
+Running on: Windows 10 10.0 (amd64)
+Java Home: C:\Program Files\Java\jdk1.8.0_181\jre
+----
+Detected language "slovak" based on iso639-2 code "slk"
+Internal error: Unable to load definitions file: C:\Program Files (x86)\BlueJ FRI Edition\lib\slovak\labels
+Internal error: Unable to load frame labels file: C:\Program Files (x86)\BlueJ FRI Edition\lib\slovak\frame-labels
+Opening project: E:\Inf1_05\RPSLS_Moje
+1540360875138: Listening for JDWP connection on address: javadebug
+Connected to debug VM via dt_shmem transport...
+Communication with debug VM fully established.
+okt 24, 2018 8:01:44 AM javafx.scene.CssStyleHelper calculateValue
+WARNING: Could not resolve '-fx-text-background-color' while resolving lookups for '-fx-text-fill' from rule '*.label' in stylesheet jar:file:/C:/Program%20Files/Java/jdk1.8.0_181/jre/lib/ext/jfxrt.jar!/com/sun/javafx/scene/control/skin/modena/modena.bss
+okt 24, 2018 8:02:02 AM javafx.scene.CssStyleHelper calculateValue
+WARNING: Could not resolve '-fx-text-background-color' while resolving lookups for '-fx-text-fill' from rule '*.label' in stylesheet jar:file:/C:/Program%20Files/Java/jdk1.8.0_181/jre/lib/ext/jfxrt.jar!/com/sun/javafx/scene/control/skin/modena/modena.bss

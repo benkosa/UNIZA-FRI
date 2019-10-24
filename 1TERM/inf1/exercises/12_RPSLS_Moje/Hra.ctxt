@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Hra
+comment1.params=
+comment1.target=Hra()
+comment2.params=pocetSekund
+comment2.target=void\ spustiHru(int)
+comment3.params=
+comment3.target=void\ jeCas()
+numComments=4

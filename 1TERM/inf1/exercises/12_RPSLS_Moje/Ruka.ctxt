@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Ruka()
+comment1.params=suradnicaX\ suradnicaY\ cisloGesta
+comment1.target=Ruka(int,\ int,\ int)
+comment2.params=
+comment2.target=int\ getGesto()
+comment3.params=cislo
+comment3.target=void\ setGesto(int)
+comment4.params=
+comment4.target=void\ ukazGesto()
+comment5.params=
+comment5.target=java.lang.String\ dajNazovGesta()
+comment6.params=
+comment6.target=void\ posunHore()
+comment7.params=
+comment7.target=void\ posunDole()
+comment8.params=
+comment8.target=void\ posunVpravo()
+comment9.params=
+comment9.target=void\ posunVlavo()
+numComments=10

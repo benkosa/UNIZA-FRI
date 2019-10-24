@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.params=selektor
+comment0.target=void\ posliSpravu(java.lang.String)
+comment1.params=selektor\ prvyParameter\ druhyParameter
+comment1.target=void\ posliSpravu(java.lang.String,\ int,\ int)
+comment2.params=
+comment2.target=void\ doNothing()
+comment3.params=
+comment3.target=void\ removeDeletedObjects()
+comment4.params=
+comment4.target=Manazer()
+comment4.text=\r\n\ Vytvori\ novy\ manazer,\ ktory\ nespravuje\ zatial\ ziadne\ objekty.\r\n
+comment5.params=objekt
+comment5.target=void\ spravujObjekt(java.lang.Object)
+comment5.text=\r\n\ Manazer\ bude\ spravovat\ dany\ objekt.\r\n
+comment6.params=objekt
+comment6.target=void\ prestanSpravovatObjekt(java.lang.Object)
+comment6.text=\r\n\ Manazer\ prestane\ spravovat\ dany\ objekt.\r\n
+numComments=7

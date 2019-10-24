@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Casovac
+comment1.params=h
+comment1.target=Casovac(Hra)
+comment2.params=paMaxPocet
+comment2.target=void\ start(int)
+comment3.params=
+comment3.target=void\ tik()
+comment4.params=
+comment4.target=void\ stop()
+numComments=5
