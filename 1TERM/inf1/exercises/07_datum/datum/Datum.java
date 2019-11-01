@@ -109,11 +109,13 @@ public class Datum {
          datumZajtra.setMesiac(this.mesiac);
          datumZajtra.setDen(++this.den);
          
-         if(datumZajtra.den == 1)
+         if(datumZajtra.den == 1){
             datumZajtra.setMesiac(++this.mesiac);
+            
+             if(datumZajtra.mesiac == 1)
+                datumZajtra.setRok(++this.rok);
+         }
          
-         if(datumZajtra.mesiac == 1)
-            datumZajtra.setRok(++this.rok);
          
          System.out.println(datumZajtra.den + "." + datumZajtra.mesiac + "." + datumZajtra.rok+"\n");
          return datumZajtra;
