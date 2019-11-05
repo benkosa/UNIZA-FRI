@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Skupina()
+comment1.params=paOsoba
+comment1.target=void\ pridajOsobu(Osoba)
+comment2.params=noveMeno\ novePriezvisko
+comment2.target=void\ pridajOsobu(java.lang.String,\ java.lang.String)
+comment3.params=paOsoba
+comment3.target=boolean\ jeClenomSkupiny(Osoba)
+comment4.params=
+comment4.target=int\ getPocetClenovSkupiny()
+comment5.params=
+comment5.target=void\ vypisClenovSkupiny()
+comment6.params=paPoradie
+comment6.target=void\ odstranClenaSkupiny(int)
+comment7.params=paOsoba
+comment7.target=void\ odstranClenaSkupiny(Osoba)
+comment8.params=
+comment8.target=void\ zrusSkupinu()
+numComments=9

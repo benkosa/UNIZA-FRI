@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=
+comment0.target=BankovyUcet()
+comment1.params=
+comment1.target=Banka\ getBanka()
+comment2.params=
+comment2.target=int\ getZostatok()
+comment3.params=suma
+comment3.target=boolean\ Vklad(int)
+comment4.params=suma
+comment4.target=boolean\ Vyber(int)
+comment5.params=novaBanka
+comment5.target=void\ setBanka(Banka)
+numComments=6

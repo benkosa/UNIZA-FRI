@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=paMeno\ paPriezvisko
+comment0.target=Osoba(java.lang.String,\ java.lang.String)
+comment1.params=
+comment1.target=java.lang.String\ getMeno()
+comment2.params=
+comment2.target=java.lang.String\ getPriezvisko()
+comment3.params=
+comment3.target=java.lang.String\ toString()
+numComments=4

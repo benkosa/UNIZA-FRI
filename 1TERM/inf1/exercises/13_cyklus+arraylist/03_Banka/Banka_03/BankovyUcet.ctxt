@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.params=paCisloUctu\ b\ k
+comment0.target=BankovyUcet(java.lang.String,\ Banka,\ Klient)
+comment1.params=
+comment1.target=int\ getZostatok()
+comment10.params=stareHeslo\ noveHeslo
+comment10.target=boolean\ setHeslo(java.lang.String,\ java.lang.String)
+comment11.params=h
+comment11.target=boolean\ overHeslo(java.lang.String)
+comment2.params=
+comment2.target=java.lang.String\ getCisloUctu()
+comment3.params=
+comment3.target=Banka\ getBanka()
+comment4.params=
+comment4.target=Klient\ getKlient()
+comment5.params=suma
+comment5.target=boolean\ Vklad(int)
+comment6.params=suma\ heslo
+comment6.target=boolean\ Vyber(int,\ java.lang.String)
+comment7.params=suma\ ciel\ heslo
+comment7.target=boolean\ prevodNaInyUcet(int,\ java.lang.String,\ java.lang.String)
+comment8.params=
+comment8.target=void\ vypisZuctu()
+comment9.params=
+comment9.target=java.lang.String\ getPIN()
+numComments=12

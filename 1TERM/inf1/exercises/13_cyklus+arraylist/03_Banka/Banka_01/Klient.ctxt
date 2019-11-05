@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Klient()
+comment1.params=paMeno\ paPriezvisko
+comment1.target=Klient(java.lang.String,\ java.lang.String)
+comment2.params=
+comment2.target=java.lang.String\ getMeno()
+comment3.params=
+comment3.target=java.lang.String\ getPriezvisko()
+comment4.params=
+comment4.target=Banka\ getBanka()
+comment5.params=noveMeno
+comment5.target=void\ setMeno(java.lang.String)
+comment6.params=novePriezvisko
+comment6.target=void\ setPriezvisko(java.lang.String)
+comment7.params=
+comment7.target=void\ vypisNazovSvojejBanky()
+comment8.params=novaBanka
+comment8.target=void\ setBanka(Banka)
+numComments=9

@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=PrvaUloha()
+comment1.params=vstup
+comment1.target=int\ vypocitajCifernySucet(int)
+comment2.params=vstup
+comment2.target=int\ vypocitajCisloSopacnymPoradimCifier(int)
+numComments=3
