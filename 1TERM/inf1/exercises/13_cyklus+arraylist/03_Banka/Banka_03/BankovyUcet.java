@@ -7,6 +7,8 @@ public class BankovyUcet{
     private Banka aBanka;
     private ArrayList<Transakcia> pohybyNaUcte;
     private Klient klient;
+    private String iban;
+    private String pin;
 
     public BankovyUcet(String paCisloUctu, Banka b, Klient k){
         this.zostatok = 0;

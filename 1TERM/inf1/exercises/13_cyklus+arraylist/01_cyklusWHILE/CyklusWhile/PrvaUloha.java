@@ -48,6 +48,27 @@ public class PrvaUloha {
     // 12345, na vystupe ocakavam 54321, ale pokial zadam -123456, na vystupe chcem -654321.
     public int vypocitajCisloSopacnymPoradimCifier(int vstup){
         // Doplnit !!!
-        return 0;
+        int cislo = vstup;
+                
+        int opacneCislo = 0;
+        boolean zaporne = false;
+        if(cislo < 0){
+            zaporne = true;
+            cislo *= -1;
+        }
+        
+        while (cislo > 0) {
+            opacneCislo *= 10;
+            opacneCislo += cislo % 10;
+            cislo = cislo / 10;        
+        }
+        
+        if(zaporne)
+            opacneCislo *= -1;
+        
+        System.out.println("Opacne cislo k cislu " + vstup + " je " + opacneCislo + ".");   
+        
+        // 6. Vratim vysledok vypoctu cez navratovu hodnotu.
+        return opacneCislo;
     }    
 }
