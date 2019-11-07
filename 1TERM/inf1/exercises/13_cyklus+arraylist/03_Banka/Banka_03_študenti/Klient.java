@@ -39,10 +39,19 @@ public class Klient{
 
     public void zriadSiUcetVbanke(Banka b) {
         // Doplnit!
+        if(b!=null) 
+            this.mojeUcty.add(b.vytvorNovyUcet(this));
     }
 
     private BankovyUcet najdiUcet(String paCisloUctu) {
-        // Doplnit!
+        if(this.mojeUcty == null)
+            return null;
+        
+        for(BankovyUcet u: this.mojeUcty)
+            if(u.getCisloUctu().equals(paCisloUctu))
+                return u;
+        
+        System.out.println("Nenasiel sa ucet s cislom " + paCisloUctu);
         return null;
     }
 

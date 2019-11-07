@@ -97,6 +97,7 @@ public class BankovyUcet{
 
     public void vypisZuctu(){
         // Doplnit!
+        System.out.println("Aktualny zostatok na ucte: " + this.getZostatok());
     }
 
     public String getPIN(){
@@ -135,6 +136,6 @@ public class BankovyUcet{
 
     public boolean overHeslo(String h) {
         // Doplnit!
-        return false;
+        return this.PIN.equals(h);
     }
 }
