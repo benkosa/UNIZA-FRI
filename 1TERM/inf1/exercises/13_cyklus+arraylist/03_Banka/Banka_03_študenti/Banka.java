@@ -38,15 +38,51 @@ public class Banka{
     }
 
     public BankovyUcet vytvorNovyUcet(Klient paKlient) {
-        // Doplnit!
-        return null;
+        // Vygenerivanie noveho IBAN cisla uctu
+        String noveCislo = "SK";
+        Random generator = new Random();
+        for (int i = 0; i < 10; i++)
+            noveCislo += generator.nextInt(10);
+            
+        BankovyUcet novy = new BankovyUcet(noveCislo, this, paKlient);
+        zoznamUctov.add(novy);
+        return novy;
     }
 
     public void vypisCislaVsetkychUctov() {
-        // Doplnit!
+        if (this.zoznamUctov.isEmpty())
+            System.out.println("Banka nema ziadny ucet!");
+        else{
+            for(BankovyUcet bu: this.zoznamUctov)
+                System.out.println(bu.getCisloUctu());
+        }       
     }
 
     public void vypisZoznamKlientovBezDuplicit() {
-        // Doplnit!
+        if (zoznamUctov != null){
+
+            // Vo vypise klientov chceme potlacit duplicity
+            ArrayList<Klient> zoznamKlientov = new ArrayList<Klient>();
+            Klient k;
+            for(BankovyUcet bu: this.zoznamUctov){
+                k = bu.getKlient();
+                if (k != null){
+                    if (!zoznamKlientov.contains(k))
+                        zoznamKlientov.add(k);
+                }
+            }
+
+            // Vypis zoznamu klientov
+            if (zoznamKlientov.isEmpty())
+                System.out.println("Banka nema ziadneho klienta!");
+            else{
+                System.out.println("Zoznam klientov:");
+                for(Klient kl: zoznamKlientov){
+                    System.out.println(kl);
+                }
+            }
+        }
+        else
+            System.out.println("Zoznam uctov neexistuje!");
     }
 }
