@@ -15,11 +15,10 @@ public class Datum {
     private static final int NEPRIESTUPNY = 365;
     
     private static final int POCIATOCNY_ROK = 1900;
-    private static final int POCIATOCNY_MESIAC = 1900;
     
     public Datum() {
         this.rok = 2019;
-        this.mesiac = 10;
+        this.mesiac = 11;
         
     }
     
@@ -69,11 +68,9 @@ public class Datum {
             default: 
                 return 31;
         }
-    }
-    
+    }    
    
-    public int getPocetDniOdZaciatkuRoka(){
-        
+    public int getPocetDniOdZaciatkuRoka(){        
         int count = 0;
         switch(this.mesiac){
             case 12: if(this.mesiac != 12)count += 31;
@@ -102,8 +99,8 @@ public class Datum {
         return this.jePriestupny(rok) ? PRIESTUPNY : NEPRIESTUPNY;
     }
     
-    private String getNazovDna(int rok){
-        switch(rok % 7){
+    private String getNazovDna(int pocetDni){
+        switch(pocetDni){
             case 0: return "MON";
             case 1: return "TUE";
             case 2: return "WED";
@@ -114,22 +111,37 @@ public class Datum {
         }
     }
     
+    private boolean fromMonth(int val){
+        return val > 0 ? (val < getMaxPocetDniMesiaca()+1 ? true : false) : false;
+    }
     
-    public void getPocetDniOd1900(){
+    private int getPocetDniOd1900(){
         int pocetDni = 1;
-        for(int i = POCIATOCNY_ROK; i< this.rok; i++){
+        for(int i = POCIATOCNY_ROK; i< this.rok; i++)
             pocetDni += this.getPocetDniVroku(i);
+        return pocetDni += this.getPocetDniOdZaciatkuRoka();
+    }
+    
+    public void pocetDniOd1900(){
+        int pocetDni = getPocetDniOd1900();
+        
+        //pocetDni % 7 vrati cislo od 0 - 6 kde 0 je pondelok...
+        //kedze vyisujem od pondelka ale pociatocny den moze byt
+        //aj napriklad piatok dam *-1 to mi hodi pociatocny den
+        //pre pondelok a nakoniec +1 riesi problem s 0
+        int pociatocnyDen = (pocetDni % 7)*-1+1;      
+       
+        String output = "";
+        for(int i = 0; i < 7; i++){
+            output += getNazovDna(i) + " ";
+            pociatocnyDen++;
+            for(int j = 0; j < 30; j+=7){
+                int kalendarnyDen = pociatocnyDen + j;
+                output += (fromMonth(kalendarnyDen) == true ? kalendarnyDen : " ") + (kalendarnyDen < 10 ? "  " : " ");
+            }
+            output += "\n";
         }
-        
-        pocetDni += this.getPocetDniOdZaciatkuRoka();
-        int pociatocnyDen = (pocetDni % 7);
-        
-        System.out.println(pocetDni);
-        System.out.println(pociatocnyDen);
-        
-        for(int i = 1; i < 31; i++){
-            
-        }
+        System.out.println(output);
     }    
 
 }
