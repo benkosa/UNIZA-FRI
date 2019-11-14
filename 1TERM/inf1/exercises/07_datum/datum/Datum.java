@@ -8,19 +8,19 @@ public class Datum {
     /**
      * Constructor for objects of class Datum
      */
-    private int den;
     private int mesiac;
     private int rok;
+    
+    private static final int PRIESTUPNY = 366;
+    private static final int NEPRIESTUPNY = 365;
+    
+    private static final int POCIATOCNY_ROK = 1900;
+    private static final int POCIATOCNY_MESIAC = 1900;
     
     public Datum() {
         this.rok = 2019;
         this.mesiac = 10;
-        this.den = 10;
         
-    }
-    
-    public int getDen(){
-        return this.den;
     }
     
     public int getMesiac(){
@@ -49,6 +49,10 @@ public class Datum {
         return (this.rok % 4 == 0) && ((this.rok % 100 != 0) || (this.rok % 400 == 0));
     }
     
+    private boolean jePriestupny(int rok){
+        return (rok % 4 == 0) && ((rok % 100 != 0) || (rok % 400 == 0));
+    }
+    
     private int getMaxPocetDniMesiaca(){
         switch (this.mesiac){
             case 4:
@@ -67,16 +71,10 @@ public class Datum {
         }
     }
     
-    public void setDen(int den){
-        this.den = 1;
-        
-        if (den >= 1 && den <= this.getMaxPocetDniMesiaca())
-            this.den = den;
-    }
-    
+   
     public int getPocetDniOdZaciatkuRoka(){
         
-        int count = this.den;
+        int count = 0;
         switch(this.mesiac){
             case 12: if(this.mesiac != 12)count += 31;
             case 11: if(this.mesiac != 11)count += 30;
@@ -99,25 +97,39 @@ public class Datum {
         
         return count;        
     }
-   
-
     
-    public Datum getZajtra(){
-         Datum datumZajtra = new Datum();
-         
-         datumZajtra.setRok(this.rok);
-         datumZajtra.setMesiac(this.mesiac);
-         datumZajtra.setDen(++this.den);
-         
-         if(datumZajtra.den == 1){
-            datumZajtra.setMesiac(++this.mesiac);
-            
-             if(datumZajtra.mesiac == 1)
-                datumZajtra.setRok(++this.rok);
-         }
-         
-         
-         System.out.println(datumZajtra.den + "." + datumZajtra.mesiac + "." + datumZajtra.rok+"\n");
-         return datumZajtra;
+    private int getPocetDniVroku(int rok){
+        return this.jePriestupny(rok) ? PRIESTUPNY : NEPRIESTUPNY;
     }
+    
+    private String getNazovDna(int rok){
+        switch(rok % 7){
+            case 0: return "MON";
+            case 1: return "TUE";
+            case 2: return "WED";
+            case 3: return "THU";
+            case 4: return "FRI";
+            case 5: return "SAT";
+            default: return "SUN";         
+        }
+    }
+    
+    
+    public void getPocetDniOd1900(){
+        int pocetDni = 1;
+        for(int i = POCIATOCNY_ROK; i< this.rok; i++){
+            pocetDni += this.getPocetDniVroku(i);
+        }
+        
+        pocetDni += this.getPocetDniOdZaciatkuRoka();
+        int pociatocnyDen = (pocetDni % 7);
+        
+        System.out.println(pocetDni);
+        System.out.println(pociatocnyDen);
+        
+        for(int i = 1; i < 31; i++){
+            
+        }
+    }    
+
 }
