@@ -18,7 +18,7 @@ public class Datum {
     
     public Datum() {
         this.rok = 2019;
-        this.mesiac = 11;
+        this.mesiac = 12;
         
     }
     
@@ -122,7 +122,7 @@ public class Datum {
     }
     
     private int getPocetDniOd1900(){
-        int pocetDni = 1;
+        int pocetDni = 0;
         for(int i = POCIATOCNY_ROK; i< this.rok; i++)
             pocetDni += this.getPocetDniVroku(i);
         return pocetDni += this.getPocetDniOdZaciatkuRoka();
@@ -134,8 +134,8 @@ public class Datum {
         //pocetDni % 7 vrati cislo od 0 - 6 kde 0 je pondelok...
         //kedze vyisujem od pondelka ale pociatocny den moze byt
         //aj napriklad piatok dam *-1 to mi hodi pociatocny den
-        //pre pondelok a nakoniec +1 riesi problem s 0
-        int pociatocnyDen = (pocetDni % 7)*-1+1;      
+        //pre pondelok
+        int pociatocnyDen = ((pocetDni) % 7)*-1;
        
         String output = "";
         for(int i = 0; i < 7; i++){
@@ -153,13 +153,8 @@ public class Datum {
     public void vypisKalendar(int rok, int mesiac){
         this.setRok(rok);
         this.setMesiac(mesiac);
-        int pocetDni = getPocetDniOd1900();
-        
-        //pocetDni % 7 vrati cislo od 0 - 6 kde 0 je pondelok...
-        //kedze vyisujem od pondelka ale pociatocny den moze byt
-        //aj napriklad piatok dam *-1 to mi hodi pociatocny den
-        //pre pondelok a nakoniec +1 riesi problem s 0
-        int pociatocnyDen = (pocetDni % 7)*-1+1;      
+        int pocetDni = getPocetDniOd1900();       
+        int pociatocnyDen = ((pocetDni) % 7)*-1;      
        
         String output = "";
         for(int i = 0; i < 7; i++){
@@ -173,4 +168,13 @@ public class Datum {
         }
         System.out.println(output);
     }
+    
+    public void vypisKalendarRok(){
+        for(int i = 1; i <= 12; i++){
+            System.out.println(i + ". mesiac: ");
+            this.mesiac = i;
+            this.vypisKalendar();
+        }
+    }
+   
 }
