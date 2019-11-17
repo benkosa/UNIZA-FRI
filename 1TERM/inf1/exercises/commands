@@ -58,3 +58,6 @@ sudo tlp bat//make sure TLP is running in battery mode.
 sudo apt-get install --no-install-recommends gnome-panel
 //create shortcut
 gnome-desktop-item-edit ~/Desktop/ --create-new
+
+//shortcut for git add, commit and push
+git config --global alias.cmp '!f() { git add -A && git commit -m "$@" && git push; }; f'
