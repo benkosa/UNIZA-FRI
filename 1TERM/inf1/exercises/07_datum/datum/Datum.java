@@ -22,11 +22,17 @@ public class Datum {
         
     }
     
-    public int getMesiac(){
+    public Datum(int rok, int mesiac) {
+        this.rok = rok;
+        this.mesiac = mesiac;
+        
+    }
+    
+    private int getMesiac(){
         return this.mesiac;
     }
     
-    public int getRok(){
+    private int getRok(){
         return this.rok;
     }
     
@@ -70,7 +76,7 @@ public class Datum {
         }
     }    
    
-    public int getPocetDniOdZaciatkuRoka(){        
+    private int getPocetDniOdZaciatkuRoka(){        
         int count = 0;
         switch(this.mesiac){
             case 12: if(this.mesiac != 12)count += 31;
@@ -122,7 +128,7 @@ public class Datum {
         return pocetDni += this.getPocetDniOdZaciatkuRoka();
     }
     
-    public void pocetDniOd1900(){
+    public void vypisKalendar(){
         int pocetDni = getPocetDniOd1900();
         
         //pocetDni % 7 vrati cislo od 0 - 6 kde 0 je pondelok...
@@ -142,6 +148,29 @@ public class Datum {
             output += "\n";
         }
         System.out.println(output);
-    }    
-
+    }
+    
+    public void vypisKalendar(int rok, int mesiac){
+        this.setRok(rok);
+        this.setMesiac(mesiac);
+        int pocetDni = getPocetDniOd1900();
+        
+        //pocetDni % 7 vrati cislo od 0 - 6 kde 0 je pondelok...
+        //kedze vyisujem od pondelka ale pociatocny den moze byt
+        //aj napriklad piatok dam *-1 to mi hodi pociatocny den
+        //pre pondelok a nakoniec +1 riesi problem s 0
+        int pociatocnyDen = (pocetDni % 7)*-1+1;      
+       
+        String output = "";
+        for(int i = 0; i < 7; i++){
+            output += getNazovDna(i) + " ";
+            pociatocnyDen++;
+            for(int j = 0; j < 30; j+=7){
+                int kalendarnyDen = pociatocnyDen + j;
+                output += (fromMonth(kalendarnyDen) == true ? kalendarnyDen : " ") + (kalendarnyDen < 10 ? "  " : " ");
+            }
+            output += "\n";
+        }
+        System.out.println(output);
+    }
 }
