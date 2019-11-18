@@ -159,7 +159,7 @@ public class Datum {
     
     public void vypisKalendarRok(){
         for(int i = 1; i <= 12; i++){
-            System.out.println(i + ". mesiac: ");
+            System.out.println(i + ". mesiac "+ this.rok + ": ");
             this.mesiac = i;
             this.vypisKalendar();
         }
