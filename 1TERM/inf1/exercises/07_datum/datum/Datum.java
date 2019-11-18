@@ -117,8 +117,16 @@ public class Datum {
         }
     }
     
-    private boolean fromMonth(int val){
-        return val > 0 ? (val < getMaxPocetDniMesiaca()+1 ? true : false) : false;
+    
+    private String naformatujKD(int kalendarnyDen){
+        String output = "";
+        if(kalendarnyDen > 0 && kalendarnyDen <= this.getMaxPocetDniMesiaca()){
+            output += kalendarnyDen + " ";
+            if(kalendarnyDen < 10)
+                output += " ";
+            return output;
+        }
+        return "   ";
     }
     
     private int getPocetDniOd1900(){
@@ -135,35 +143,15 @@ public class Datum {
         //kedze vyisujem od pondelka ale pociatocny den moze byt
         //aj napriklad piatok dam *-1 to mi hodi pociatocny den
         //pre pondelok
-        int pociatocnyDen = ((pocetDni) % 7)*-1;
+        int pociatocnyDen = (pocetDni % 7)*-1;
        
         String output = "";
         for(int i = 0; i < 7; i++){
             output += getNazovDna(i) + " ";
             pociatocnyDen++;
-            for(int j = 0; j < 30; j+=7){
-                int kalendarnyDen = pociatocnyDen + j;
-                output += (fromMonth(kalendarnyDen) == true ? kalendarnyDen : " ") + (kalendarnyDen < 10 ? "  " : " ");
-            }
-            output += "\n";
-        }
-        System.out.println(output);
-    }
-    
-    public void vypisKalendar(int rok, int mesiac){
-        this.setRok(rok);
-        this.setMesiac(mesiac);
-        int pocetDni = getPocetDniOd1900();       
-        int pociatocnyDen = ((pocetDni) % 7)*-1;      
-       
-        String output = "";
-        for(int i = 0; i < 7; i++){
-            output += getNazovDna(i) + " ";
-            pociatocnyDen++;
-            for(int j = 0; j < 30; j+=7){
-                int kalendarnyDen = pociatocnyDen + j;
-                output += (fromMonth(kalendarnyDen) == true ? kalendarnyDen : " ") + (kalendarnyDen < 10 ? "  " : " ");
-            }
+            for(int j = 0; j < 30; j+=7)
+                output += naformatujKD(pociatocnyDen + j);
+                
             output += "\n";
         }
         System.out.println(output);
