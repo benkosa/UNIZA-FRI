@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=Player
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Player\ here.\r\n\ \r\n\ @author\ (Benjamin\ Kosa)\ \r\n
+comment1.params=
+comment1.target=Player()
+comment2.params=direction
+comment2.target=void\ move(java.lang.String)
+comment3.params=
+comment3.target=void\ drawP()
+comment3.text=\r\n\ Draw\ the\ square\ with\ current\ specifications\ on\ screen.\r\n
+comment4.params=
+comment4.target=void\ eraseP()
+comment4.text=\r\n\ Erase\ the\ square\ on\ screen.\r\n
+numComments=5
