@@ -31,7 +31,7 @@ public class Manazer {
             if (event.getKeyCode() == KeyEvent.VK_DOWN) {
                 Manazer.this.posliSpravu("posunDole");
             } else if (event.getKeyCode() == KeyEvent.VK_UP) {
-                Manazer.this.posliSpravu("posunHore");
+                Manazer.this.posliSpravu("up");
             } else if (event.getKeyCode() == KeyEvent.VK_LEFT) {
                 Manazer.this.posliSpravu("posunVlavo");
             } else if (event.getKeyCode() == KeyEvent.VK_RIGHT) {

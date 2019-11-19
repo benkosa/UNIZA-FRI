@@ -1,14 +1,15 @@
 #BlueJ class context
-comment0.params=
-comment0.target=OvladanieHracom()
+comment0.target=OvladanieHracom
 comment1.params=
-comment1.target=Ruka\ getRuka()
+comment1.target=OvladanieHracom()
 comment2.params=
-comment2.target=void\ posunHore()
+comment2.target=Ruka\ getRuka()
 comment3.params=
-comment3.target=void\ posunDole()
+comment3.target=void\ up()
 comment4.params=
-comment4.target=void\ posunVpravo()
+comment4.target=void\ posunDole()
 comment5.params=
-comment5.target=void\ posunVlavo()
-numComments=6
+comment5.target=void\ posunVpravo()
+comment6.params=
+comment6.target=void\ posunVlavo()
+numComments=7

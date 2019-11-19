@@ -1,6 +1,7 @@
 #BlueJ class context
-comment0.params=
-comment0.target=Rozhodca()
-comment1.params=prvyHrac\ druhyHrac
-comment1.target=Ruka\ urciVitaza(Ruka,\ Ruka)
-numComments=2
+comment0.target=Rozhodca
+comment1.params=
+comment1.target=Rozhodca()
+comment2.params=prvyHrac\ druhyHrac
+comment2.target=Ruka\ urciVitaza(Ruka,\ Ruka)
+numComments=3

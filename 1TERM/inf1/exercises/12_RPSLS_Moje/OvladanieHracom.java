@@ -9,7 +9,7 @@ public class OvladanieHracom {
         return this.ruka;
     }
 
-    public void posunHore() {
+    public void up() {
         this.ruka.posunHore();
     }
 

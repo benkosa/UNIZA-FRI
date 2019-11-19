@@ -4,8 +4,7 @@ public class Hra {
     private Casovac casovac;
     private Manazer manazer;
     private Rozhodca rozhodca;
-    
-    private DigitalneHodiny digitalneHodiny;
+   
 
     public Hra() {
         this.pocitac = new OvladaniePocitacom();
@@ -13,7 +12,6 @@ public class Hra {
         this.casovac = new Casovac(this);
         this.manazer = new Manazer();
         this.rozhodca = new Rozhodca();
-        this.digitalneHodiny = new DigitalneHodiny();
     }
 
     public void spustiHru(int pocetSekund) {
@@ -21,7 +19,6 @@ public class Hra {
         this.manazer.spravujObjekt(this.pocitac);
         this.manazer.spravujObjekt(this.hrac);
         this.casovac.start(pocetSekund*4);
-        this.digitalneHodiny.start(pocetSekund);
     }
     
     public void jeCas() {

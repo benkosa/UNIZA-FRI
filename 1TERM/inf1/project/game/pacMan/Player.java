@@ -6,56 +6,37 @@ import java.awt.Rectangle;
  * @author (Benjamin Kosa) 
  */
 public class Player {
-    private int x;
-    private int y;
-    private int size;
-    private String color;
+    private Square square;
+    private String direction;   
     
-    private int step = 3;
 
-    public Player() {
-        x = 100;
-        y = 100;
-        size = 30;
-        color = "red";
+    public Player(int x, int y, int size) {
+        this.square = new Square(x, y, size, "red", true);
     }
     
-    private void move(String direction){
-        if(direction.equals("up")){
-            x-=step;
-            return;
-        }
-        if(direction.equals("do")){
-            x+=step;
-            return;
-        }
-        if(direction.equals("ri")){
-            y+=step;
-            return;
-        }
-        if(direction.equals("le")){
-            y-=step;
-            return;
-        }    
+    public void draw(){
+        this.square.draw();
     }
-
-    /*
-     * Draw the square with current specifications on screen.
-     */
-    private void drawP() {
-        Platno canvas = Platno.dajPlatno();
-        canvas.draw(this, this.color,
-            new Rectangle(this.x, this.y, this.size, this.size));
-        canvas.wait(10);
-
+    
+    public void move(){
+        this.square.move(this.direction);
     }
-
-    /*
-     * Erase the square on screen.
-     */
-    private void eraseP() {
-        Platno canvas = Platno.dajPlatno();
-        canvas.erase(this);
-
+    
+    public void moveUp(){
+        this.direction = "up";
     }
+    
+    public void moveDown(){
+        this.direction = "do";
+    }
+    
+    public void moveRight(){
+        this.direction = "le";
+    }
+    
+    public void moveLeft(){
+        this.direction = "ri";
+    } 
+    
+
 }

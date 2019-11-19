@@ -35,13 +35,15 @@ public class Platno {
     // shape objects in this project clean and simple for educational purposes.
 
     private static Platno platnoSingleton;
+    private static final int BLOCK_SIZE = 35;
+    private static final int GAME_SIZE = 21;
 
     /**
      * Factory method to get the canvas singleton object.
      */
     public static Platno dajPlatno() {
         if (Platno.platnoSingleton == null) {
-            Platno.platnoSingleton = new Platno("Rock paper scissors lizard spock", 400, 300, 
+            Platno.platnoSingleton = new Platno("PacMan", GAME_SIZE*BLOCK_SIZE, GAME_SIZE*BLOCK_SIZE, 
                                          Color.white);
         }
         Platno.platnoSingleton.setVisible(true);

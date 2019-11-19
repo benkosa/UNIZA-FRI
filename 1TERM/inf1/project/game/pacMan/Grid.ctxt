@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=Grid
+comment1.params=
+comment1.target=Grid()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Grid\r\n
+comment2.params=
+comment2.target=int\ getBaseX()
+comment3.params=
+comment3.target=int\ getBaseY()
+comment4.params=
+comment4.target=void\ leadDefaulutMap()
+comment5.params=
+comment5.target=void\ draw()
+numComments=6

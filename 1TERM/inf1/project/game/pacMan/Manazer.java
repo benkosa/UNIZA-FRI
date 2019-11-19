@@ -24,22 +24,22 @@ public class Manazer {
     private ArrayList<Object> spravovaneObjekty;
     private ArrayList<Integer> vymazaneObjekty;
     private long oldTick;
-    private static final long TICK_LENGTH = 250000000;
+    private static final long TICK_LENGTH = 30000000;
     
     private class ManazerKlaves extends KeyAdapter {
         public void keyPressed(KeyEvent event) {
             if (event.getKeyCode() == KeyEvent.VK_DOWN) {
-                Manazer.this.posliSpravu("posunDole");
+                Manazer.this.posliSpravu("moveUp");
             } else if (event.getKeyCode() == KeyEvent.VK_UP) {
-                Manazer.this.posliSpravu("posunHore");
+                Manazer.this.posliSpravu("moveDown");
             } else if (event.getKeyCode() == KeyEvent.VK_LEFT) {
-                Manazer.this.posliSpravu("posunVlavo");
+                Manazer.this.posliSpravu("moveLeft");
             } else if (event.getKeyCode() == KeyEvent.VK_RIGHT) {
-                Manazer.this.posliSpravu("posunVpravo");
+                Manazer.this.posliSpravu("moveRight");
             } else if (event.getKeyCode() == KeyEvent.VK_SPACE || event.getKeyCode() == KeyEvent.VK_ENTER) {
                 Manazer.this.posliSpravu("aktivuj");
             } else if (event.getKeyCode() == KeyEvent.VK_ESCAPE) {
-                Manazer.this.posliSpravu("zrus");
+                Manazer.this.posliSpravu("end");
             }
         }
     }

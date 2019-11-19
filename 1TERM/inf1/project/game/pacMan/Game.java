@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 /**
  * Write a description of class Game here.
@@ -6,15 +7,34 @@
  * @version (a version number or a date)
  */
 public class Game {
+    public static final int BLOCK_SIZE = 35;
     /**
      * Constructor for objects of class Game
      */
-    Manazer main;
-    Player player;
+    private Manazer main;
+    private Player player;
+    private String direction;
+    private Grid grid;
     public Game() {
-        // initialise instance variables
+        // initialise instance variables 
+        
+        grid = new Grid();
+        grid.leadDefaulutMap();        
+        player = new Player(grid.getBaseX(), grid.getBaseY(), BLOCK_SIZE);  
+        
         main = new Manazer();
-        player = new Player();
-        main.spravujObjekt(player);
+        main.spravujObjekt(player);        
+        main.spravujObjekt(this);
+        grid.draw();
+        player.draw();
+    }
+    
+    public void tik() {
+        player.move();
+    }
+    
+    public void end() {
+        main.prestanSpravovatObjekt(player);
+        main.prestanSpravovatObjekt(this);
     }
 }
