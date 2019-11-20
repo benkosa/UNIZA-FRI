@@ -14,7 +14,7 @@ public class Square {
     private String color;
     private boolean exist;
     private boolean isColision;
-    
+
     private static final int BLOCK_SIZE = 33;
 
     public static int STEP = 3;
@@ -38,20 +38,20 @@ public class Square {
     public int getBlockY(){
         return (this.y + this.size/2) / BLOCK_SIZE;
     }
-    
+
     public boolean getColision(){
         return this.isColision;
     }
 
     private boolean colison(Square square){       
-        
+
         if(square.isColision == false)
             return false;
-
+        //true ak naslo koliziu
         return (square.x <= this.x + this.size
-             && square.x + square.size >= this.x
-             && square.y <= this.y + this.size
-             && square.y + square.size >= this.y);
+            && square.y <= this.y + this.size
+            && square.x + square.size >= this.x
+            && square.y + square.size >= this.y);
     }  
 
     public void move(Player player){
@@ -63,7 +63,12 @@ public class Square {
             if(player.getSquare().colison(squareColision0) == false
             && player.getSquare().colison(squareColision1) == false
             && player.getSquare().colison(squareColision2) == false)            
-                y+=STEP;            
+                y+=STEP;
+            else{
+                y-=STEP;
+                player.setDirection("");
+            }
+
             draw();
             return;
         }
@@ -75,6 +80,10 @@ public class Square {
             && player.getSquare().colison(squareColision1) == false
             && player.getSquare().colison(squareColision2) == false)
                 y-=STEP;
+            else{
+                y+=STEP;
+                player.setDirection("");
+            }
             draw();
             return;
         }
@@ -86,6 +95,10 @@ public class Square {
             && player.getSquare().colison(squareColision1) == false
             && player.getSquare().colison(squareColision2) == false)
                 x-=STEP;
+            else{
+                x+=STEP;
+                player.setDirection("");
+            }
             draw();
             return;
         }
@@ -97,6 +110,10 @@ public class Square {
             && player.getSquare().colison(squareColision1) == false
             && player.getSquare().colison(squareColision2) == false)
                 x+=STEP;
+            else{
+                x-=STEP;
+                player.setDirection("");
+            }
             draw();
             return;
         }    

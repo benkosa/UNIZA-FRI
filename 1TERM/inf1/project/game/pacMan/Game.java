@@ -17,7 +17,7 @@ public class Game {
     private Grid grid;
     public Game() {
         // initialise instance variables 
-        
+         
         grid = new Grid();
         grid.leadDefaulutMap();        
         player = new Player(grid, BLOCK_SIZE-9);  

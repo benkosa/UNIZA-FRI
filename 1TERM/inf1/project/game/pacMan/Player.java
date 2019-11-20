@@ -28,14 +28,17 @@ public class Player {
         return this.direction;
     }
     
+    public void setDirection(String direction){
+        this.direction =direction;
+    }
+    
     public Grid getGrid(){
         return this.grid;
     }
-    
+     
     public void setCurrentBlock(){
         blockX = square.getBlockX();
         blockY = square.getBlockY();
-        System.out.println(blockX + " " + blockY);
     }
     
     public int getBlockX(){
