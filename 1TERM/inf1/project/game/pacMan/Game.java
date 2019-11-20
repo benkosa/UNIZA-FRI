@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * @version (a version number or a date)
  */
 public class Game {
-    public static final int BLOCK_SIZE = 35;
+    public static final int BLOCK_SIZE = 33;
     /**
      * Constructor for objects of class Game
      */
@@ -20,7 +20,7 @@ public class Game {
         
         grid = new Grid();
         grid.leadDefaulutMap();        
-        player = new Player(grid.getBaseX(), grid.getBaseY(), BLOCK_SIZE);  
+        player = new Player(grid, BLOCK_SIZE-9);  
         
         main = new Manazer();
         main.spravujObjekt(player);        

@@ -11,9 +11,13 @@ public class Player {
     private int blockX;
     private int blockY;
     
+    private Grid grid;
+    
 
-    public Player(int x, int y, int size) {
-        this.square = new Square(x, y, size, "red", true);
+    public Player(Grid grid, int size) {
+        this.square = new Square(grid.getBaseX(), grid.getBaseY(), size, "red", true);
+        this.grid = grid;
+        setCurrentBlock();
     }
     
     public void draw(){
@@ -24,14 +28,30 @@ public class Player {
         return this.direction;
     }
     
-    public void getCurrentBlock(){
+    public Grid getGrid(){
+        return this.grid;
+    }
+    
+    public void setCurrentBlock(){
         blockX = square.getBlockX();
         blockY = square.getBlockY();
+        System.out.println(blockX + " " + blockY);
+    }
+    
+    public int getBlockX(){
+        return blockX;
+    }
+    
+    public int getBlockY(){
+        return blockY;
+    }
+    
+    public Square getSquare(){
+        return this.square;
     }
     
     public void move(){
         this.square.move(this);
-        this.getCurrentBlock();
     }
     
     public void moveUp(){

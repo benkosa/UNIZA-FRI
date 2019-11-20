@@ -14,7 +14,7 @@ public class DefaultMap
     private int playerBaseX;
     private int playerBaseY;
     
-    private static final int BLOCK_SIZE = 35;
+    private static final int BLOCK_SIZE = 33;
     private static final int GAME_SIZE = 21;
 
     /**

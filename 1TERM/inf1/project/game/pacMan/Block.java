@@ -18,8 +18,13 @@ public class Block
     }
 
     public void changeToBlack(){
-        isAir = false;
+        isAir = false;        
         this.square.setColor("black");
+        this.square.setColision(false);
+    }
+    
+    public Square getSquare() {
+        return this.square;
     }
     
     public void draw() {

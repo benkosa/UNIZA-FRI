@@ -35,7 +35,7 @@ public class Platno {
     // shape objects in this project clean and simple for educational purposes.
 
     private static Platno platnoSingleton;
-    private static final int BLOCK_SIZE = 35;
+    private static final int BLOCK_SIZE = 33;
     private static final int GAME_SIZE = 21;
 
     /**

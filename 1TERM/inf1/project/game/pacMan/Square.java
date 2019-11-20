@@ -14,6 +14,8 @@ public class Square {
     private String color;
     private boolean exist;
     private boolean isColision;
+    
+    private static final int BLOCK_SIZE = 33;
 
     public static int STEP = 3;
 
@@ -30,39 +32,71 @@ public class Square {
     }
 
     public int getBlockX(){
-        return this.x / this.size;
+        return (this.x + this.size/2) / BLOCK_SIZE;
     }
 
     public int getBlockY(){
-        return this.y / this.size;
+        return (this.y + this.size/2) / BLOCK_SIZE;
     }
-
-    private boolean colison(Square square){
-        return (square.x < this.x + this.size &&
-        square.x + square.size > this.x &&
-        square.y < this.y + this.size &&
-        square.y + square.size > this.y);
-    }
-
     
+    public boolean getColision(){
+        return this.isColision;
+    }
+
+    private boolean colison(Square square){       
+        
+        if(square.isColision == false)
+            return false;
+
+        return (square.x <= this.x + this.size
+             && square.x + square.size >= this.x
+             && square.y <= this.y + this.size
+             && square.y + square.size >= this.y);
+    }  
+
     public void move(Player player){
+        player.setCurrentBlock();
         if(player.getDirection().equals("up")){
-            y+=STEP;
+            Square squareColision0 = player.getGrid().getBlock(player.getBlockX(), player.getBlockY()+1).getSquare();
+            Square squareColision1 = player.getGrid().getBlock(player.getBlockX()+1, player.getBlockY()+1).getSquare();
+            Square squareColision2 = player.getGrid().getBlock(player.getBlockX()-1, player.getBlockY()+1).getSquare();
+            if(player.getSquare().colison(squareColision0) == false
+            && player.getSquare().colison(squareColision1) == false
+            && player.getSquare().colison(squareColision2) == false)            
+                y+=STEP;            
             draw();
             return;
         }
         if(player.getDirection().equals("do")){
-            y-=STEP;
+            Square squareColision0 = player.getGrid().getBlock(player.getBlockX(), player.getBlockY()-1).getSquare();
+            Square squareColision1 = player.getGrid().getBlock(player.getBlockX()+1, player.getBlockY()-1).getSquare();
+            Square squareColision2 = player.getGrid().getBlock(player.getBlockX()-1, player.getBlockY()-1).getSquare();
+            if(player.getSquare().colison(squareColision0) == false
+            && player.getSquare().colison(squareColision1) == false
+            && player.getSquare().colison(squareColision2) == false)
+                y-=STEP;
             draw();
             return;
         }
         if(player.getDirection().equals("ri")){
-            x-=STEP;
+            Square squareColision0 = player.getGrid().getBlock(player.getBlockX()-1, player.getBlockY()).getSquare();
+            Square squareColision1 = player.getGrid().getBlock(player.getBlockX()-1, player.getBlockY()+1).getSquare();
+            Square squareColision2 = player.getGrid().getBlock(player.getBlockX()-1, player.getBlockY()-1).getSquare();
+            if(player.getSquare().colison(squareColision0) == false
+            && player.getSquare().colison(squareColision1) == false
+            && player.getSquare().colison(squareColision2) == false)
+                x-=STEP;
             draw();
             return;
         }
         if(player.getDirection().equals("le")){
-            x+=STEP;
+            Square squareColision0 = player.getGrid().getBlock(player.getBlockX()+1, player.getBlockY()).getSquare();
+            Square squareColision1 = player.getGrid().getBlock(player.getBlockX()+1, player.getBlockY()+1).getSquare();
+            Square squareColision2 = player.getGrid().getBlock(player.getBlockX()+1, player.getBlockY()-1).getSquare();
+            if(player.getSquare().colison(squareColision0) == false
+            && player.getSquare().colison(squareColision1) == false
+            && player.getSquare().colison(squareColision2) == false)
+                x+=STEP;
             draw();
             return;
         }    

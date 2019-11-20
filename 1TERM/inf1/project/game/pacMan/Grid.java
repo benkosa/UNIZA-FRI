@@ -14,7 +14,7 @@ public class Grid
     private int playerBaseX;
     private int playerBaseY;
     
-    private static final int BLOCK_SIZE = 35;
+    private static final int BLOCK_SIZE = 33;
     private static final int GAME_SIZE = 21;
 
     /**
@@ -31,6 +31,10 @@ public class Grid
     
     public int getBaseY(){
         return playerBaseY;
+    }
+    
+    public Block getBlock(int x, int y){        
+        return grid[x][y];
     }
     
     public void leadDefaulutMap(){
