@@ -7,7 +7,9 @@ import java.awt.Rectangle;
  */
 public class Player {
     private Square square;
-    private String direction;   
+    private String direction;
+    private int blockX;
+    private int blockY;
     
 
     public Player(int x, int y, int size) {
@@ -18,8 +20,18 @@ public class Player {
         this.square.draw();
     }
     
+    public String getDirection(){
+        return this.direction;
+    }
+    
+    public void getCurrentBlock(){
+        blockX = square.getBlockX();
+        blockY = square.getBlockY();
+    }
+    
     public void move(){
-        this.square.move(this.direction);
+        this.square.move(this);
+        this.getCurrentBlock();
     }
     
     public void moveUp(){

@@ -18,7 +18,7 @@ public class Block
     }
 
     public void changeToBlack(){
-        isAir = true;
+        isAir = false;
         this.square.setColor("black");
     }
     
