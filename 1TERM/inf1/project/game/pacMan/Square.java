@@ -48,75 +48,68 @@ public class Square {
         if(square.isColision == false)
             return false;
         //true ak naslo koliziu
-        return (square.x <= this.x + this.size
-            && square.y <= this.y + this.size
-            && square.x + square.size >= this.x
-            && square.y + square.size >= this.y);
-    }  
-
-    public void move(Player player){
-        player.setCurrentBlock();
-        if(player.getDirection().equals("up")){
+        return (square.x < this.x + this.size
+            && square.y < this.y + this.size
+            && square.x + square.size > this.x
+            && square.y + square.size > this.y);
+    }
+    
+    public boolean moveTo(Player player, String direction){
+        if(direction.equals("up")){
             Square squareColision0 = player.getGrid().getBlock(player.getBlockX(), player.getBlockY()+1).getSquare();
             Square squareColision1 = player.getGrid().getBlock(player.getBlockX()+1, player.getBlockY()+1).getSquare();
             Square squareColision2 = player.getGrid().getBlock(player.getBlockX()-1, player.getBlockY()+1).getSquare();
-            if(player.getSquare().colison(squareColision0) == false
-            && player.getSquare().colison(squareColision1) == false
-            && player.getSquare().colison(squareColision2) == false)            
-                y+=STEP;
-            else{
+            y+=STEP;
+            if(player.getSquare().colison(squareColision0)
+            || player.getSquare().colison(squareColision1)
+            || player.getSquare().colison(squareColision2)){            
                 y-=STEP;
-                player.setDirection("");
+                return false;
             }
-
-            draw();
-            return;
         }
-        if(player.getDirection().equals("do")){
+        if(direction.equals("do")){
             Square squareColision0 = player.getGrid().getBlock(player.getBlockX(), player.getBlockY()-1).getSquare();
             Square squareColision1 = player.getGrid().getBlock(player.getBlockX()+1, player.getBlockY()-1).getSquare();
             Square squareColision2 = player.getGrid().getBlock(player.getBlockX()-1, player.getBlockY()-1).getSquare();
-            if(player.getSquare().colison(squareColision0) == false
-            && player.getSquare().colison(squareColision1) == false
-            && player.getSquare().colison(squareColision2) == false)
-                y-=STEP;
-            else{
+            y-=STEP;
+            if(player.getSquare().colison(squareColision0)
+            || player.getSquare().colison(squareColision1)
+            || player.getSquare().colison(squareColision2)){
                 y+=STEP;
-                player.setDirection("");
+                return false;
             }
-            draw();
-            return;
         }
-        if(player.getDirection().equals("ri")){
+        if(direction.equals("ri")){
             Square squareColision0 = player.getGrid().getBlock(player.getBlockX()-1, player.getBlockY()).getSquare();
             Square squareColision1 = player.getGrid().getBlock(player.getBlockX()-1, player.getBlockY()+1).getSquare();
             Square squareColision2 = player.getGrid().getBlock(player.getBlockX()-1, player.getBlockY()-1).getSquare();
-            if(player.getSquare().colison(squareColision0) == false
-            && player.getSquare().colison(squareColision1) == false
-            && player.getSquare().colison(squareColision2) == false)
-                x-=STEP;
-            else{
+            x-=STEP;
+            if(player.getSquare().colison(squareColision0)
+            || player.getSquare().colison(squareColision1)
+            || player.getSquare().colison(squareColision2)){
                 x+=STEP;
-                player.setDirection("");
+                return false;
             }
-            draw();
-            return;
         }
-        if(player.getDirection().equals("le")){
+        if(direction.equals("le")){
             Square squareColision0 = player.getGrid().getBlock(player.getBlockX()+1, player.getBlockY()).getSquare();
             Square squareColision1 = player.getGrid().getBlock(player.getBlockX()+1, player.getBlockY()+1).getSquare();
             Square squareColision2 = player.getGrid().getBlock(player.getBlockX()+1, player.getBlockY()-1).getSquare();
-            if(player.getSquare().colison(squareColision0) == false
-            && player.getSquare().colison(squareColision1) == false
-            && player.getSquare().colison(squareColision2) == false)
-                x+=STEP;
-            else{
+            x+=STEP;
+            if(player.getSquare().colison(squareColision0)
+            || player.getSquare().colison(squareColision1)
+            || player.getSquare().colison(squareColision2)){
                 x-=STEP;
-                player.setDirection("");
+                return false;
             }
+        }
+        return true;
+    }
+
+    public void move(Player player){
+        player.setCurrentBlock();
+        player.getSquare().moveTo(player, player.getDirection());
             draw();
-            return;
-        }    
     }
 
     public void setColor(String color){

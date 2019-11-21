@@ -20,7 +20,7 @@ public class Game {
          
         grid = new Grid();
         grid.leadDefaulutMap();        
-        player = new Player(grid, BLOCK_SIZE-9);  
+        player = new Player(grid, BLOCK_SIZE-10);  
         
         main = new Manazer();
         main.spravujObjekt(player);        

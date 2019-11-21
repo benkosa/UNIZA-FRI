@@ -29,11 +29,11 @@ public class DefaultMap
     }
     
     public int getBaseX(){
-        return playerBaseX+4;
+        return playerBaseX+1;
     }
     
     public int getBaseY(){
-        return playerBaseY+4;
+        return playerBaseY+1;
     }   
 
     public Point[][] getPoints(){

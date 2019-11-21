@@ -8,6 +8,7 @@ import java.awt.Rectangle;
 public class Player {
     private Square square;
     private String direction;
+    private String lastDirection;
     private int blockX;
     private int blockY;
     
@@ -58,18 +59,22 @@ public class Player {
     }
     
     public void moveUp(){
+        this.lastDirection = this.direction;
         this.direction = "up";
     }
     
     public void moveDown(){
+        this.lastDirection = this.direction;
         this.direction = "do";
     }
     
     public void moveRight(){
+        this.lastDirection = this.direction;
         this.direction = "le";
     }
     
     public void moveLeft(){
+        this.lastDirection = this.direction;
         this.direction = "ri";
     } 
     
