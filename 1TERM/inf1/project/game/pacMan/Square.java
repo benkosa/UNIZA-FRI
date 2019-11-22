@@ -30,7 +30,10 @@ public class Square {
         this.exist = exist;
         this.isColision = true;
     }
-
+    
+    /*
+     * kontroluje v ktorom bloku sa nachadza stred hraca
+    **/
     public int getBlockX(){
         return (this.x + this.size/2) / BLOCK_SIZE;
     }
@@ -43,75 +46,17 @@ public class Square {
         return this.isColision;
     }
 
-    private boolean colison(Square square){       
-
+    public boolean squareSquare(Square square){       
+        //ak najde blok s ktorym sa nerobi kolizia
         if(square.isColision == false)
             return false;
-        //true ak naslo koliziu
+        //vrati true ak naslo koliziu
         return (square.x < this.x + this.size
             && square.y < this.y + this.size
             && square.x + square.size > this.x
             && square.y + square.size > this.y);
     }
     
-    public boolean moveTo(Player player, String direction){
-        if(direction.equals("up")){
-            Square squareColision0 = player.getGrid().getBlock(player.getBlockX(), player.getBlockY()+1).getSquare();
-            Square squareColision1 = player.getGrid().getBlock(player.getBlockX()+1, player.getBlockY()+1).getSquare();
-            Square squareColision2 = player.getGrid().getBlock(player.getBlockX()-1, player.getBlockY()+1).getSquare();
-            y+=STEP;
-            if(player.getSquare().colison(squareColision0)
-            || player.getSquare().colison(squareColision1)
-            || player.getSquare().colison(squareColision2)){            
-                y-=STEP;
-                return false;
-            }
-        }
-        if(direction.equals("do")){
-            Square squareColision0 = player.getGrid().getBlock(player.getBlockX(), player.getBlockY()-1).getSquare();
-            Square squareColision1 = player.getGrid().getBlock(player.getBlockX()+1, player.getBlockY()-1).getSquare();
-            Square squareColision2 = player.getGrid().getBlock(player.getBlockX()-1, player.getBlockY()-1).getSquare();
-            y-=STEP;
-            if(player.getSquare().colison(squareColision0)
-            || player.getSquare().colison(squareColision1)
-            || player.getSquare().colison(squareColision2)){
-                y+=STEP;
-                return false;
-            }
-        }
-        if(direction.equals("ri")){
-            Square squareColision0 = player.getGrid().getBlock(player.getBlockX()-1, player.getBlockY()).getSquare();
-            Square squareColision1 = player.getGrid().getBlock(player.getBlockX()-1, player.getBlockY()+1).getSquare();
-            Square squareColision2 = player.getGrid().getBlock(player.getBlockX()-1, player.getBlockY()-1).getSquare();
-            x-=STEP;
-            if(player.getSquare().colison(squareColision0)
-            || player.getSquare().colison(squareColision1)
-            || player.getSquare().colison(squareColision2)){
-                x+=STEP;
-                return false;
-            }
-        }
-        if(direction.equals("le")){
-            Square squareColision0 = player.getGrid().getBlock(player.getBlockX()+1, player.getBlockY()).getSquare();
-            Square squareColision1 = player.getGrid().getBlock(player.getBlockX()+1, player.getBlockY()+1).getSquare();
-            Square squareColision2 = player.getGrid().getBlock(player.getBlockX()+1, player.getBlockY()-1).getSquare();
-            x+=STEP;
-            if(player.getSquare().colison(squareColision0)
-            || player.getSquare().colison(squareColision1)
-            || player.getSquare().colison(squareColision2)){
-                x-=STEP;
-                return false;
-            }
-        }
-        return true;
-    }
-
-    public void move(Player player){
-        player.setCurrentBlock();
-        player.getSquare().moveTo(player, player.getDirection());
-            draw();
-    }
-
     public void setColor(String color){
         this.color = color;
     }
@@ -122,6 +67,22 @@ public class Square {
 
     public void setColision(boolean colision){
         this.isColision = colision;
+    }
+    
+    public void increaseX (){
+        this.x+=STEP;
+    }
+    
+    public void decreaseX (){
+        this.x-=STEP;
+    }
+    
+    public void increaseY(){
+        this.y+=STEP;
+    }
+    
+    public void decreaseY (){
+        this.y-=STEP;
     }
 
     /*
