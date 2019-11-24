@@ -14,7 +14,7 @@ public class Block
 
     
     public Block(int x, int y, int size, String color){
-        this.square = new Square(x, y, size, color, true);
+        this.square = new Square(x, y, size, color, true, true);
     }
 
     public void changeToBlack(){

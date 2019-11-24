@@ -16,19 +16,20 @@ public class Square {
     private boolean isColision;
 
     private static final int BLOCK_SIZE = 33;
+    private static final int GAME_SIZE = 21;
 
     public static int STEP = 3;
 
     /**
      * Vytvor nový obdĺžnik preddefinovanej farby na preddefinovanej pozícii.
      */
-    public Square(int x, int y, int size, String color, boolean exist) {
+    public Square(int x, int y, int size, String color, boolean exist, boolean isColision) {
         this.size = size;
         this.x = x;
         this.y = y;
         this.color = color;
         this.exist = exist;
-        this.isColision = true;
+        this.isColision = isColision;
     }
     
     /*
@@ -47,7 +48,7 @@ public class Square {
     }
 
     public boolean squareSquare(Square square){       
-        //ak najde blok s ktorym sa nerobi kolizia
+        //ak najde blok s ktorym sa nerobi kolizia        
         if(square.isColision == false)
             return false;
         //vrati true ak naslo koliziu
@@ -67,6 +68,13 @@ public class Square {
 
     public void setColision(boolean colision){
         this.isColision = colision;
+    }
+    
+    public void migrateXUP(){
+            x = BLOCK_SIZE * (GAME_SIZE-2);
+    }
+    public void migrateXDOWN(){
+            x = BLOCK_SIZE;
     }
     
     public void increaseX (){

@@ -38,6 +38,10 @@ public class Grid
         return grid[x][y];
     }
     
+    public Point getPoint(int x, int y){
+        return pointGrid[x][y];
+    }
+    
     public void leadDefaulutMap(){
         DefaultMap map = new DefaultMap();
         this.grid = map.getMap();

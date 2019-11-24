@@ -13,12 +13,15 @@ public class Player {
     private int blockX;
     private int blockY;
     
+    private int score;
+    
     private Grid grid;
     
 
     public Player(Grid grid, int size) {
-        this.square = new Square(grid.getBaseX(), grid.getBaseY(), size, "red", true);
+        this.square = new Square(grid.getBaseX(), grid.getBaseY(), size, "red", true, true);
         this.grid = grid;
+        this.score = 0;
         setCurrentBlock();
     }
     
@@ -35,16 +38,22 @@ public class Player {
     }
     
     public void setDirection(String direction){
-        this.direction =direction;
+        this.direction = direction;
     }
     
     public Grid getGrid(){
         return this.grid;
     }
      
-    public void setCurrentBlock(){
+    public void setCurrentBlock(){            
         blockX = square.getBlockX();
         blockY = square.getBlockY();
+         
+        if(blockX < 1)
+           this.square.migrateXUP();
+        if(blockX > 19)
+           this.square.migrateXDOWN(); 
+        System.out.println(blockX + " " + blockY);
     }
     
     public int getBlockX(){
@@ -57,7 +66,27 @@ public class Player {
     
     public Square getSquare(){
         return this.square;
-    }  
+    }
+    
+
+    public void pickPoint(){
+        Point point = this.isPoint();
+        if(point != null){
+            this.score++;
+            point.erase();
+        }
+    }
+    
+    /* najde point podla suradnic a otestuje koliziu
+     * s hracom
+     */ 
+    public Point isPoint(){
+        Square square2 = this.grid.getPoint(this.blockX, this.blockY).getSquare();
+        if(this.square.squareSquare(square2)){
+            return this.grid.getPoint(this.blockX, this.blockY);
+        }
+        return null;
+    }
     
     /* najde blok podla suradnic a otestuje koliziu
      */
