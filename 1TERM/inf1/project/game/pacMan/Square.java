@@ -14,6 +14,7 @@ public class Square {
     private String color;
     private boolean exist;
     private boolean isColision;
+    
 
     private static final int BLOCK_SIZE = 33;
     private static final int GAME_SIZE = 21;
@@ -46,6 +47,19 @@ public class Square {
     public boolean getColision(){
         return this.isColision;
     }
+    
+    public int getSize(){
+        return this.size;
+    }
+    
+    public int getX(){
+        return this.x;
+    }
+    
+    public int getY(){
+        return this.y;
+    }
+
 
     public boolean squareSquare(Square square){       
         //ak najde blok s ktorym sa nerobi kolizia        
@@ -56,7 +70,8 @@ public class Square {
             && square.y < this.y + this.size
             && square.x + square.size > this.x
             && square.y + square.size > this.y);
-    }
+    }    
+    
     
     public void setColor(String color){
         this.color = color;
@@ -68,6 +83,18 @@ public class Square {
 
     public void setColision(boolean colision){
         this.isColision = colision;
+    }
+    
+    public void setX(int x){
+        this.x = x;
+    }
+    
+    public void setY(int y){
+        this.y = y;
+    }
+    
+    public void setSize(int size){
+        this.size = size;
     }
     
     public void migrateXUP(){

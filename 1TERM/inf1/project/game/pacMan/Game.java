@@ -15,12 +15,14 @@ public class Game {
     private Player player;
     private String direction;
     private Grid grid;
+    private Timer timer;
     public Game() {
         // initialise instance variables 
          
         grid = new Grid();
         grid.leadDefaulutMap();        
-        player = new Player(grid, BLOCK_SIZE);  
+        player = new Player(grid, BLOCK_SIZE);
+        timer = new Timer();
         
         main = new Manazer();
         main.spravujObjekt(player);        
@@ -32,6 +34,7 @@ public class Game {
     public void tik() {
         player.move();
         player.pickPoint();
+        timer.increaseSec();
     }
     
     public void end() {

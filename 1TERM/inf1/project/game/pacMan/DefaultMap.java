@@ -122,6 +122,12 @@ public class DefaultMap
         pointGrid[9][14].setIs(true);
         pointGrid[11][14].setIs(true);
         
+        pointGrid[3][3].setSuper();
+        pointGrid[18][3].setSuper();
+        
+        pointGrid[3][15].setSuper();
+        pointGrid[18][15].setSuper();
+        
         return pointGrid;
     }
 

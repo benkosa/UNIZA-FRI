@@ -52,8 +52,7 @@ public class Player {
         if(blockX < 1)
            this.square.migrateXUP();
         if(blockX > 19)
-           this.square.migrateXDOWN(); 
-        System.out.println(blockX + " " + blockY);
+           this.square.migrateXDOWN();
     }
     
     public int getBlockX(){
