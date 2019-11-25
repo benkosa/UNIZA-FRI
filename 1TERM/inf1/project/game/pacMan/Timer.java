@@ -19,5 +19,5 @@ public class Timer {
             this.sec++;
             System.out.println(sec);
         }
-    }
+    } 
 }

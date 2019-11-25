@@ -28,7 +28,7 @@ public class Game {
         main.spravujObjekt(player);        
         main.spravujObjekt(this);
         grid.draw();
-        player.draw();
+        player.draw(); 
     }
     
     public void tik() {
