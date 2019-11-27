@@ -13,11 +13,15 @@ public class Timer {
        count = 0;
     }
     
-    public void increaseSec(){
+    public void tik(){
         if(++this.count > 30){
             this.count = 0;
             this.sec++;
-            System.out.println(sec);
+            //System.out.println(sec);
         }
-    } 
+    }
+    
+    public int getSec(){
+        return sec;
+    }
 }

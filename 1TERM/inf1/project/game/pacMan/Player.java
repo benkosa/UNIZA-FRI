@@ -12,70 +12,70 @@ public class Player {
     //info o tom v ktorom bloku sa hrac nachadza
     private int blockX;
     private int blockY;
-    
+
     private int score;
-    
+
     private Grid grid;
-    
 
     public Player(Grid grid, int size) {
-        this.square = new Square(grid.getBaseX(), grid.getBaseY(), size, "red", true, true);
+        this.square = new Square(grid.getBaseX(), grid.getBaseY(), size, "yellow", true, true);
         this.grid = grid;
         this.score = 0;
         setCurrentBlock();
     }
-    
+
     public void draw(){
         this.square.draw();
     }
-    
+
     public String getDirection(){
         return this.direction;
     }
-    
+
     public String getLastDirection(){
         return this.lastDirection;
     }
-    
+
     public void setDirection(String direction){
         this.direction = direction;
     }
-    
+
     public Grid getGrid(){
         return this.grid;
     }
-     
+
     public void setCurrentBlock(){            
         blockX = square.getBlockX();
         blockY = square.getBlockY();
-         
+
         if(blockX < 1)
-           this.square.migrateXUP();
+            this.square.migrateXUP();
         if(blockX > 19)
-           this.square.migrateXDOWN();
+            this.square.migrateXDOWN();
     }
-    
+
     public int getBlockX(){
         return blockX;
     }
-    
+
     public int getBlockY(){
         return blockY;
     }
-    
+
     public Square getSquare(){
         return this.square;
     }
-    
 
-    public void pickPoint(){
+    public boolean pickPoint(){
         Point point = this.isPoint();
         if(point != null){
             this.score++;
             point.erase();
+            return true;
         }
+        return false;
     }
-    
+
     /* najde point podla suradnic a otestuje koliziu
      * s hracom
      */ 
@@ -86,14 +86,14 @@ public class Player {
         }
         return null;
     }
-    
+
     /* najde blok podla suradnic a otestuje koliziu
      */
     public boolean isCollision(int X, int Y){
         Square square2 = this.grid.getBlock(this.blockX+X, this.blockY+Y).getSquare();
         return this.square.squareSquare(square2);
     }
-    
+
     /* kontroluje koliziu s tromi blokmi pred hracom
      */
     public boolean moveTo(String direction){
@@ -131,7 +131,7 @@ public class Player {
         }
         return true;
     }
-    
+
     /* vykona pohyb a ak nastala kolizia tak pokracuje 
      * v predoslom pohybe
      */    
@@ -139,29 +139,28 @@ public class Player {
         this.setCurrentBlock();        
         if(this.moveTo(this.getDirection()) == false)
             this.moveTo(this.getLastDirection());
-            
+
         draw();
     }
-    
+
     public void moveUp(){
         this.lastDirection = this.direction;
         this.direction = "up";
     }
-    
+
     public void moveDown(){
         this.lastDirection = this.direction;
         this.direction = "do";
     }
-    
+
     public void moveRight(){
         this.lastDirection = this.direction;
         this.direction = "le";
     }
-    
+
     public void moveLeft(){
         this.lastDirection = this.direction;
         this.direction = "ri";
     } 
-    
 
 }

@@ -14,6 +14,9 @@ public class DefaultMap
     private int playerBaseX;
     private int playerBaseY;
     
+    private int[] enemyBaseX;
+    private int[] enemyBaseY;
+    
     private static final int BLOCK_SIZE = 33;
     private static final int GAME_SIZE = 21;
 
@@ -26,6 +29,17 @@ public class DefaultMap
         pointGrid = new Point[GAME_SIZE][GAME_SIZE];
         playerBaseX = BLOCK_SIZE*10;
         playerBaseY = BLOCK_SIZE*15;
+        
+        enemyBaseX = new int[]{BLOCK_SIZE*9, BLOCK_SIZE*10, BLOCK_SIZE*11, BLOCK_SIZE*10};
+        enemyBaseY = new int[]{BLOCK_SIZE*9, BLOCK_SIZE*9, BLOCK_SIZE*9, BLOCK_SIZE*8};
+    }
+    
+    public int[] getEnemyBaseX(){
+        return enemyBaseX;
+    }
+    
+    public int[] getEnemyBaseY(){
+        return enemyBaseY;
     }
     
     public int getBaseX(){
@@ -38,90 +52,44 @@ public class DefaultMap
 
     public Point[][] getPoints(){
         int x = 0;
-        int y = 0;
+        int y = 0;        
+        int[][] map = { 
+            {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+            {0,0,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,0,0},
+            {0,0,1,0,0,1,0,0,0,1,0,1,0,0,0,1,0,0,1,0,0},
+            {0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0},
+            {0,0,1,0,0,1,0,1,0,0,0,0,0,1,0,1,0,0,1,0,0},
+            {0,0,1,1,1,1,0,1,1,1,0,1,1,1,0,1,1,1,1,0,0},
+            {0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0},
+            {0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0},
+            {0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0},
+            {0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0},
+            {0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0},
+            {0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0},
+            {0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0},
+            {0,0,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,0,0},
+            {0,0,1,0,0,1,0,0,0,1,0,1,0,0,0,1,0,0,1,0,0},
+            {0,0,1,1,0,1,1,1,1,1,1,1,1,1,1,1,0,1,1,0,0},
+            {0,0,0,1,0,1,0,1,0,0,0,0,0,1,0,1,0,1,0,0,0},
+            {0,0,1,1,1,1,0,1,1,1,0,1,1,1,0,1,1,1,1,0,0},
+            {0,0,1,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,1,0,0},
+            {0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0},
+            {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}
+        };        
 
         for(int i = 0; i < GAME_SIZE; i++){            
-            for(int j = 0; j< GAME_SIZE; j++){                
-                pointGrid[i][j]= new Point(x, y, BLOCK_SIZE, "white");
+            for(int j = 0; j< GAME_SIZE; j++){
+                if(map[j][i] == 0)
+                    pointGrid[i][j] = new Point(x, y, BLOCK_SIZE, "white");
+                else{
+                    pointGrid[i][j] = new Point(x, y, BLOCK_SIZE, "white");
+                    pointGrid[i][j].setIs(true);
+                }
                 y+=BLOCK_SIZE;
             }
             x+=BLOCK_SIZE;
             y = 0;
         }
-
-        for(int i = 2; i <= 9; i++){
-            pointGrid[i][1].setIs(true);
-            pointGrid[i][13].setIs(true);
-        }
-        for(int i = 11; i <= 18; i++){
-            pointGrid[i][1].setIs(true);
-            pointGrid[i][13].setIs(true);
-        }
-        for(int i = 2; i <= 18; i++){
-            pointGrid[i][3].setIs(true);
-            pointGrid[i][19].setIs(true);
-        }
-        for(int i = 2; i <= 5; i++){
-            pointGrid[i][5].setIs(true);
-            pointGrid[i][17].setIs(true);
-        }
-        for(int i = 7; i <= 9; i++){
-            pointGrid[i][5].setIs(true);
-            pointGrid[i][17].setIs(true);
-        }
-        for(int i = 11; i <= 13; i++){
-            pointGrid[i][5].setIs(true);
-            pointGrid[i][17].setIs(true);
-        }
-        for(int i = 15; i <= 18; i++){
-            pointGrid[i][5].setIs(true);
-            pointGrid[i][17].setIs(true);
-        }
-        //y-os    
-        for(int i = 2; i <= 4; i++){
-            pointGrid[2][i].setIs(true);
-            pointGrid[18][i].setIs(true);
-        }
-        for(int i = 2; i <= 4; i++){
-            pointGrid[2][i].setIs(true);
-            pointGrid[18][i].setIs(true);
-        }
-        for(int i = 5; i <= 15; i++){
-            pointGrid[i][15].setIs(true);
-        }
-        for(int i = 13; i <= 14; i++){
-            pointGrid[2][i].setIs(true);
-            pointGrid[18][i].setIs(true);
-        }
-        for(int i = 17; i <= 19; i++){
-            pointGrid[2][i].setIs(true);
-            pointGrid[18][i].setIs(true);
-        }
-        for(int i = 2; i <= 16; i++){
-            pointGrid[5][i].setIs(true);
-            pointGrid[15][i].setIs(true);
-        }
-        pointGrid[7][4].setIs(true);
-        pointGrid[13][4].setIs(true);
-        pointGrid[13][4].setIs(true);
-        pointGrid[9][2].setIs(true);
-        pointGrid[11][2].setIs(true);
-        pointGrid[7][16].setIs(true);
-        pointGrid[13][16].setIs(true);
-        pointGrid[2][15].setIs(true);
-        pointGrid[3][15].setIs(true);
-        pointGrid[3][16].setIs(true);
-        pointGrid[17][15].setIs(true);
-        pointGrid[17][16].setIs(true);
-        pointGrid[18][15].setIs(true);
-        pointGrid[8][15].setIs(true);
-        pointGrid[7][16].setIs(true);
-        pointGrid[13][16].setIs(true);
-        pointGrid[9][18].setIs(true);
-        pointGrid[11][18].setIs(true);
-        pointGrid[9][14].setIs(true);
-        pointGrid[11][14].setIs(true);
-        
         pointGrid[3][3].setSuper();
         pointGrid[18][3].setSuper();
         
@@ -129,128 +97,49 @@ public class DefaultMap
         pointGrid[18][15].setSuper();
         
         return pointGrid;
+    
     }
 
     public Block[][] getMap(){
         int x = 0;
-        int y = 0;
+        int y = 0;        
+        int[][] map = { 
+            {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+            {1,0,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,0,1},
+            {1,0,1,0,0,1,0,0,0,1,0,1,0,0,0,1,0,0,1,0,1},
+            {1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1},
+            {1,0,1,0,0,1,0,1,0,0,0,0,0,1,0,1,0,0,1,0,1},
+            {1,0,1,1,1,1,0,1,1,1,0,1,1,1,0,1,1,1,1,0,1},
+            {1,0,0,0,0,1,0,0,0,1,0,1,0,0,0,1,0,0,0,0,1},
+            {1,1,1,1,0,1,0,1,1,1,1,1,1,1,0,1,0,1,1,1,1},
+            {0,0,0,0,0,1,0,1,0,0,1,0,0,1,0,1,0,0,0,0,0},
+            {1,1,1,1,1,1,1,1,0,1,1,1,0,1,1,1,1,1,1,1,1},
+            {0,0,0,0,0,1,0,1,0,0,0,0,0,1,0,1,0,0,0,0,0},
+            {1,1,1,1,0,1,0,1,1,1,1,1,1,1,0,1,0,1,1,1,1},
+            {1,0,0,0,0,1,0,1,0,0,0,0,0,1,0,1,0,0,0,0,1},
+            {1,0,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,0,1},
+            {1,0,1,0,0,1,0,0,0,1,0,1,0,0,0,1,0,0,1,0,1},
+            {1,0,1,1,0,1,1,1,1,1,1,1,1,1,1,1,0,1,1,0,1},
+            {1,0,0,1,0,1,0,1,0,0,0,0,0,1,0,1,0,1,0,0,1},
+            {1,0,1,1,1,1,0,1,1,1,0,1,1,1,0,1,1,1,1,0,1},
+            {1,0,1,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,1,0,1},
+            {1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1},
+            {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1}
+        };        
 
         for(int i = 0; i < GAME_SIZE; i++){            
-            for(int j = 0; j< GAME_SIZE; j++){                
-                grid[i][j] = new Block(x, y, BLOCK_SIZE, "blue");
+            for(int j = 0; j< GAME_SIZE; j++){
+                if(map[j][i] == 0)
+                    grid[i][j] = new Block(x, y, BLOCK_SIZE, "blue");
+                else{
+                    grid[i][j] = new Block(x, y, BLOCK_SIZE, "blue");
+                    grid[i][j].changeToBlack();
+                }
                 y+=BLOCK_SIZE;
             }
             x+=BLOCK_SIZE;
             y = 0;
         }
-        for(int i = 2; i <= 9; i++){
-            grid[i][1].changeToBlack();
-            grid[i][13].changeToBlack();
-        }
-        for(int i = 11; i <= 18; i++){
-            grid[i][1].changeToBlack();
-            grid[i][13].changeToBlack();
-        }
-        for(int i = 2; i <= 18; i++){
-            grid[i][3].changeToBlack();
-            grid[i][19].changeToBlack();
-        }
-        for(int i = 2; i <= 5; i++){
-            grid[i][5].changeToBlack();
-            grid[i][17].changeToBlack();
-        }
-        for(int i = 7; i <= 9; i++){
-            grid[i][5].changeToBlack();
-            grid[i][17].changeToBlack();
-        }
-        for(int i = 11; i <= 13; i++){
-            grid[i][5].changeToBlack();
-            grid[i][17].changeToBlack();
-        }
-        for(int i = 15; i <= 18; i++){
-            grid[i][5].changeToBlack();
-            grid[i][17].changeToBlack();
-        }
-        for(int i = 0; i <= 3; i++){
-            grid[i][7].changeToBlack();
-            grid[i][11].changeToBlack();
-        }
-        for(int i = 7; i <= 13; i++){
-            grid[i][7].changeToBlack();
-            grid[i][11].changeToBlack();
-        }
-        for(int i = 17; i <= 20; i++){
-            grid[i][7].changeToBlack();
-            grid[i][11].changeToBlack();
-        }
-        for(int i = 0; i <= 7; i++)
-            grid[i][9].changeToBlack();
-        for(int i = 9; i <= 11; i++)
-            grid[i][9].changeToBlack();
-        for(int i = 13; i <= 20; i++)
-            grid[i][9].changeToBlack();
-        for(int i = 5; i <= 15; i++)
-            grid[i][15].changeToBlack();
-        //y-os    
-        for(int i = 0; i <= 7; i++){
-            grid[0][i].changeToBlack();
-            grid[20][i].changeToBlack();
-        }    
-        for(int i = 11; i <= 20; i++){
-            grid[0][i].changeToBlack();
-            grid[20][i].changeToBlack();
-        }
-        for(int i = 2; i <= 4; i++){
-            grid[2][i].changeToBlack();
-            grid[18][i].changeToBlack();
-        }
-        for(int i = 2; i <= 4; i++){
-            grid[2][i].changeToBlack();
-            grid[18][i].changeToBlack();
-        }
-        for(int i = 13; i <= 14; i++){
-            grid[2][i].changeToBlack();
-            grid[18][i].changeToBlack();
-        }
-        for(int i = 17; i <= 19; i++){
-            grid[2][i].changeToBlack();
-            grid[18][i].changeToBlack();
-        }
-        for(int i = 2; i <= 16; i++){
-            grid[5][i].changeToBlack();
-            grid[15][i].changeToBlack();
-        }
-        grid[7][4].changeToBlack();
-        grid[13][4].changeToBlack();
-        grid[13][4].changeToBlack();
-        grid[9][2].changeToBlack();
-        grid[11][2].changeToBlack();
-        grid[7][12].changeToBlack();
-        grid[13][12].changeToBlack();
-        grid[9][6].changeToBlack();
-        grid[11][6].changeToBlack();
-        grid[10][8].changeToBlack();
-        for(int i = 7; i <= 13; i++){
-            grid[7][i].changeToBlack();
-            grid[13][i].changeToBlack();
-        }
-        grid[7][16].changeToBlack();
-        grid[13][16].changeToBlack();
-        grid[2][15].changeToBlack();
-        grid[3][15].changeToBlack();
-        grid[3][16].changeToBlack();
-        grid[17][15].changeToBlack();
-        grid[17][16].changeToBlack();
-        grid[18][15].changeToBlack();
-        grid[8][15].changeToBlack();
-        grid[7][16].changeToBlack();
-        grid[13][16].changeToBlack();
-        grid[9][18].changeToBlack();
-        grid[11][18].changeToBlack();
-        grid[9][14].changeToBlack();
-        grid[11][14].changeToBlack();
         return grid;
-    }
-    
-    
+    }    
 }

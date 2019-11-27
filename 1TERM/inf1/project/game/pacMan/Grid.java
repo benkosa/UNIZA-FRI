@@ -15,6 +15,9 @@ public class Grid
     private int playerBaseX;
     private int playerBaseY;
     
+    private int[] enemyBaseX;
+    private int[] enemyBaseY;
+    
     private static final int BLOCK_SIZE = 33;
     private static final int GAME_SIZE = 21;
 
@@ -24,6 +27,18 @@ public class Grid
     public Grid(){
         grid = new Block[GAME_SIZE][GAME_SIZE];
         pointGrid = new Point[GAME_SIZE][GAME_SIZE];
+    }
+    
+    public Block[][] getMap(){
+        return grid;
+    }
+    
+    public int getEnemyBaseX(int id){
+        return enemyBaseX[id];
+    }
+    
+    public int getEnemyBaseY(int id){
+        return enemyBaseY[id];
     }
      
     public int getBaseX(){
@@ -49,6 +64,9 @@ public class Grid
         
         this.playerBaseX = map.getBaseX();
         this.playerBaseY = map.getBaseY();
+        
+        this.enemyBaseX = map.getEnemyBaseX();
+        this.enemyBaseY = map.getEnemyBaseY();
     }
     
     public void draw(){

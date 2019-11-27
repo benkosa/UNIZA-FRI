@@ -59,6 +59,10 @@ public class Square {
     public int getY(){
         return this.y;
     }
+    
+    public String getColor(){
+        return this.color;
+    }
 
 
     public boolean squareSquare(Square square){       
