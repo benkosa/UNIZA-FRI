@@ -15,12 +15,17 @@ public class Block
     
     public Block(int x, int y, int size, String color){
         this.square = new Square(x, y, size, color, true, true);
+        this.isAir = true;
     }
 
     public void changeToBlack(){
-        isAir = false;        
+        this.isAir = false;        
         this.square.setColor("black");
         this.square.setColision(false);
+    }
+    
+    public boolean getIsAir() {
+        return this.isAir;
     }
     
     public Square getSquare() {

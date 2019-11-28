@@ -82,18 +82,22 @@ public class Enemy
 
         // Inicializacia cesty - este som nebol na ziadnom policku
         for (int i = 0; i < grid.getMap().length; i++){
-            for (int j = 0; j < grid.getMap()[i].length; j++)
+            for (int j = 0; j < grid.getMap()[i].length; j++){
                 this.cesta[i][j] = 0;
+                if(grid.getBlock(i,j).getIsAir() == true)
+                    this.blud[i][j] = 0;
+                else
+                    this.blud[i][j] = 1;
+            }
         }
- 
+
         setCurrentBlock();
-        System.out.println(this.square.getColor() + " " + this.blockX + " " + this.blockY + " " + this.direction);
-        this.generateInstructions();
-        this.najdiAvypisCestu();        
+        //System.out.println(this.square.getColor() + " " + this.blockX + " " + this.blockY + " " + this.direction);
+        this.generateInstructions();       
         changeMovement();
-        System.out.println(this.square.getColor() + " " + this.blockX + " " + this.blockY + " " + this.direction);
+        //System.out.println(this.square.getColor() + " " + this.blockX + " " + this.blockY + " " + this.direction);
     }
- 
+
     // Vypis vysledky (poradie navstivenia jednotlivych policok)
     private void vypisVysledky(){
         System.out.print("Bludisko:");
@@ -151,7 +155,7 @@ public class Enemy
                     if ((this.cesta[u][v] == 0) && (this.blud[u][v] == 1)){
                         this.cesta[u][v] = cisloSkoku;
                         this.addInstruction(a[k], b[k]);
-                        // Ak este nie som v cieli, pokusam sa ist dalej
+                        // Ak este nie som v cieli, pokusam sa ist dalej 
                         if ((u != cielX) || (v != cielY)){
                             skokDopadolUspesne = vyskusaj(cisloSkoku + 1, u, v);
                             if (!skokDopadolUspesne){
@@ -174,19 +178,19 @@ public class Enemy
 
     public void addInstruction(int x, int y){
         if(x == -1 && y == 0)
-            instructions.add("do");
-        if(x == 1 && y == 0)
-            instructions.add("up"); 
-        if(x == 0 && y == 1)
-            instructions.add("ri");
-        if(x == 0 && y == -1)
             instructions.add("le");
+        if(x == 1 && y == 0)
+            instructions.add("ri"); 
+        if(x == 0 && y == 1)
+            instructions.add("up");
+        if(x == 0 && y == -1)
+            instructions.add("do"); 
     }
 
     public void generateInstructions(){
 
-        cielY = player.getBlockX();
-        cielX = player.getBlockY();
+        cielX = player.getBlockX();
+        cielY = player.getBlockY();
 
         for (int i = 0; i < this.blud.length; i++){
             for (int j = 0; j < this.blud[i].length; j++)
@@ -197,8 +201,8 @@ public class Enemy
 
     public void najdiAvypisCestu(){
 
-        cielY = player.getBlockX();
-        cielX = player.getBlockY();
+        cielX = player.getBlockX();
+        cielY = player.getBlockY();
 
         for (int i = 0; i < this.blud.length; i++){
             for (int j = 0; j < this.blud[i].length; j++)
@@ -208,7 +212,8 @@ public class Enemy
         if (this.vyskusaj(1, this.blockX, this.blockY)){
             this.vypisVysledky();
             for(String o: this.instructions)
-                System.out.println(o);
+                System.out.print(o + ", ");
+            System.out.println();
         }else
             System.out.println("Riešenie pre toto bludisko neexistuje!");
     }
@@ -249,11 +254,11 @@ public class Enemy
 
     public boolean setCurrentBlock(){
         boolean ret = false;
-        if(square.getBlockY() == blockX && square.getBlockX() == blockY)
+        if(square.getBlockX() == blockX && square.getBlockY() == blockY)
             ret = true;
 
-        blockY = square.getBlockX();
-        blockX = square.getBlockY();
+        blockX = square.getBlockX();
+        blockY = square.getBlockY();
 
         if(blockX < 1)
             this.square.migrateXUP();
@@ -321,12 +326,16 @@ public class Enemy
     }
 
     public void changeMovement(){
-        String direction = instructions.get(0);
-        instructions.remove(0);
-
-        if(instructions.size() == 0)
+        String direction =  "";
+        if(instructions.size() == 0){
             this.najdiAvypisCestu();
+        }
+        if(instructions.size() != 0){
+            direction = instructions.get(0);
+            instructions.remove(0);
+        }
 
+        System.out.println(this.square.getColor() + " " + instructions.size());
         if(direction.equals("up")){
             this.moveUp();
         }
@@ -348,10 +357,9 @@ public class Enemy
     public void move(){
         if(this.setCurrentBlock() == false){
             this.changeMovement();
-            System.out.println(this.square.getColor() + " " + this.blockX + " " + this.blockY + " " + this.direction);
+            System.out.println(this.square.getColor() + " " + this.blockX + " " + this.blockY + " " + this.direction);            
         }
-
-        
+        //if(instructions.size() != 0)
         if(this.moveTo(this.getDirection()) == false)
             this.moveTo(this.getLastDirection());
 
