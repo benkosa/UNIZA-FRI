@@ -182,11 +182,11 @@ public class Platno {
             System.out.println("Cakanie sa nepodarilo");
         }
     }
-
+ 
     /**
      * * Redraw all shapes currently on the Canvas.
      */
-    private void redraw() {
+    public void redraw() {
         this.erase();
         for (Object tvar : this.objekty ) {
             this.tvary.get(tvar).draw(this.graphic);
@@ -197,7 +197,7 @@ public class Platno {
     /**
      * Erase the whole canvas. (Does not repaint.)
      */
-    private void erase() {
+    public void erase() {
         Color original = this.graphic.getColor();
         this.graphic.setColor(this.pozadie);
         Dimension size = this.canvas.getSize();

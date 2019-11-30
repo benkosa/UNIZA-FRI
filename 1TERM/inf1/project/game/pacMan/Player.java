@@ -14,6 +14,7 @@ public class Player {
     private int blockY;
 
     private int score;
+    private int life;
 
     private Grid grid;
 
@@ -21,11 +22,20 @@ public class Player {
         this.square = new Square(grid.getBaseX(), grid.getBaseY(), size, "yellow", true, true);
         this.grid = grid;
         this.score = 0;
+        this.life = 3;
         setCurrentBlock();
     }
 
     public void draw(){
         this.square.draw();
+    }
+    
+    public void erase(){
+        this.square.erase();
+    }
+    
+    public int takeLife(){
+        return --this.life;
     }
 
     public String getDirection(){

@@ -146,8 +146,11 @@ public class Enemy
             // Najdi novy bod na zaklade sucasneho bodu a suradnic skoku
             u = aktX + a[k]; 
             v = aktY + b[k];
-            //if(cisloSkoku == 10)
-            //    return true;
+            if(cisloSkoku == 20){
+                swapMovements();swapMovements();
+                swapMovements();swapMovements();
+                return true;
+            }
             if ((0 <= u) && (u < this.blud.length)){ // Ak sa bod nachadza v bludisku
                 if ((0 <= v) && (v < this.blud[u].length)){
                     // Ak som tam este nebol a mozem tam ist
@@ -327,15 +330,16 @@ public class Enemy
 
     public void changeMovement(){
         String direction =  "";
-        if(instructions.size() == 0){
-            this.najdiAvypisCestu();
+        if(instructions.size() == 0){            
+            swapMovements();swapMovements();
+            swapMovements();swapMovements();
+            this.generateInstructions();
         }
-        if(instructions.size() != 0){
-            direction = instructions.get(0);
-            instructions.remove(0);
-        }
+        direction = instructions.get(0);
+        instructions.remove(0);
+        
 
-        System.out.println(this.square.getColor() + " " + instructions.size());
+        //System.out.println(this.square.getColor() + " " + instructions.size());
         if(direction.equals("up")){
             this.moveUp();
         }
@@ -357,7 +361,7 @@ public class Enemy
     public void move(){
         if(this.setCurrentBlock() == false){
             this.changeMovement();
-            System.out.println(this.square.getColor() + " " + this.blockX + " " + this.blockY + " " + this.direction);            
+            //System.out.println(this.square.getColor() + " " + this.blockX + " " + this.blockY + " " + this.direction);            
         }
         //if(instructions.size() != 0)
         if(this.moveTo(this.getDirection()) == false)
@@ -384,6 +388,10 @@ public class Enemy
     public void moveLeft(){
         this.lastDirection = this.direction;
         this.direction = "ri";
-    } 
+    }
+    
+    public void erase(){
+        this.square.erase();
+    }
 
 }
