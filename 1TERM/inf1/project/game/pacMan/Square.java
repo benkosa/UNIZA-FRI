@@ -64,7 +64,9 @@ public class Square {
         return this.color;
     }
 
-
+    /**
+     * kolizia stvorec stvorec
+     */
     public boolean squareSquare(Square square){       
         //ak najde blok s ktorym sa nerobi kolizia        
         if(square.isColision == false)
@@ -75,7 +77,6 @@ public class Square {
             && square.x + square.size > this.x
             && square.y + square.size > this.y);
     }    
-    
     
     public void setColor(String color){
         this.color = color;

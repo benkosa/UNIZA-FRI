@@ -14,6 +14,7 @@ public class Player {
     private int blockY;
 
     private int score;
+    private int points;
     private int life;
 
     private Grid grid;
@@ -22,7 +23,17 @@ public class Player {
         this.square = new Square(grid.getBaseX(), grid.getBaseY(), size, "yellow", true, true);
         this.grid = grid;
         this.score = 0;
-        this.life = 3;
+        this.points = 0;
+        this.life = 3; 
+        setCurrentBlock();
+    }
+    
+    public Player(Grid grid, int size, int score) {
+        this.square = new Square(grid.getBaseX(), grid.getBaseY(), size, "yellow", true, true);
+        this.grid = grid;
+        this.score = score;
+        this.points = 0;
+        this.life = 3; 
         setCurrentBlock();
     }
 
@@ -53,7 +64,16 @@ public class Player {
     public Grid getGrid(){
         return this.grid;
     }
-
+    
+    public void setBase(){
+        this.square.setX(grid.getBaseX());
+        this.square.setY(grid.getBaseY());
+    }
+    
+    /**
+     * zistuje v ktrom bloku sa hrac nachadza
+     * a riesi migrovanie cex x os
+     */
     public void setCurrentBlock(){            
         blockX = square.getBlockX();
         blockY = square.getBlockY();
@@ -76,17 +96,32 @@ public class Player {
         return this.square;
     }
 
-    public boolean pickPoint(){
+    public Point pickPoint(){
         Point point = this.isPoint();
         if(point != null){
-            this.score++;
+            this.score+=200;
+            this.points++;
             point.erase();
-            return true;
+            System.out.println("Score: " + this.score + " points: " + points);
+            return point;
         }
-        return false;
+        return point;
+    }
+    
+    public int getPoints(){
+        return this.points;
+    }
+    
+    public int getScore(){
+        return this.score;
+    }
+    
+    public void increaseScore(int score){
+        this.score += score;
     }
 
-    /* najde point podla suradnic a otestuje koliziu
+    /** 
+     * najde point podla suradnic a otestuje koliziu
      * s hracom
      */ 
     public Point isPoint(){
@@ -97,14 +132,16 @@ public class Player {
         return null;
     }
 
-    /* najde blok podla suradnic a otestuje koliziu
+    /**
+     * najde blok podla suradnic a otestuje koliziu
      */
     public boolean isCollision(int X, int Y){
         Square square2 = this.grid.getBlock(this.blockX+X, this.blockY+Y).getSquare();
         return this.square.squareSquare(square2);
     }
 
-    /* kontroluje koliziu s tromi blokmi pred hracom
+    /**
+     * kontroluje koliziu s tromi blokmi pred hracom
      */
     public boolean moveTo(String direction){
         if(direction.equals("up")){
@@ -142,7 +179,8 @@ public class Player {
         return true;
     }
 
-    /* vykona pohyb a ak nastala kolizia tak pokracuje 
+    /**
+     * vykona pohyb a ak nastala kolizia tak pokracuje 
      * v predoslom pohybe
      */    
     public void move(){        

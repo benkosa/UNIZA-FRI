@@ -9,6 +9,8 @@ import java.util.ArrayList;
  */
 public class Enemy
 {
+    private boolean comboMode;
+    private int id;
     private Square square;
     private String direction;
     private String lastDirection;
@@ -28,6 +30,7 @@ public class Enemy
     // Suradnice ciela - pravy dolny roh matice (teoreticky by mohol byt ciel aj v inom bode)
     private int cielX;
     private int cielY;
+    private String defaultColor;
 
     private ArrayList<String> instructions;
 
@@ -56,9 +59,12 @@ public class Enemy
         }; 
 
     public Enemy(Grid grid, int size, int id, String color, Player player) {
+        defaultColor = color;
+        this.id = id;
         this.square = new Square(grid.getEnemyBaseX(id), grid.getEnemyBaseY(id), size, color, true, true);
         this.grid = grid;
         this.player = player;
+        this.comboMode = false;
 
         // Mozne pohyby (mame 4 moznosti - hore, dole, dolava, doprava)        
         this.a = new int [4];           // Xove suradnice pohybu
@@ -71,9 +77,9 @@ public class Enemy
         this.a[1] = 1;  this.b[1] = 0;  // dole
         this.a[2] = 0;  this.b[2] = 1;  // doprava
         this.a[3] = 0;  this.b[3] = -1; // dolava
-        swapMovements();
-        swapMovements();
-        swapMovements();
+
+        swapMovements();swapMovements();
+        swapMovements();swapMovements();
 
         // Pociatocne vytvorenie cesty
         this.cesta = new int[grid.getMap().length][];
@@ -147,6 +153,7 @@ public class Enemy
             u = aktX + a[k]; 
             v = aktY + b[k];
             if(cisloSkoku == 20){
+
                 swapMovements();swapMovements();
                 swapMovements();swapMovements();
                 return true;
@@ -235,6 +242,58 @@ public class Enemy
         this.b[id2] = tmp;
     }
 
+    private void swapMovementsInteligently(){        
+        Random generator = new Random();
+
+        int pBx = player.getBlockX();
+        int pBy = player.getBlockY();
+
+        int eBx = this.getBlockX();
+        int eBy = this.getBlockY();
+
+        int id1 = generator.nextInt(2)+2;
+        int id2 = generator.nextInt(2)+2; 
+
+        if(pBx < eBx && pBy > eBy){       // dole v pravo
+            System.out.println("dole v pravo");
+            this.a[0] = 1;  this.b[0] = 0;  // dole
+            this.a[1] = 0;  this.b[1] = 1;  // doprava
+
+            this.a[id1] = -1; this.b[id1] = 0;  // hore            
+            this.a[id2] = 0;  this.b[id2] = -1; // dolava
+        }
+        else if (pBx > eBx && pBy > eBy){ // dole v lavo
+            System.out.println("dole v lavo");
+            this.a[0] = 1;  this.b[0] = 0;  // dole           
+            this.a[1] = 0;  this.b[1] = -1; // dolava
+
+            this.a[id1] = 0;  this.b[id1] = 1;  // doprava
+            this.a[id2] = -1; this.b[id2] = 0;  // hore
+
+        }else if(pBx < eBx && pBy < eBy){ // hore v pravo
+            System.out.println("hore v pravo");
+            this.a[0] = -1; this.b[0] = 0;  // hore
+            this.a[1] = 0;  this.b[1] = 1;  // doprava
+
+            this.a[id1] = 1;  this.b[id1] = 0;  // dole          
+            this.a[id2] = 0;  this.b[id2] = -1; // dolava
+        }
+        else if (pBx > eBx && pBy > eBy){ // hore v lavo
+            System.out.println("hore v lavo");
+            this.a[0] = -1; this.b[0] = 0;  // hore         
+            this.a[1] = 0;  this.b[1] = -1; // dolava
+
+            this.a[id1] = 0;  this.b[id1] = 1;  // doprava
+            this.a[id2] = 1;  this.b[id2] = 0;  // dole 
+
+        }
+        else{
+            System.out.println("random");
+            swapMovements();swapMovements();
+            swapMovements();swapMovements();
+        }
+    }
+
     public void draw(){
         this.square.draw();
     }
@@ -263,11 +322,6 @@ public class Enemy
         blockX = square.getBlockX();
         blockY = square.getBlockY();
 
-        if(blockX < 1)
-            this.square.migrateXUP();
-        if(blockX > 19)
-            this.square.migrateXDOWN();
-
         return ret;
     }
 
@@ -283,14 +337,19 @@ public class Enemy
         return this.square;
     }
 
-    /* najde blok podla suradnic a otestuje koliziu
+    /**
+     * najde blok podla suradnic a otestuje koliziu
+     * @param int X
+     * @param int Y
      */
     public boolean isCollision(int X, int Y){
         Square square2 = this.grid.getBlock(this.blockX+X, this.blockY+Y).getSquare();
         return this.square.squareSquare(square2);
     }
 
-    /* kontroluje koliziu s tromi blokmi pred hracom
+    /**
+     * kontroluje koliziu s tromi blokmi pred hracom
+     * @param String direction
      */
     public boolean moveTo(String direction){
         if(direction.equals("up")){
@@ -327,17 +386,21 @@ public class Enemy
         }
         return true;
     }
-
+    
+    
+    /**
+     * meni pohyb na zaklade vygenerovanych instrukcii
+     */
     public void changeMovement(){
         String direction =  "";
-        if(instructions.size() == 0){            
+        if(instructions.size() == 0){     
+
             swapMovements();swapMovements();
             swapMovements();swapMovements();
             this.generateInstructions();
         }
         direction = instructions.get(0);
         instructions.remove(0);
-        
 
         //System.out.println(this.square.getColor() + " " + instructions.size());
         if(direction.equals("up")){
@@ -358,7 +421,7 @@ public class Enemy
     /* vykona pohyb a ak nastala kolizia tak pokracuje 
      * v predoslom pohybe
      */    
-    public void move(){
+    public void move(){ 
         if(this.setCurrentBlock() == false){
             this.changeMovement();
             //System.out.println(this.square.getColor() + " " + this.blockX + " " + this.blockY + " " + this.direction);            
@@ -368,6 +431,27 @@ public class Enemy
             this.moveTo(this.getLastDirection());
 
         draw();
+    }
+
+    public void startComboMode(){
+        this.square.setColor("white");
+        this.comboMode = true;
+    }
+
+    public void stopComboMode(){
+        this.square.setColor(defaultColor);        
+        this.comboMode = false;
+
+    }
+
+    public void kill(){
+        this.square.setX(grid.getEnemyBaseX(this.id));
+        this.square.setY(grid.getEnemyBaseY(this.id));
+
+        this.setCurrentBlock();
+        instructions.clear();
+        generateInstructions();
+        changeMovement();
     }
 
     public void moveUp(){
@@ -389,7 +473,7 @@ public class Enemy
         this.lastDirection = this.direction;
         this.direction = "ri";
     }
-    
+
     public void erase(){
         this.square.erase();
     }

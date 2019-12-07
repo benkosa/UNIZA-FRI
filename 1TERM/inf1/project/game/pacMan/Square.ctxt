@@ -51,4 +51,5 @@ comment8.params=
 comment8.target=java.lang.String\ getColor()
 comment9.params=square
 comment9.target=boolean\ squareSquare(Square)
+comment9.text=\r\n\ kolizia\ stvorec\ stvorec\r\n
 numComments=24

@@ -9,7 +9,7 @@ import java.awt.Rectangle;
 public class Point
 {
     private Square square;
-    
+
     private boolean isSuper;
 
     public Point(int x, int y, int size, String color)
@@ -17,23 +17,33 @@ public class Point
         int newSize = size/3;
         this.square = new Square(x+newSize, y+newSize, newSize, color, false, false);
         this.isSuper = false;
-      }
+    }
     
+    /**
+     * nastavi ze bod exzistuje
+     */
     public void setIs(boolean is){
         this.square.setExist(is);
         this.square.setColision(is);
     }
     
+    /**
+     * nastavi specialny bod ktory spusta mod
+     * na zabytie nepriatela
+     */
     public void setSuper(){
         this.isSuper = true;
-        
+
         int size = square.getSize();
         square.setSize(size * 2);
-        
+
         square.setX(square.getX()-size/2);
         square.setY(square.getY()-size/2);
-        
-        
+
+    }
+    
+    public boolean isSuper(){
+        return this.isSuper;
     }
     
     public Square getSquare() {
@@ -43,7 +53,7 @@ public class Point
     public void draw() {
         this.square.draw();
     }
-    
+
     public void erase() {
         this.square.erase();
         this.square.setExist(false);
