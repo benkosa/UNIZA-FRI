@@ -1,10 +1,11 @@
 import java.util.ArrayList;
 
 /**
- * Write a description of class Game here.
+ * pospaja vsetko dokopy
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Benjamin Kosa
+ * @version 2019.12.11
+ * UNIZA FRI INFORMATIKA 1
  */
 public class Game {
     public static final int BLOCK_SIZE = 33;
@@ -193,5 +194,10 @@ public class Game {
         player.erase();
         main.prestanSpravovatObjekt(player);
         main.prestanSpravovatObjekt(this);
+    }
+    
+    public void exit() {
+        end();
+        System.exit(0);
     }
 }

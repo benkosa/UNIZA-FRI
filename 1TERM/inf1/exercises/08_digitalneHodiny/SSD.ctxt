@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=SSD
-comment0.text=\ 7-segmentovy\ displej\ s\ privatnymi\ metodami\r\n\ metoda\ -\ odpoved\ objektu\ na\ spravu\ zvonka\r\n\ \ Segmenty\:\r\n\ \ \ ---a---\r\n\ \ |\ \ \ \ \ \ \ |\r\n\ \ f\ \ \ \ \ \ \ b\r\n\ \ |\ \ \ \ \ \ \ |\r\n\ \ \ ---g---\r\n\ \ |\ \ \ \ \ \ \ |\r\n\ \ e\ \ \ \ \ \ \ c\r\n\ \ |\ \ \ \ \ \ \ |\r\n\ \ \ ---d---\r\n
+comment0.text=\ 7-segmentovy\ displej\ s\ privatnymi\ metodami\n\ metoda\ -\ odpoved\ objektu\ na\ spravu\ zvonka\n\ \ Segmenty\:\n\ \ \ ---a---\n\ \ |\ \ \ \ \ \ \ |\n\ \ f\ \ \ \ \ \ \ b\n\ \ |\ \ \ \ \ \ \ |\n\ \ \ ---g---\n\ \ |\ \ \ \ \ \ \ |\n\ \ e\ \ \ \ \ \ \ c\n\ \ |\ \ \ \ \ \ \ |\n\ \ \ ---d---\n
 comment1.params=paLHX\ paLHY
 comment1.target=SSD(int,\ int)
 comment10.params=

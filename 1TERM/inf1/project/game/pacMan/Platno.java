@@ -43,7 +43,7 @@ public class Platno {
      */
     public static Platno dajPlatno() {
         if (Platno.platnoSingleton == null) {
-            Platno.platnoSingleton = new Platno("PacMan", GAME_SIZE*BLOCK_SIZE, (GAME_SIZE+2)*BLOCK_SIZE, 
+            Platno.platnoSingleton = new Platno("PacMan", GAME_SIZE*BLOCK_SIZE, GAME_SIZE*BLOCK_SIZE, 
                                          Color.white);
         }
         Platno.platnoSingleton.setVisible(true);
@@ -80,6 +80,7 @@ public class Platno {
         this.frame.pack();
         this.objekty = new ArrayList<Object>();
         this.tvary = new HashMap<Object, IDraw>();
+        frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
     }
 
     /**

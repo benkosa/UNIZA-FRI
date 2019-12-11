@@ -1,9 +1,9 @@
 
 /**
- * Write a description of class Grid here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * nasklada mapu na grid
+ * @author Benjamin Kosa
+ * @version 2019.12.11
+ * UNIZA FRI INFORMATIKA 1
  */
 import java.util.Arrays; 
 public class Grid

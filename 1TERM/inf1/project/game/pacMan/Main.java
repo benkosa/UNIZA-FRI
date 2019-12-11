@@ -2,8 +2,9 @@
 /**
  * Write a description of class Main here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Benjamin Kosa
+ * @version 2019.12.11
+ * UNIZA FRI INFORMATIKA 1
  */
 public class Main
 {

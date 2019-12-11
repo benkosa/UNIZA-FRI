@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Block
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Block\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\n\ grid\ sa\ sklada\ s\ Bloko-ov\n\ @author\ Benjamin\ Kosa\n\ @version\ 2019.12.11\n\ UNIZA\ FRI\ INFORMATIKA\ 1\n
 comment1.params=x\ y\ size\ color
 comment1.target=Block(int,\ int,\ int,\ java.lang.String)
 comment2.params=

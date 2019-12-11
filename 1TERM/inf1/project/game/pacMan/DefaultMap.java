@@ -1,9 +1,10 @@
 
 /**
- * Write a description of class DefaultMap here.
+ * Mapa default.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Benjamin Kosa
+ * @version 2019.12.11
+ * UNIZA FRI INFORMATIKA 1
  */
 public class DefaultMap
 {

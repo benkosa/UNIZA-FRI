@@ -1,9 +1,9 @@
 import java.awt.Rectangle;
 
 /**
- * Write a description of class Player here.
- * 
- * @author (Benjamin Kosa) 
+ * @author Benjamin Kosa
+ * @version 2019.12.11
+ * UNIZA FRI INFORMATIKA 1
  */
 public class Player {
     private Square square;

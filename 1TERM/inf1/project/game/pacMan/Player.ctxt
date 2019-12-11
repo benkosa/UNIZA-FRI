@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Player
-comment0.text=\n\ Write\ a\ description\ of\ class\ Player\ here.\n\ \n\ @author\ (Benjamin\ Kosa)\ \n
+comment0.text=\n\ @author\ Benjamin\ Kosa\n\ @version\ 2019.12.11\n\ UNIZA\ FRI\ INFORMATIKA\ 1\n
 comment1.params=grid\ size
 comment1.target=Player(Grid,\ int)
 comment10.params=

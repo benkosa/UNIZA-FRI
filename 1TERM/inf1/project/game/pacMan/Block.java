@@ -1,10 +1,10 @@
 import java.awt.Rectangle;
 
 /**
- * Write a description of class Block here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * grid sa sklada s Bloko-ov
+ * @author Benjamin Kosa
+ * @version 2019.12.11
+ * UNIZA FRI INFORMATIKA 1
  */
 public class Block
 {

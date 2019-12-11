@@ -39,7 +39,7 @@ public class Manazer {
             } else if (event.getKeyCode() == KeyEvent.VK_SPACE || event.getKeyCode() == KeyEvent.VK_ENTER) {
                 Manazer.this.posliSpravu("aktivuj");
             } else if (event.getKeyCode() == KeyEvent.VK_ESCAPE) {
-                Manazer.this.posliSpravu("end");
+                Manazer.this.posliSpravu("exit");
             }
         }
     }
