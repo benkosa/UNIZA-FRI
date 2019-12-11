@@ -11,6 +11,7 @@ dependency11.type=UsesDependency
 dependency12.from=Enemy
 dependency12.to=Grid
 dependency12.type=UsesDependency
+<<<<<<< HEAD
 dependency13.from=Player
 dependency13.to=Square
 dependency13.type=UsesDependency
@@ -19,30 +20,49 @@ dependency14.to=Grid
 dependency14.type=UsesDependency
 dependency15.from=Player
 dependency15.to=Point
+=======
+dependency13.from=Game
+dependency13.to=Manazer
+dependency13.type=UsesDependency
+dependency14.from=Game
+dependency14.to=Player
+dependency14.type=UsesDependency
+dependency15.from=Game
+dependency15.to=Grid
+>>>>>>> a216b7a5bb09119ffdeb7b27e37682ecd018a230
 dependency15.type=UsesDependency
 dependency16.from=Game
-dependency16.to=Manazer
+dependency16.to=Timer
 dependency16.type=UsesDependency
 dependency17.from=Game
-dependency17.to=Player
+dependency17.to=Enemy
 dependency17.type=UsesDependency
 dependency18.from=Game
-dependency18.to=Grid
+dependency18.to=Square
 dependency18.type=UsesDependency
 dependency19.from=Game
+<<<<<<< HEAD
 dependency19.to=Enemy
+=======
+dependency19.to=Platno
+>>>>>>> a216b7a5bb09119ffdeb7b27e37682ecd018a230
 dependency19.type=UsesDependency
 dependency2.from=Grid
 dependency2.to=Block
 dependency2.type=UsesDependency
+<<<<<<< HEAD
 dependency20.from=Game
 dependency20.to=Point
+=======
+dependency20.from=Enemy
+dependency20.to=Square
+>>>>>>> a216b7a5bb09119ffdeb7b27e37682ecd018a230
 dependency20.type=UsesDependency
-dependency21.from=Game
-dependency21.to=Square
+dependency21.from=Enemy
+dependency21.to=Player
 dependency21.type=UsesDependency
-dependency22.from=Game
-dependency22.to=Platno
+dependency22.from=Enemy
+dependency22.to=Grid
 dependency22.type=UsesDependency
 dependency3.from=Grid
 dependency3.to=Point
@@ -65,18 +85,27 @@ dependency8.type=UsesDependency
 dependency9.from=DefaultMap
 dependency9.to=Point
 dependency9.type=UsesDependency
+<<<<<<< HEAD
 editor.fx.0.height=851
 editor.fx.0.width=1018
 editor.fx.0.x=594
 editor.fx.0.y=135
 objectbench.height=139
 objectbench.width=756
+=======
+editor.fx.0.height=848
+editor.fx.0.width=1550
+editor.fx.0.x=-7
+editor.fx.0.y=-7
+objectbench.height=171
+objectbench.width=741
+>>>>>>> a216b7a5bb09119ffdeb7b27e37682ecd018a230
 package.divider.horizontal=0.6
-package.divider.vertical=0.8040268456375839
-package.editor.height=592
-package.editor.width=650
-package.editor.x=204
-package.editor.y=114
+package.divider.vertical=0.7605177993527508
+package.editor.height=558
+package.editor.width=640
+package.editor.x=223
+package.editor.y=1
 package.frame.height=840
 package.frame.width=780
 package.numDependencies=22
