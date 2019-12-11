@@ -46,6 +46,7 @@ public class Player {
     }
     
     public int takeLife(){
+        this.setBase();
         return --this.life;
     }
 

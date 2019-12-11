@@ -13,7 +13,6 @@ public class Game {
     private Enemy[] enemyes;
     private String direction;
     private Grid grid;
-    private Timer timer;
     private boolean comboMode;
     private int comboTimer;
     public Game() {
@@ -22,14 +21,12 @@ public class Game {
         comboTimer = 200;
         grid = new Grid();
         grid.leadDefaulutMap();        
-        player = new Player(grid, BLOCK_SIZE);
-        timer = new Timer();        
+        player = new Player(grid, BLOCK_SIZE);     
 
         main = new Manazer();
 
         main.spravujObjekt(player);        
         main.spravujObjekt(this);
-        main.spravujObjekt(timer);
         grid.draw();
         player.draw();
 
@@ -71,6 +68,8 @@ public class Game {
                     System.out.println("Zabity nepriatel");                    
                 }else {
                     int life = player.takeLife();
+                    end();
+                    start();
                     System.out.println("Zivoty: " + life);
                     if(life == 0){
                         end();
@@ -107,14 +106,12 @@ public class Game {
 
         //grid = new Grid();
         //grid.leadDefaulutMap();        
-        player.setBase();
-        timer = new Timer();         
+        player.setBase();       
 
         main = new Manazer();
 
         main.spravujObjekt(player);        
         main.spravujObjekt(this);
-        main.spravujObjekt(timer);
         //grid.draw();
         player.moveUp();
         player.moveUp();
@@ -139,14 +136,12 @@ public class Game {
 
         grid = new Grid();
         grid.leadDefaulutMap();        
-        player = new Player(grid, BLOCK_SIZE, score);
-        timer = new Timer();         
+        player = new Player(grid, BLOCK_SIZE, score);       
 
         main = new Manazer();
 
         main.spravujObjekt(player);        
         main.spravujObjekt(this);
-        main.spravujObjekt(timer);
         grid.draw();
         player.moveUp();
         player.moveUp();
@@ -171,14 +166,12 @@ public class Game {
 
         grid = new Grid();
         grid.leadDefaulutMap();        
-        player = new Player(grid, BLOCK_SIZE);
-        timer = new Timer();         
+        player = new Player(grid, BLOCK_SIZE);      
 
         main = new Manazer();
 
         main.spravujObjekt(player);        
         main.spravujObjekt(this);
-        main.spravujObjekt(timer);
         grid.draw();
         player.moveUp();
         player.moveUp();
@@ -200,6 +193,5 @@ public class Game {
         player.erase();
         main.prestanSpravovatObjekt(player);
         main.prestanSpravovatObjekt(this);
-        main.prestanSpravovatObjekt(timer);
     }
 }
