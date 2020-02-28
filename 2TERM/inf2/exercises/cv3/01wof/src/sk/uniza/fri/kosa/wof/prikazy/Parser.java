@@ -1,3 +1,7 @@
+package sk.uniza.fri.kosa.wof.prikazy;
+
+import sk.uniza.fri.kosa.wof.prikazy.NazvyPrikazov;
+import sk.uniza.fri.kosa.wof.prikazy.Prikaz;
 import java.util.Scanner;
 
 /**

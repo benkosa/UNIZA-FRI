@@ -1,3 +1,7 @@
+package sk.uniza.fri.kosa.wof.prostredie;
+
+import java.util.HashMap;
+
 /**
  * Trieda Miestnost realizuje jednu miestnost/priestor v celom priestore hry.
  * Kazda "miestnost" je z inymi miestnostami spojena vychodmi. 
@@ -11,11 +15,34 @@
  * @version 2012.02.21
  */
 public class Miestnost {
-    public String popisMiestnosti;
-    public Miestnost severnyVychod;
-    public Miestnost juznyVychod;
-    public Miestnost vychodnyVychod;
-    public Miestnost zapadnyVychod;
+    private String popisMiestnosti;
+//    private Miestnost severnyVychod;
+//    private Miestnost juznyVychod;
+//    private Miestnost vychodnyVychod;
+//    private Miestnost zapadnyVychod;
+    
+    //alt enter pridanie inportu
+    private HashMap<String, Miestnost> vychody;
+
+    public String getPopisMiestnosti() {
+        return popisMiestnosti;
+    }
+
+    public Miestnost getSevernyVychod() {
+        return severnyVychod;
+    }
+
+    public Miestnost getJuznyVychod() {
+        return juznyVychod;
+    }
+
+    public Miestnost getVychodnyVychod() {
+        return vychodnyVychod;
+    }
+
+    public Miestnost getZapadnyVychod() {
+        return zapadnyVychod;
+    }
 
     /**
      * Vytvori miestnost popis ktorej je v parametrom.
@@ -26,6 +53,9 @@ public class Miestnost {
      */
     public Miestnost(String popis) {
         this.popisMiestnosti = popis;
+        this.vychody = new HashMap<>();
+        this.vychody.put("sever", this);
+        this.vychody.get("sever");
     }
 
     /**

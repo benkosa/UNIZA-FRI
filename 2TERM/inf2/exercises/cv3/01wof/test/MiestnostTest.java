@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 
+import sk.uniza.fri.kosa.wof.prostredie.Miestnost;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.Assert;
@@ -37,27 +38,27 @@ public class MiestnostTest {
     @Test
     public void nemaVychody() {
         Assert.assertEquals("nema vychody", this.nemaVychody.getPopis());
-        Assert.assertNull(this.nemaVychody.vychodnyVychod);
-        Assert.assertNull(this.nemaVychody.zapadnyVychod);
-        Assert.assertNull(this.nemaVychody.severnyVychod);
-        Assert.assertNull(this.nemaVychody.juznyVychod);
+        Assert.assertNull(this.nemaVychody.getVychodnyVychod());
+        Assert.assertNull(this.nemaVychody.getZapadnyVychod());
+        Assert.assertNull(this.nemaVychody.getSevernyVychod());
+        Assert.assertNull(this.nemaVychody.getJuznyVychod());
     }
 
     @Test
     public void sever() {
         Assert.assertEquals("sever", this.sever.getPopis());
-        Assert.assertSame(this.vychod, this.sever.vychodnyVychod);
-        Assert.assertSame(this.zapad, this.sever.zapadnyVychod);
-        Assert.assertNull(this.sever.severnyVychod);
-        Assert.assertSame(this.juh, this.sever.juznyVychod);
+        Assert.assertSame(this.vychod, this.sever.getVychodnyVychod());
+        Assert.assertSame(this.zapad, this.sever.getZapadnyVychod());
+        Assert.assertNull(this.sever.getSevernyVychod());
+        Assert.assertSame(this.juh, this.sever.getJuznyVychod());
     }
 
     @Test
     public void juh() {
         Assert.assertEquals("juh", this.juh.getPopis());
-        Assert.assertSame(this.vychod, this.juh.vychodnyVychod);
-        Assert.assertSame(this.zapad, this.juh.zapadnyVychod);
-        Assert.assertSame(this.sever, this.juh.severnyVychod);
-        Assert.assertNull(this.juh.juznyVychod);
+        Assert.assertSame(this.vychod, this.juh.getVychodnyVychod());
+        Assert.assertSame(this.zapad, this.juh.getZapadnyVychod());
+        Assert.assertSame(this.sever, this.juh.getSevernyVychod());
+        Assert.assertNull(this.juh.getJuznyVychod());
     }
 }

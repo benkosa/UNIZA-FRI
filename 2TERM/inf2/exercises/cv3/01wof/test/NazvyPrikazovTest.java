@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 
+import sk.uniza.fri.kosa.wof.prikazy.NazvyPrikazov;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.Assert;

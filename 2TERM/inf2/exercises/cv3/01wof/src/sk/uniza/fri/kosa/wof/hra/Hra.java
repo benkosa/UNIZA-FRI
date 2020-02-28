@@ -1,3 +1,9 @@
+package sk.uniza.fri.kosa.wof.hra;
+
+import sk.uniza.fri.kosa.wof.prostredie.Miestnost;
+import sk.uniza.fri.kosa.wof.prikazy.Parser;
+import sk.uniza.fri.kosa.wof.prikazy.Prikaz;
+
 /**
  * Trieda Hra je hlavna trieda aplikacie "World of FRI".
  * "World of FRI" je velmi jednoducha textova hra - adventura. 
@@ -40,13 +46,15 @@ public class Hra  {
         Miestnost bufet = new Miestnost("bufet");
         Miestnost labak = new Miestnost("pocitacove laboratorium");
         Miestnost kancelaria = new Miestnost("kancelaria spravcu pocitacoveho laboratoria");
+        Miestnost ic = new Miestnost("Informacne centrum");
         
         // inicializacia miestnosti = nastavenie vychodov
-        terasa.nastavVychody(null, aula, labak, bufet);
+        terasa.nastavVychody(ic, aula, labak, bufet);
         aula.nastavVychody(null, null, null, terasa);
         bufet.nastavVychody(null, terasa, null, null);
         labak.nastavVychody(terasa, kancelaria, null, null);
         kancelaria.nastavVychody(null, null, null, labak);
+        ic.nastavVychody(null, null, terasa, bufet);
 
         this.aktualnaMiestnost = terasa;  // startovacia miestnost hry
     }
@@ -81,21 +89,7 @@ public class Hra  {
         System.out.println("World of FRI je nova, neuveritelne nudna adventura.");
         System.out.println("Zadaj 'pomoc' ak potrebujes pomoc.");
         System.out.println();
-        System.out.println("Teraz si v miestnosti " + this.aktualnaMiestnost.getPopis());
-        System.out.print("Vychody: ");
-        if (this.aktualnaMiestnost.severnyVychod != null) {
-            System.out.print("sever ");
-        }
-        if (this.aktualnaMiestnost.vychodnyVychod != null) {
-            System.out.print("vychod ");
-        }
-        if (this.aktualnaMiestnost.juznyVychod != null) {
-            System.out.print("juh ");
-        }
-        if (this.aktualnaMiestnost.zapadnyVychod != null) {
-            System.out.print("zapad ");
-        }
-        System.out.println();
+        vypisVychody();
     }
 
     /**
@@ -159,16 +153,16 @@ public class Hra  {
         Miestnost novaMiestnost = null;
         switch (smer) {
             case "sever":
-                novaMiestnost = this.aktualnaMiestnost.severnyVychod;
+                novaMiestnost = this.aktualnaMiestnost.getSevernyVychod();
                 break;
             case "vychod":
-                novaMiestnost = this.aktualnaMiestnost.vychodnyVychod;
+                novaMiestnost = this.aktualnaMiestnost.getVychodnyVychod();
                 break;
             case "juh":
-                novaMiestnost = this.aktualnaMiestnost.juznyVychod;
+                novaMiestnost = this.aktualnaMiestnost.getJuznyVychod();
                 break;
             case "zapad":
-                novaMiestnost = this.aktualnaMiestnost.zapadnyVychod;
+                novaMiestnost = this.aktualnaMiestnost.getZapadnyVychod();
                 break;
         }
 
@@ -176,22 +170,26 @@ public class Hra  {
             System.out.println("Tam nie je vychod!");
         } else {
             this.aktualnaMiestnost = novaMiestnost;
-            System.out.println("Teraz si v miestnosti " + this.aktualnaMiestnost.getPopis());
-            System.out.print("Vychody: ");
-            if (this.aktualnaMiestnost.severnyVychod != null) {
-                System.out.print("sever ");
-            }
-            if (this.aktualnaMiestnost.vychodnyVychod != null) {
-                System.out.print("vychod ");
-            }
-            if (this.aktualnaMiestnost.juznyVychod != null) {
-                System.out.print("juh ");
-            }
-            if (this.aktualnaMiestnost.zapadnyVychod != null) {
-                System.out.print("zapad ");
-            }
-            System.out.println();
+            vypisVychody();
         }
+    }
+
+    private void vypisVychody() {
+        System.out.println("Teraz si v miestnosti " + this.aktualnaMiestnost.getPopis());
+        System.out.print("Vychody: ");
+        if (this.aktualnaMiestnost.getSevernyVychod() != null) {
+            System.out.print("sever ");
+        }
+        if (this.aktualnaMiestnost.getVychodnyVychod() != null) {
+            System.out.print("vychod ");
+        }
+        if (this.aktualnaMiestnost.getJuznyVychod() != null) {
+            System.out.print("juh ");
+        }
+        if (this.aktualnaMiestnost.getZapadnyVychod() != null) {
+            System.out.print("zapad ");
+        }
+        System.out.println();
     }
 
     /** 

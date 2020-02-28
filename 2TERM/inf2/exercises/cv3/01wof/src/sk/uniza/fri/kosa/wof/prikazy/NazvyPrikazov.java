@@ -1,3 +1,5 @@
+package sk.uniza.fri.kosa.wof.prikazy;
+
 /**
  * Trieda NazvyPrikazov udrzuje zoznam nazvov platnych prikazov hry. 
  * Za ulohu ma rozpoznavat platne prikazy.
