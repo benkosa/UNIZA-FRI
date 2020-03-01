@@ -51,7 +51,6 @@ public class SkupinaTest {
         Student studentVrateny = skupina.dajStudenta("123");
         
         Assert.assertSame(student, studentVrateny);
-        
     }
     
     @Test
@@ -88,10 +87,46 @@ public class SkupinaTest {
         Assert.assertEquals(1, skupina.dajPocetStudentov());
         
     }
-
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
+    
+    @Test
+    public void testOdoberExistujucehoStudenta() {
+        Student student = new Student("123", "j", "t");
+        skupina.pridajStudenta(student);
+        
+        skupina.odoberStudenta("123");
+        
+        Assert.assertEquals(0, skupina.dajPocetStudentov()); 
+    }
+    
+    @Test
+    public void testOdoberNeexistujucehoStudenta() {
+        Student student = new Student("123", "j", "t");
+        skupina.pridajStudenta(student);
+        
+        skupina.odoberStudenta("1234");
+        
+        Assert.assertEquals(1, skupina.dajPocetStudentov()); 
+    }
+    
+    @Test
+    public void testVlastnostiSkupiny() {
+        Skupina skupina = new Skupina("123");
+       
+        Assert.assertEquals(0, skupina.dajPocetStudentov()); 
+        Assert.assertEquals("123", skupina.getCislo());
+    }
+    
+    @Test
+    public void testVlastnostiStudenta() {
+        Student student = new Student("123", "j", "t");
+        
+        Assert.assertEquals("123", student.getOsobneCislo());
+        Assert.assertEquals("j", student.getMeno());
+        Assert.assertEquals("t", student.getPriezvisko());
+        Assert.assertNull(student.getCisloSkupiny());
+        
+        skupina.pridajStudenta(student);
+        Assert.assertEquals(skupina.getCislo(), student.getCisloSkupiny());
+    }
+    
 }
