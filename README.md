@@ -18,3 +18,9 @@
 * **[1. Winter](https://github.com/benkosa/UNIZA-FRI/tree/master/1TERM)** 2019/2020
 	* [INF1](https://github.com/benkosa/UNIZA-FRI/tree/master/1TERM/inf1)
 		* [exercises](https://github.com/benkosa/UNIZA-FRI/tree/master/1TERM/inf1/exercises)
+		* [project](https://github.com/benkosa/UNIZA-FRI/tree/master/1TERM/inf1/project)
+* **[2. Summer](https://github.com/benkosa/UNIZA-FRI/tree/master/2TERM)** 2019/2020
+	* [INF2](https://github.com/benkosa/UNIZA-FRI/tree/master/2TERM/inf2)
+		* [exercises](https://github.com/benkosa/UNIZA-FRI/tree/master/2TERM/inf2/exercises)
+	* [DPRAV](https://github.com/benkosa/UNIZA-FRI/tree/master/2TERM/DPrav)
+		* [demo](https://github.com/benkosa/UNIZA-FRI/tree/master/2TERM/DPrav/demo)
