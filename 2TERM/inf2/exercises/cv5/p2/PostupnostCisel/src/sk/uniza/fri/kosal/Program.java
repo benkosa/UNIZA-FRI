@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package sk.uniza.fri.kosal;
 
 /**
@@ -16,29 +11,22 @@ public class Program {
      */
     public static void main(String[] args) {
         GeneratorPostupnostiParnychCisiel generator = new GeneratorPostupnostiParnychCisiel();
-        for (int i = 0; i < 5; i++) {
-        int cislo = generator.getNasledujuceCislo();
-            System.out.println(cislo);
-        }
-        generator.reset();
-        for (int i = 0; i < 10; i++) {
-        int cislo = generator.getNasledujuceCislo();
-            System.out.println(cislo);
-        }
+        vygenerujCisla(generator);
         System.out.println("********************************************");
+        
+        GeneratorPostupnostiMocninyDva generatorMocniny = new GeneratorPostupnostiMocninyDva();
+        vygenerujCisla(generatorMocniny);
+    }
+
+    private static void vygenerujCisla(iGenerator generator) {
         for (int i = 0; i < 5; i++) {
-        int cislo = generator.getNasledujuceCisloMocnina();
+            int cislo = generator.getNasledujuceCislo();
             System.out.println(cislo);
         }
         generator.reset();
         for (int i = 0; i < 10; i++) {
-        int cislo = generator.getNasledujuceCisloMocnina();
+            int cislo = generator.getNasledujuceCislo();
             System.out.println(cislo);
         }
-        System.out.println("");
-
-
-
     }
-    
 }

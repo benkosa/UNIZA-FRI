@@ -9,28 +9,20 @@ package sk.uniza.fri.kosal;
  *
  * @author kosa11
  */
-class GeneratorPostupnostiParnychCisiel {
+class GeneratorPostupnostiParnychCisiel implements iGenerator {
     private int cislo;
-    private int cisloMocnina;
 
     public GeneratorPostupnostiParnychCisiel() {
         this.cislo = -2;
-        this.cisloMocnina = 1;
     }
     
+    @Override
     public int getNasledujuceCislo() {
         return this.cislo+=2;
     }
     
-    public int getNasledujuceCisloMocnina() {
-        int cislo = this.cisloMocnina;
-        this.cisloMocnina*=2;
-        return cislo;
-    }
-
+    @Override
     public void reset() {
         this.cislo = -2;
-        this.cisloMocnina = 1;
     }
-    
 }
