@@ -4,21 +4,22 @@ package sk.uniza.fri.kosal;
  *
  * @author kosa11
  */
-class GeneratorPostupnostiParnychCisiel implements IGenerator {
+class GeneratorPostupnostiNeparnychCisel implements IGenerator {
     private int cislo;
-
-    GeneratorPostupnostiParnychCisiel() {
-        this.cislo = -2;
-    }
     
+    GeneratorPostupnostiNeparnychCisel() {
+        this.cislo = -1;
+    }
+
     @Override
     public int getNasledujuceCislo() {
         this.cislo += 2;
         return this.cislo;
     }
-    
+
     @Override
     public void reset() {
-        this.cislo = -2;
+        this.cislo = -1;
     }
+    
 }

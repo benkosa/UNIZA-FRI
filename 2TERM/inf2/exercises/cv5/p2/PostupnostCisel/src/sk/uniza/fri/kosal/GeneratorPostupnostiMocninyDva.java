@@ -4,17 +4,17 @@ package sk.uniza.fri.kosal;
  *
  * @author kosa11
  */
-class GeneratorPostupnostiMocninyDva implements iGenerator {
+class GeneratorPostupnostiMocninyDva implements IGenerator {
     private int cislo;
 
-    public GeneratorPostupnostiMocninyDva() {
+    GeneratorPostupnostiMocninyDva() {
         this.cislo = 1;
     }
     
     @Override
     public int getNasledujuceCislo() {
         int predosleCislo = this.cislo;
-        this.cislo*=2;
+        this.cislo *= 2;
         return predosleCislo;
     }
     
