@@ -1,14 +1,14 @@
 #BlueJ class context
 comment0.target=Point
-comment0.text=\n\ @author\ Benjamin\ Kosa\n\ @version\ 2019.12.11\n\ UNIZA\ FRI\ INFORMATIKA\ 1\n
+comment0.text=\r\n\ @author\ Benjamin\ Kosa\r\n\ @version\ 2019.12.11\r\n\ UNIZA\ FRI\ INFORMATIKA\ 1\r\n
 comment1.params=x\ y\ size\ color
 comment1.target=Point(int,\ int,\ int,\ java.lang.String)
 comment2.params=is
 comment2.target=void\ setIs(boolean)
-comment2.text=\n\ nastavi\ ze\ bod\ exzistuje\n
+comment2.text=\r\n\ nastavi\ ze\ bod\ exzistuje\r\n
 comment3.params=
 comment3.target=void\ setSuper()
-comment3.text=\n\ nastavi\ specialny\ bod\ ktory\ spusta\ mod\n\ na\ zabytie\ nepriatela\n
+comment3.text=\r\n\ nastavi\ specialny\ bod\ ktory\ spusta\ mod\r\n\ na\ zabytie\ nepriatela\r\n
 comment4.params=
 comment4.target=boolean\ isSuper()
 comment5.params=

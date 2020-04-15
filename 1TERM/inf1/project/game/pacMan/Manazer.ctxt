@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Manazer
-comment0.text=\n\ Automaticky\ posiela\ spravy\ danym\ objektom\:<br\ />\n\ posunDole()\ -\ pri\ stlaceni\ klavesy\ DOWN<br\ />\n\ posunHore()\ -\ pri\ stlaceni\ klavesy\ UP<br\ />\n\ posunVlavo()\ -\ pri\ stlacen\ klavesy\ LEFT<br\ />\n\ posunVpravo()\ -\ pri\ stlaceni\ klavesy\ RIGHT<br\ />\n\ aktivuj()\ -\ pri\ stlaceni\ klavesy\ ENTER\ alebo\ SPACE<br\ />\n\ zrus()\ -\ pri\ stlaceni\ klavesy\ ESC<br\ />\n\ tik()\ -\ kazdych\ 0,25\ sekundy<br\ />\n\ vyberSuradnice(x,\ y)\ -\ pri\ kliknuti\ mysou\n
+comment0.text=\r\n\ Automaticky\ posiela\ spravy\ danym\ objektom\:<br\ />\r\n\ posunDole()\ -\ pri\ stlaceni\ klavesy\ DOWN<br\ />\r\n\ posunHore()\ -\ pri\ stlaceni\ klavesy\ UP<br\ />\r\n\ posunVlavo()\ -\ pri\ stlacen\ klavesy\ LEFT<br\ />\r\n\ posunVpravo()\ -\ pri\ stlaceni\ klavesy\ RIGHT<br\ />\r\n\ aktivuj()\ -\ pri\ stlaceni\ klavesy\ ENTER\ alebo\ SPACE<br\ />\r\n\ zrus()\ -\ pri\ stlaceni\ klavesy\ ESC<br\ />\r\n\ tik()\ -\ kazdych\ 0,25\ sekundy<br\ />\r\n\ vyberSuradnice(x,\ y)\ -\ pri\ kliknuti\ mysou\r\n
 comment1.params=selektor
 comment1.target=void\ posliSpravu(java.lang.String)
 comment2.params=selektor\ prvyParameter\ druhyParameter
@@ -11,11 +11,11 @@ comment4.params=
 comment4.target=void\ removeDeletedObjects()
 comment5.params=
 comment5.target=Manazer()
-comment5.text=\n\ Vytvori\ novy\ manazer,\ ktory\ nespravuje\ zatial\ ziadne\ objekty.\n
+comment5.text=\r\n\ Vytvori\ novy\ manazer,\ ktory\ nespravuje\ zatial\ ziadne\ objekty.\r\n
 comment6.params=objekt
 comment6.target=void\ spravujObjekt(java.lang.Object)
-comment6.text=\n\ Manazer\ bude\ spravovat\ dany\ objekt.\n
+comment6.text=\r\n\ Manazer\ bude\ spravovat\ dany\ objekt.\r\n
 comment7.params=objekt
 comment7.target=void\ prestanSpravovatObjekt(java.lang.Object)
-comment7.text=\n\ Manazer\ prestane\ spravovat\ dany\ objekt.\n
+comment7.text=\r\n\ Manazer\ prestane\ spravovat\ dany\ objekt.\r\n
 numComments=8
