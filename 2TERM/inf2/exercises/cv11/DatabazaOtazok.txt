@@ -1,0 +1,21 @@
+﻿>Aké kľúčove slovo sa použiva v Jave, ak chceme dediť od inej triedy:
+>Kto založil novodobé olympijské hry?
+Pierre Cardin
+*Pierre de Coubertin
+Henri Matisse
+Charles de Gaulle
+>5 + 6 = 
+10
+*11
+12
+>Predok všetkých tried v Jave je trieda:
+Objekt
+*Object
+Base
+base
+>V ktorom roku sa skončila druhá svetová vojna?
+1938
+1939
+1944
+*1945
+1946
