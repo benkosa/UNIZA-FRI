@@ -10,7 +10,5 @@ tickerData = yf.Ticker(tickerSymbol)
 tickerDf = tickerData.history(period='1d', start='2020-1-1', end='2020-10-30')
 
 #see your data
-
 for col in tickerDf['Close']:
     print(col)
-
