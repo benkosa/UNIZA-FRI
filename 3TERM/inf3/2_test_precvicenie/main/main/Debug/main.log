@@ -1,0 +1,6 @@
+﻿  Hra.cpp
+  Team.cpp
+  main.cpp
+C:\Users\Benji\git\UNIZA-FRI\3TERM\inf3\2_test_precvicenie\main\main\main.cpp(17,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Generating Code...
+  main.vcxproj -> C:\Users\Benji\git\UNIZA-FRI\3TERM\inf3\2_test_precvicenie\main\Debug\main.exe
