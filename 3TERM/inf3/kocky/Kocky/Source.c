@@ -1,125 +1,47 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int vsetkyRovnake(int kocka1, int kocka2, int kocka3) {
-	if (kocka1 == kocka2 && kocka3 == kocka2) {
-		return kocka1 * 100;
-	}
+int main(int argc, const char* argv[]) {
+    //pocet argumentov
+    if (argc == 1) {
+        printf("Chybny pocet argumentov");
+        return 1;
+    }
 
-	return 0;
-}
+    srand(time(NULL));
 
-void sort(int* kocka1, int* kocka2, int* kocka3) {
-	int tmp = 0;
-	for (int i = 0; i < 3; i++) {
+    //nazov suboru z argumentu
+    char* nazovSuboru = argv[1];
 
-		if (*kocka1 > *kocka2) {
-			tmp = *kocka1;
-			*kocka1 = *kocka2;
-			*kocka2 = tmp;
-		}
+    FILE* subor = nazovSuboru;
+    int bufferDlzka = 255;
+    char buffer[255];
 
-		if (*kocka2 > *kocka3) {
-			tmp = *kocka2;
-			*kocka2 = *kocka3;
-			*kocka3 = tmp;
-		}
-	}
+    subor = fopen(nazovSuboru, "r");
 
-	return;
-}
+    //prve nacitanie suboru, zistenie poctu riadkov
+    char* pocetRiadkov = fgets(buffer, bufferDlzka, subor);
 
-int suZaSebou(int kocka1, int kocka2, int kocka3) {
+    //prebod stringu na int
+    int pocerRiadkovInt = atoi(pocetRiadkov);
+    //generovanie nahodneho cisla, ohraniecnie pomocou modulo
+    int randCislo = rand() % pocerRiadkovInt;
 
-	sort(&kocka1, &kocka2, &kocka3);
+    printf("nazov suboru: %s\n", nazovSuboru);
+    printf("nahodne cislo: %d\n", randCislo);
+    printf("pocet riadkov: %d\n", pocerRiadkovInt);
 
-	if ((kocka1 + 2) == (kocka2 + 1) && kocka3 == (kocka2 + 1)) {
-		return (kocka1 + kocka2 +kocka3) * 100;
-	}
+    //nacitanie ostatnych riadkov
+    for (int i = 0; i < pocerRiadkovInt; i++) {
+        //nacitanie cleho riadku
+        fgets(buffer, bufferDlzka, subor);
 
-	return 0;
-}
+        //prevod string na int
+        int cislo = atoi(buffer);
 
-int hra() {
-	
+        if(cislo > randCislo)
+            printf("%d\n", cislo);
+    }
 
-	int kocka1 = rand() % 6 + 1;
-	int kocka2 = rand() % 6 + 1;
-	int kocka3 = rand() % 6 + 1;
-
-	printf("%d, %d, %d\n", kocka1, kocka2, kocka3);
-
-	int body = vsetkyRovnake(kocka1, kocka2, kocka3);
-	body += suZaSebou(kocka1, kocka2, kocka3);
-
-	printf("%d\n", body);
-
-	return body;
-}
-
-struct Hrac {
-	int body;
-	int vyhrateKola;
-	int bodyAktualneKolo;
-};
-
-void hracConstruct(struct Hrac* hrac, int body, int vyhrateKola, int bodyAktualneKolo) {
-	hrac -> body = body;
-	hrac -> vyhrateKola = vyhrateKola;
-	hrac -> bodyAktualneKolo = bodyAktualneKolo;
-}
-
-
-int main(int argc, const char* argv[])
-{
-
-	srand(time(NULL));
-
-	struct Hrac hrac1;
-	struct Hrac hrac2;
-
-	hracConstruct(&hrac1, 0, 0, 0);
-
-	hracConstruct(&hrac2, 0, 0, 0);
-
-	int body = 0;
-	
-	for (int i = 0; i < 10; i++) {
-
-		hrac1.bodyAktualneKolo = hra();
-		hrac1.body += hrac1.bodyAktualneKolo;
-
-		hrac2.bodyAktualneKolo = hra();
-		hrac2.body += hrac2.bodyAktualneKolo;
-		
-		//hrac 2 vyhral
-		if (hrac1.bodyAktualneKolo < hrac2.bodyAktualneKolo) {
-			hrac2.vyhrateKola++;
-			printf("body hrac2 %d\n", hrac2.vyhrateKola);
-		//remiza
-		}else if (hrac1.bodyAktualneKolo == hrac2.bodyAktualneKolo) {
-		//hrac 2 vyhral
-			printf("remiza\n");
-		} else {
-			hrac1.vyhrateKola++;
-			printf("body hrac1 %d\n", hrac1.vyhrateKola);
-
-		}
-	}
-
-
-
-	if (hrac2.vyhrateKola > hrac1.vyhrateKola) {
-		printf("vyhral hrac2");
-	}
-	if (hrac2.vyhrateKola == hrac1.vyhrateKola) {
-		printf("remiza");
-	}
-	if (hrac2.vyhrateKola < hrac1.vyhrateKola) {
-		printf("vyhral hrac1");
-	}
-
-	
-
-	return 0;
+    fclose(subor);
 }
