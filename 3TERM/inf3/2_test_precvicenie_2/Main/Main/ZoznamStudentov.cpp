@@ -72,7 +72,7 @@ void ZoznamStudentov::sort() {
             break;
     }
     //sort podla poctu a
-    for (int i = 0; i < pocetStudentov; i++) {
+    /*for (int i = 0; i < pocetStudentov; i++) {
         int swaps = 0;
         for (int j = 0; j < pocetStudentov - i - 1; j++) {
             //ak sa rovna pocet bodov
@@ -86,7 +86,7 @@ void ZoznamStudentov::sort() {
         }
         if (!swaps)
             break;
-    }
+    }*/
 }
 
 void ZoznamStudentov::swap(Student& a, Student& b) {

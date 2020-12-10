@@ -21,6 +21,6 @@ public:
 	void vypis();
 	string zapis();
 	int getPocetA();
-	int getPriemer();
+	float getPriemer();
 };
 

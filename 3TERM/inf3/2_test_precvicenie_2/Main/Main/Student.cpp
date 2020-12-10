@@ -50,6 +50,6 @@ int Student::getPocetA() {
 	return this->pocetA;
 }
 
-int Student::getPriemer() {
+float Student::getPriemer() {
 	return this->priemer;
 }
