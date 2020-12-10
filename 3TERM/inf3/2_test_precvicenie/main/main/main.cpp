@@ -2,13 +2,13 @@
 //
 #define _CRT_SECURE_NO_DEPRECATE
 #include <iostream>
-#include <string>
 #include "Team.h"
 #include "Hra.h"
 #include <time.h>
 
 
 int main(int argc, char* argv[]) {
+    _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
     if (argc != 2) {
         std::cout << "povinny jeden argument - nazov vstupneho suboru\n";
         exit(EXIT_FAILURE);
@@ -40,7 +40,7 @@ int main(int argc, char* argv[]) {
     hra->vypisPoradie();
 
     fclose(fp);
-    //delete[] riadok;
-    //delete hra;
+    delete[] riadok;
+    delete hra;
     return 0;
 }

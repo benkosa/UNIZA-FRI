@@ -9,6 +9,8 @@ private:
 public:
 	Team();
 	Team(char* nazov);
+	Team(const Team& other);
+	Team& operator=(const Team& other);
 
 	void vypis();
 

@@ -13,6 +13,40 @@ Team::Team(char* nazov) {
 	this->nazov[DLZKA_NAZVU-1] = 0;
 }
 
+//copy constructor
+Team::Team(const Team& other) {
+	if (!other.nazov) return;
+
+	const int DLZKA_NAZVU = strlen(other.nazov);
+	this->nazov = new char[DLZKA_NAZVU + 1];
+	memcpy(this->nazov, other.nazov, DLZKA_NAZVU + 1);
+	this->nazov[DLZKA_NAZVU] = 0;
+
+	this->body = other.body;
+	this->streleneGoly = other.streleneGoly;
+	this->dostaneGoly = other.dostaneGoly;
+}
+
+//assigment operator
+Team& Team::operator=(const Team& other) {
+	if (this == &other) return *this;
+
+	if (!other.nazov) return *this;
+
+	Team::~Team();
+
+	const int DLZKA_NAZVU = strlen(other.nazov);
+	this->nazov = new char[DLZKA_NAZVU + 1];
+	memcpy(this->nazov, other.nazov, DLZKA_NAZVU + 1);
+	this->nazov[DLZKA_NAZVU] = 0;
+
+	this->body = other.body;
+	this->streleneGoly = other.streleneGoly;
+	this->dostaneGoly = other.dostaneGoly;
+
+	return *this;
+}
+
 void Team::vypis() {
 	std::cout << nazov << ": " << streleneGoly << " | " << dostaneGoly << " | " << body << "\n";
 }
@@ -36,7 +70,8 @@ int Team::getStrelene() {
 }
 
 Team::~Team() {
-	//delete[] this->nazov;
+	delete[] this->nazov;
+	this->nazov = nullptr;
 }
 
 

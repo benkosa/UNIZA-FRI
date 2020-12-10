@@ -4,8 +4,6 @@
 #include <iostream>
 
 void Hra::zapas(Team* team0, Team* team1) {
-	
-
 	int golyT0 = rand() % 11;
 	int golyT1 = rand() % 11;
 	//remiza
@@ -29,62 +27,65 @@ void Hra::zapas(Team* team0, Team* team1) {
 void Hra::zoradHry() {
 	//sort podla poctu golov
 	for (int i = 0; i < pocetTeamov; i++) {
-		int swaps = 0;         //flag to detect any swap is there or not
+		int swaps = 0;	//ak sa nevykonal swap pole je zoradene
 		for (int j = 0; j < pocetTeamov - i - 1; j++) {
-			if (poleTeamov[j].getBody() < poleTeamov[j + 1].getBody()) {       //when the current item is bigger than next
-				swap(poleTeamov[j], poleTeamov[j + 1]);
-				swaps = 1;    //set swap flag
+			if (poleTeamov[j]->getBody() < poleTeamov[j + 1]->getBody()) {
+				swap(*poleTeamov[j], *poleTeamov[j + 1]);
+				swaps = 1;
 			}
 		}
 		if (!swaps)
-			break;       // No swap in this pass, so array is sorted
+			break; 
 	}
-	//sor podla strelenych golov
+	//sort podla strelenych golov
 	for (int i = 0; i < pocetTeamov; i++) {
-		int swaps = 0;         //flag to detect any swap is there or not
+		int swaps = 0;
 		for (int j = 0; j < pocetTeamov - i - 1; j++) {
-			if (poleTeamov[j].getBody() == poleTeamov[j + 1].getBody()) {     //when the current item is bigger than next
-				if (poleTeamov[j].getStrelene() < poleTeamov[j + 1].getStrelene()) {       //when the current item is bigger than next
-					swap(poleTeamov[j], poleTeamov[j + 1]);
-					swaps = 1;    //set swap flag
+			//ak sa rovna pocet bodov
+			if (poleTeamov[j]->getBody() == poleTeamov[j + 1]->getBody()) {
+				//triedi podla strelenych golov
+				if (poleTeamov[j]->getStrelene() < poleTeamov[j + 1]->getStrelene()) {
+					swap(*poleTeamov[j], *poleTeamov[j + 1]);
+					swaps = 1;
 				}
 			}
-
 		}
 		if (!swaps)
-			break;       // No swap in this pass, so array is sorted
+			break;
 	}
 }
 
 void Hra::swap(Team& a, Team& b) {
-	Team temp;
-	temp = a;
+	Team tmp = a;
 	a = b;
-	b = temp;
+	b = tmp;
 }
 
 
 Hra::Hra() {}
 
 void Hra::pridaj(char* nazovTeamu) {
-	this->poleTeamov[pocetTeamov++] = *new Team(nazovTeamu);
+	this->poleTeamov[pocetTeamov++] = new Team(nazovTeamu);
 }
 
 void Hra::vypisPoradie() {
 	zoradHry();
 	for (int i = 0; i < this->pocetTeamov; i++) {
-		this->poleTeamov[i].vypis();
+		this->poleTeamov[i]->vypis();
 	}
 }
 
 void Hra::spustitHru() {
 	for (int i = 0; i < this->pocetTeamov; i++) {
 		for (int j = i+1; j < this->pocetTeamov; j++) {
-			this->zapas(&this->poleTeamov[i], &this->poleTeamov[j]);
+			this->zapas(&*this->poleTeamov[i], &*this->poleTeamov[j]);
 		}
 	}
 }
 
 Hra::~Hra() {
+	for (int i = 0; i < this->pocetTeamov; i++) {
+		delete this->poleTeamov[i];
+	}
 	delete[] poleTeamov;
 }
