@@ -1,7 +1,7 @@
 import yfinance as yf
 
 #define the ticker symbol
-tickerSymbol = 'TDOC'
+tickerSymbol = 'TSLA'
 
 #get data on this ticker
 tickerData = yf.Ticker(tickerSymbol)
