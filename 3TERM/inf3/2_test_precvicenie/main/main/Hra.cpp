@@ -54,7 +54,8 @@ void Hra::zoradHry() {
 			break;
 	}
 }
-
+//https://www.geeksforgeeks.org/pointers-vs-references-cpp/
+//https://www.geeksforgeeks.org/passing-by-pointer-vs-passing-by-reference-in-c/
 void Hra::swap(Team& a, Team& b) {
 	Team tmp = a;
 	a = b;

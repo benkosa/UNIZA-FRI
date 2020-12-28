@@ -71,22 +71,6 @@ void ZoznamStudentov::sort() {
         if (!swaps)
             break;
     }
-    //sort podla poctu a
-    /*for (int i = 0; i < pocetStudentov; i++) {
-        int swaps = 0;
-        for (int j = 0; j < pocetStudentov - i - 1; j++) {
-            //ak sa rovna pocet bodov
-            if (zoznam[j]->getPriemer() == zoznam[j + 1]->getPriemer()) {
-                //triedi podla strelenych golov
-                if (zoznam[j]->getPocetA() < zoznam[j + 1]->getPocetA()) {
-                    swap(*zoznam[j], *zoznam[j + 1]);
-                    swaps = 1;
-                }
-            }
-        }
-        if (!swaps)
-            break;
-    }*/
 }
 
 void ZoznamStudentov::swap(Student& a, Student& b) {
