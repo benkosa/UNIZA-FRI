@@ -12,7 +12,16 @@ DoublePole<T>::~DoublePole() {
 template <class T>
 DoublePole<T>::DoublePole(const DoublePole& other) {
 	if (!this->aData) return;
-	this->aData = other.aData;
+
+	DoublePole::~DoublePole();
+
+	this->aData = new double* [100];
+
+	for (int i = 0; i < 100; i++) {
+		this->aData[i] = new double(*other.aData[i]);
+	}
+
+	return *this;
 }
 
 template <class T>

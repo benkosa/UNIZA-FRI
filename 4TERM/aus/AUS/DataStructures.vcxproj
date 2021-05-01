@@ -1,0 +1,380 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{CA3704D9-B3A6-41B2-9143-2743B68196D6}</ProjectGuid>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <Keyword>ManagedCProj</Keyword>
+    <RootNamespace>DataStructures</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\ImageContentTask.props" />
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>$(ProjectName)</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DisableSpecificWarnings>4100; 4634; 4400</DisableSpecificWarnings>
+      <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies />
+      <EntryPointSymbol>Main</EntryPointSymbol>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
+      <DisableSpecificWarnings>4100; 4634; 4400</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies />
+      <EntryPointSymbol>Main</EntryPointSymbol>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DisableSpecificWarnings>4100; 4634; 4400</DisableSpecificWarnings>
+      <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies />
+      <EntryPointSymbol>Main</EntryPointSymbol>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DisableSpecificWarnings>4100; 4634; 4400</DisableSpecificWarnings>
+      <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies />
+      <EntryPointSymbol>Main</EntryPointSymbol>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="data\form_data.cpp" />
+    <ClCompile Include="data\graph_data.cpp" />
+    <ClCompile Include="form_main.cpp" />
+    <ClCompile Include="data\data_routines.cpp" />
+    <ClCompile Include="structures\graph\algorithms\dijkstra.cpp" />
+    <ClCompile Include="structures\graph\bi_star_graph.cpp" />
+    <ClCompile Include="structures\graph\forward_star_graph.cpp" />
+    <ClCompile Include="structures\graph\graph.cpp" />
+    <ClCompile Include="structures\graph\graph_with_registration.cpp" />
+    <ClCompile Include="structures\memory_routines.cpp" />
+    <ClCompile Include="structures\table\sorting\sort.cpp" />
+    <ClCompile Include="structures\vector\vector.cpp" />
+    <ClCompile Include="ui\action_history\action_history.cpp" />
+    <ClCompile Include="ui\action_history\panel_action_history.cpp" />
+    <ClCompile Include="ui\color_scheme.cpp" />
+    <ClCompile Include="ui\controls\structure_info_holder.cpp" />
+    <ClCompile Include="ui\logger\panel_logger.cpp" />
+    <ClCompile Include="ui\logger\ui_logger.cpp" />
+    <ClCompile Include="ui\controls\controls.cpp" />
+    <ClCompile Include="ui\panel_controls.cpp" />
+    <ClCompile Include="ui\performance_chart\panel_performance_chart.cpp" />
+    <ClCompile Include="ui\performance_chart\performance.cpp" />
+    <ClCompile Include="ui\sorting\panel_sorting.cpp" />
+    <ClCompile Include="ui\ui_routines.cpp" />
+    <ClCompile Include="structures\structure.cpp" />
+    <ClCompile Include="structures\ds_routines.cpp" />
+    <ClCompile Include="structures\ds_structure_factory.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="data\data_types.h" />
+    <ClInclude Include="data\graph_data.h" />
+    <ClInclude Include="form_main.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="data\data_routines.h" />
+    <ClInclude Include="data\form_data.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="structures\graph\algorithms\dijkstra.h" />
+    <ClInclude Include="structures\graph\bi_star_graph.h" />
+    <ClInclude Include="structures\graph\forward_star_graph.h" />
+    <ClInclude Include="structures\graph\graph.h" />
+    <ClInclude Include="structures\graph\graph_with_registration.h" />
+    <ClInclude Include="structures\heap_monitor.h" />
+    <ClInclude Include="structures\list\array_list.h" />
+    <ClInclude Include="structures\list\linked_list.h" />
+    <ClInclude Include="structures\list\list.h" />
+    <ClInclude Include="structures\memory_routines.h" />
+    <ClInclude Include="structures\priority_queue\heap.h" />
+    <ClInclude Include="structures\priority_queue\priority_queue_limited_sorted_array_list.h" />
+    <ClInclude Include="structures\priority_queue\priority_queue.h" />
+    <ClInclude Include="structures\priority_queue\priority_queue_sorted_array_list.h" />
+    <ClInclude Include="structures\priority_queue\priority_queue_unsorted_array_list.h" />
+    <ClInclude Include="structures\priority_queue\priority_queue_linked_list.h" />
+    <ClInclude Include="structures\priority_queue\priority_queue_list.h" />
+    <ClInclude Include="structures\priority_queue\priority_queue_two_lists.h" />
+    <ClInclude Include="structures\queue\explicit_queue.h" />
+    <ClInclude Include="structures\queue\implicit_queue.h" />
+    <ClInclude Include="structures\queue\queue.h" />
+    <ClInclude Include="structures\stack\explicit_stack.h" />
+    <ClInclude Include="structures\stack\implicit_stack.h" />
+    <ClInclude Include="structures\stack\stack.h" />
+    <ClInclude Include="structures\table\binary_search_tree.h" />
+    <ClInclude Include="structures\table\hash_table.h" />
+    <ClInclude Include="structures\table\linked_table.h" />
+    <ClInclude Include="structures\table\unsorted_sequence_table.h" />
+    <ClInclude Include="structures\table\sequence_table.h" />
+    <ClInclude Include="structures\table\sorted_sequence_table.h" />
+    <ClInclude Include="structures\table\sorting\bubble_sort.h" />
+    <ClInclude Include="structures\table\sorting\heap_sort.h" />
+    <ClInclude Include="structures\table\sorting\insert_sort.h" />
+    <ClInclude Include="structures\table\sorting\merge_sort.h" />
+    <ClInclude Include="structures\table\sorting\quick_sort.h" />
+    <ClInclude Include="structures\table\sorting\radix_sort.h" />
+    <ClInclude Include="structures\table\sorting\select_sort.h" />
+    <ClInclude Include="structures\table\sorting\shell_sort.h" />
+    <ClInclude Include="structures\table\sorting\shuffle.h" />
+    <ClInclude Include="structures\table\sorting\sort.h" />
+    <ClInclude Include="structures\table\table.h" />
+    <ClInclude Include="structures\table\treap.h" />
+    <ClInclude Include="structures\tree\binary_tree.h" />
+    <ClInclude Include="structures\tree\k_way_tree.h" />
+    <ClInclude Include="structures\tree\multi_way_tree.h" />
+    <ClInclude Include="structures\tree\tree.h" />
+    <ClInclude Include="ui\action_history\action_history.h" />
+    <ClInclude Include="ui\action_history\panel_action_history.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="ui\color_scheme.h" />
+    <ClInclude Include="ui\controls\controls_array.h" />
+    <ClInclude Include="ui\controls\controls_graph.h" />
+    <ClInclude Include="ui\controls\controls_list.h" />
+    <ClInclude Include="ui\controls\controls_priority_queue.h" />
+    <ClInclude Include="ui\controls\controls_queue.h" />
+    <ClInclude Include="ui\controls\controls_stack.h" />
+    <ClInclude Include="ui\controls\controls_table.h" />
+    <ClInclude Include="ui\controls\controls_tree.h" />
+    <ClInclude Include="ui\controls\controls_vector.h" />
+    <ClInclude Include="ui\controls\structure_info_holder.h" />
+    <ClInclude Include="ui\graph\panel_graph.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="ui\list\panel_list.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="ui\logger\panel_logger.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="ui\logger\ui_logger.h" />
+    <ClInclude Include="ui\controls\controls.h" />
+    <ClInclude Include="ui\panel_controls.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="ui\performance_chart\panel_performance_chart.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="ui\performance_chart\performance.h" />
+    <ClInclude Include="ui\priority_queue\panel_priority_queue.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="ui\sorting\panel_sorting.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="ui\queue\panel_queue.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="ui\stack\panel_stack.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="ui\table\panel_table.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="ui\tree\panel_tree.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="ui\ui_routines.h" />
+    <ClInclude Include="ui\panel_structures.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="ui\vector\panel_vector.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="ui\array\panel_array.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="structures\structure.h" />
+    <ClInclude Include="structures\structure_iterator.h" />
+    <ClInclude Include="structures\ds_routines.h" />
+    <ClInclude Include="structures\ds_structure_factory.h" />
+    <ClInclude Include="structures\vector\vector.h" />
+    <ClInclude Include="structures\array\array.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="structures\ds_structure_types.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="data\form_data.resx">
+      <DependentUpon>data\form_data.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_main.resx">
+      <DependentUpon>form_main.h</DependentUpon>
+      <DeploymentContent>false</DeploymentContent>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\action_history\panel_action_history.resx">
+      <DependentUpon>ui\action_history\panel_action_history.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\array\panel_array.resx">
+      <DependentUpon>ui\array\panel_array.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\graph\panel_graph.resx">
+      <DependentUpon>ui\graph\panel_graph.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\list\panel_list.resx">
+      <DependentUpon>ui\list\panel_list.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\logger\panel_logger.resx">
+      <DependentUpon>ui\logger\panel_logger.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\panel_controls.resx">
+      <DependentUpon>ui\panel_controls.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\panel_structures.resx">
+      <DependentUpon>ui\panel_structures.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\performance_chart\panel_performance_chart.resx">
+      <DependentUpon>ui\performance_chart\panel_performance_chart.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\sorting\panel_sorting.resx">
+      <DependentUpon>ui\sorting\panel_sorting.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\priority_queue\panel_priority_queue.resx">
+      <DependentUpon>ui\priority_queue\panel_priority_queue.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\queue\panel_queue.resx">
+      <DependentUpon>ui\queue\panel_queue.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\stack\panel_stack.resx">
+      <DependentUpon>ui\stack\panel_stack.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\table\panel_table.resx">
+      <DependentUpon>ui\table\panel_table.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\tree\panel_tree.resx">
+      <DependentUpon>ui\tree\panel_tree.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\vector\panel_vector.resx">
+      <DependentUpon>ui\vector\panel_vector.h</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Natvis Include="aus.natvis">
+      <SubType>Designer</SubType>
+    </Natvis>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\ImageContentTask.targets" />
+  </ImportGroup>
+</Project>

@@ -1,0 +1,445 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="data">
+      <UniqueIdentifier>{50199534-1f5d-4989-a6a1-6d51795bad23}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ds">
+      <UniqueIdentifier>{868c6b95-7c11-47e8-bc5d-b690759eb231}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ui">
+      <UniqueIdentifier>{5638457f-ec5f-48c9-8a95-13eba476d650}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="forms">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="structures">
+      <UniqueIdentifier>{18b98b6e-3b81-4471-86d4-27477a27bc7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="structures\common">
+      <UniqueIdentifier>{d4e9bc2b-00ee-4b6c-9ca7-b5069ca726f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="structures\array">
+      <UniqueIdentifier>{9d524a23-d6a2-46b7-aeb9-e1ab9f25ff1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="structures\vector">
+      <UniqueIdentifier>{7d530f1d-1181-4a1c-a881-ab31308d251d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ui\logger">
+      <UniqueIdentifier>{0b59266a-fd5b-49c0-84ec-29e76c1f7d0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ui\controls">
+      <UniqueIdentifier>{c6f37971-0ac9-4d94-b420-4a5b69ad7095}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="structures\list">
+      <UniqueIdentifier>{a26ea14e-51b0-4520-9bbb-a208232dfdec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ui\performance_chart">
+      <UniqueIdentifier>{2ec48d49-26c6-402d-ba6d-8efd4af6e2d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="structures\table">
+      <UniqueIdentifier>{a4924b1a-ee7e-4b4f-a6a7-77a7376f1467}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="structures\tree">
+      <UniqueIdentifier>{97e2aa66-d74c-46cc-a18f-b1a18a07b469}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ui\action_history">
+      <UniqueIdentifier>{8bdb6bd6-7596-4733-abd7-4de48c752b79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="structures\priority_queue">
+      <UniqueIdentifier>{a49032fa-cc19-41e7-a5b6-5db3f73d0fc0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="structures\table\sorting">
+      <UniqueIdentifier>{5007a5e3-54ce-441f-afaf-876d49580629}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="structures\graph">
+      <UniqueIdentifier>{45988954-cda0-4ebe-a114-c06a11425d16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="structures\graph\algorithms">
+      <UniqueIdentifier>{39ed39ec-22ef-4e53-a464-fbd8c128e78b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="structures\stack">
+      <UniqueIdentifier>{ebdc14c4-8281-4c34-9b5a-30ef974df4fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="structures\queue">
+      <UniqueIdentifier>{7904627c-6d46-45fa-90fb-d96e10b4c4aa}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Structures\Structure.cpp">
+      <Filter>structures\common</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\ui_routines.cpp">
+      <Filter>ui</Filter>
+    </ClCompile>
+    <ClCompile Include="form_main.cpp">
+      <Filter>forms</Filter>
+    </ClCompile>
+    <ClCompile Include="structures\ds_routines.cpp">
+      <Filter>ds</Filter>
+    </ClCompile>
+    <ClCompile Include="data\data_routines.cpp">
+      <Filter>data</Filter>
+    </ClCompile>
+    <ClCompile Include="structures\ds_structure_factory.cpp">
+      <Filter>ds</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\logger\ui_logger.cpp">
+      <Filter>ui\logger</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\logger\panel_logger.cpp">
+      <Filter>ui\logger</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\controls\controls.cpp">
+      <Filter>ui\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="structures\vector\vector.cpp">
+      <Filter>structures\vector</Filter>
+    </ClCompile>
+    <ClCompile Include="structures\memory_routines.cpp">
+      <Filter>ds</Filter>
+    </ClCompile>
+    <ClCompile Include="data\form_data.cpp">
+      <Filter>forms</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\performance_chart\panel_performance_chart.cpp">
+      <Filter>ui\performance_chart</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\performance_chart\performance.cpp">
+      <Filter>ui\performance_chart</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\panel_controls.cpp">
+      <Filter>forms</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\action_history\panel_action_history.cpp">
+      <Filter>ui\action_history</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\action_history\action_history.cpp">
+      <Filter>ui\action_history</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\controls\structure_info_holder.cpp">
+      <Filter>ui\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="structures\graph\graph.cpp">
+      <Filter>structures\graph</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\sorting\panel_sorting.cpp">
+      <Filter>forms</Filter>
+    </ClCompile>
+    <ClCompile Include="structures\graph\bi_star_graph.cpp">
+      <Filter>structures\graph</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\color_scheme.cpp">
+      <Filter>ui</Filter>
+    </ClCompile>
+    <ClCompile Include="data\graph_data.cpp">
+      <Filter>data</Filter>
+    </ClCompile>
+    <ClCompile Include="structures\table\sorting\sort.cpp">
+      <Filter>structures\table\sorting</Filter>
+    </ClCompile>
+    <ClCompile Include="structures\graph\forward_star_graph.cpp">
+      <Filter>structures\graph</Filter>
+    </ClCompile>
+    <ClCompile Include="structures\graph\graph_with_registration.cpp">
+      <Filter>structures\graph</Filter>
+    </ClCompile>
+    <ClCompile Include="structures\graph\algorithms\dijkstra.cpp">
+      <Filter>structures\graph\algorithms</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Structures\Array\Array.h">
+      <Filter>structures\array</Filter>
+    </ClInclude>
+    <ClInclude Include="Structures\Vector\Vector.h">
+      <Filter>structures\vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Structures\Structure.h">
+      <Filter>structures\common</Filter>
+    </ClInclude>
+    <ClInclude Include="form_main.h">
+      <Filter>forms</Filter>
+    </ClInclude>
+    <ClInclude Include="data\form_data.h">
+      <Filter>forms</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\panel_structures.h">
+      <Filter>forms</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\vector\panel_vector.h">
+      <Filter>forms</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\array\panel_array.h">
+      <Filter>forms</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\ds_routines.h">
+      <Filter>ds</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\structure_iterator.h">
+      <Filter>structures\common</Filter>
+    </ClInclude>
+    <ClInclude Include="data\data_routines.h">
+      <Filter>data</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\ds_structure_factory.h">
+      <Filter>ds</Filter>
+    </ClInclude>
+    <ClInclude Include="data\data_types.h">
+      <Filter>data</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\ui_routines.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\logger\ui_logger.h">
+      <Filter>ui\logger</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\logger\panel_logger.h">
+      <Filter>ui\logger</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\controls\controls_vector.h">
+      <Filter>ui\controls</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\controls\controls.h">
+      <Filter>ui\controls</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\controls\controls_array.h">
+      <Filter>ui\controls</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\memory_routines.h">
+      <Filter>ds</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\list\list.h">
+      <Filter>structures\list</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\controls\controls_list.h">
+      <Filter>ui\controls</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\list\panel_list.h">
+      <Filter>forms</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\list\array_list.h">
+      <Filter>structures\list</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\list\linked_list.h">
+      <Filter>structures\list</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\performance_chart\panel_performance_chart.h">
+      <Filter>ui\performance_chart</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\performance_chart\performance.h">
+      <Filter>ui\performance_chart</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\table\table.h">
+      <Filter>structures\table</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\table\sequence_table.h">
+      <Filter>structures\table</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\controls\controls_table.h">
+      <Filter>ui\controls</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\table\panel_table.h">
+      <Filter>forms</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\table\sorted_sequence_table.h">
+      <Filter>structures\table</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\table\linked_table.h">
+      <Filter>structures\table</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\tree\k_way_tree.h">
+      <Filter>structures\tree</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\tree\tree.h">
+      <Filter>structures\tree</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\tree\binary_tree.h">
+      <Filter>structures\tree</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\panel_controls.h">
+      <Filter>forms</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\controls\controls_tree.h">
+      <Filter>ui\controls</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\tree\panel_tree.h">
+      <Filter>forms</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\tree\multi_way_tree.h">
+      <Filter>structures\tree</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\table\binary_search_tree.h">
+      <Filter>structures\table</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\table\hash_table.h">
+      <Filter>structures\table</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\table\treap.h">
+      <Filter>structures\table</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\action_history\panel_action_history.h">
+      <Filter>ui\action_history</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\action_history\action_history.h">
+      <Filter>ui\action_history</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\controls\structure_info_holder.h">
+      <Filter>ui\controls</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\priority_queue\panel_priority_queue.h">
+      <Filter>forms</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\table\sorting\sort.h">
+      <Filter>structures\table\sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\priority_queue\priority_queue_unsorted_array_list.h">
+      <Filter>structures\priority_queue</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\table\sorting\shuffle.h">
+      <Filter>structures\table\sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\priority_queue\priority_queue.h">
+      <Filter>structures\priority_queue</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\sorting\panel_sorting.h">
+      <Filter>forms</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\priority_queue\priority_queue_limited_sorted_array_list.h">
+      <Filter>structures\priority_queue</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\color_scheme.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\priority_queue\priority_queue_linked_list.h">
+      <Filter>structures\priority_queue</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\table\sorting\insert_sort.h">
+      <Filter>structures\table\sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\priority_queue\priority_queue_list.h">
+      <Filter>structures\priority_queue</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\table\sorting\select_sort.h">
+      <Filter>structures\table\sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\priority_queue\priority_queue_sorted_array_list.h">
+      <Filter>structures\priority_queue</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\table\sorting\bubble_sort.h">
+      <Filter>structures\table\sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\priority_queue\priority_queue_two_lists.h">
+      <Filter>structures\priority_queue</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\table\sorting\quick_sort.h">
+      <Filter>structures\table\sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\priority_queue\heap.h">
+      <Filter>structures\priority_queue</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\table\sorting\heap_sort.h">
+      <Filter>structures\table\sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\heap_monitor.h">
+      <Filter>ds</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\table\sorting\shell_sort.h">
+      <Filter>structures\table\sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\controls\controls_priority_queue.h">
+      <Filter>ui\controls</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\table\sorting\radix_sort.h">
+      <Filter>structures\table\sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\graph\graph.h">
+      <Filter>structures\graph</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\table\sorting\merge_sort.h">
+      <Filter>structures\table\sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\graph\bi_star_graph.h">
+      <Filter>structures\graph</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\graph\panel_graph.h">
+      <Filter>forms</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\controls\controls_graph.h">
+      <Filter>ui\controls</Filter>
+    </ClInclude>
+    <ClInclude Include="data\graph_data.h">
+      <Filter>data</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\graph\forward_star_graph.h">
+      <Filter>structures\graph</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\graph\graph_with_registration.h">
+      <Filter>structures\graph</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\graph\algorithms\dijkstra.h">
+      <Filter>structures\graph\algorithms</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\queue\explicit_queue.h">
+      <Filter>structures\queue</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\queue\implicit_queue.h">
+      <Filter>structures\queue</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\queue\queue.h">
+      <Filter>structures\queue</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\stack\explicit_stack.h">
+      <Filter>structures\stack</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\stack\implicit_stack.h">
+      <Filter>structures\stack</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\stack\stack.h">
+      <Filter>structures\stack</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\controls\controls_stack.h">
+      <Filter>ui\controls</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\controls\controls_queue.h">
+      <Filter>ui\controls</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\queue\panel_queue.h">
+      <Filter>forms</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\stack\panel_stack.h">
+      <Filter>forms</Filter>
+    </ClInclude>
+    <ClInclude Include="structures\table\unsorted_sequence_table.h">
+      <Filter>structures\table</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="structures\ds_structure_types.h">
+      <Filter>ds</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="data\form_data.resx" />
+    <EmbeddedResource Include="form_main.resx" />
+    <EmbeddedResource Include="ui\logger\panel_logger.resx" />
+    <EmbeddedResource Include="ui\panel_structures.resx" />
+    <EmbeddedResource Include="ui\vector\panel_vector.resx" />
+    <EmbeddedResource Include="ui\array\panel_array.resx" />
+    <EmbeddedResource Include="ui\list\panel_list.resx" />
+    <EmbeddedResource Include="ui\performance_chart\panel_performance_chart.resx" />
+    <EmbeddedResource Include="ui\table\panel_table.resx" />
+    <EmbeddedResource Include="ui\panel_controls.resx" />
+    <EmbeddedResource Include="ui\tree\panel_tree.resx" />
+    <EmbeddedResource Include="ui\action_history\panel_action_history.resx" />
+    <EmbeddedResource Include="ui\priority_queue\panel_priority_queue.resx" />
+    <EmbeddedResource Include="ui\sorting\panel_sorting.resx" />
+    <EmbeddedResource Include="ui\graph\panel_graph.resx" />
+    <EmbeddedResource Include="ui\queue\panel_queue.resx" />
+    <EmbeddedResource Include="ui\stack\panel_stack.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Natvis Include="aus.natvis" />
+  </ItemGroup>
+</Project>

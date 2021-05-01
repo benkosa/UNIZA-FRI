@@ -7,6 +7,7 @@ void Container::pridajStudenta(string line) {
     float priemer = 0;
     string meno;
     string priezvsko;
+    char* priezvisko2;
 
     int i = 0;
 
@@ -18,6 +19,7 @@ void Container::pridajStudenta(string line) {
             break;
         case 1:
             priezvsko = word;
+            priezvisko2 = (char*)word.c_str();
             break;
         case 2:
             priemer = stof(word);

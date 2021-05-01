@@ -30,6 +30,7 @@ int main (int argc, char* argv[]) {
     zoznam->vypis();
 
     infile.close();
+    infile2.close();
 
     delete zoznam;
 
