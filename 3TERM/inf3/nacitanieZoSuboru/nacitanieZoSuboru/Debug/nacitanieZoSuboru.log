@@ -1,5 +1,0 @@
-﻿  main.c
-C:\Users\Benji\git\UNIZA-FRI\3TERM\inf3\nacitanieZoSuboru\nacitanieZoSuboru\main.c(46,15): warning C4013: 'time' undefined; assuming extern returning int
-C:\Users\Benji\git\UNIZA-FRI\3TERM\inf3\nacitanieZoSuboru\nacitanieZoSuboru\main.c(49,1): warning C4090: 'initializing': different 'const' qualifiers
-C:\Users\Benji\git\UNIZA-FRI\3TERM\inf3\nacitanieZoSuboru\nacitanieZoSuboru\main.c(51,19): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  nacitanieZoSuboru.vcxproj -> C:\Users\Benji\git\UNIZA-FRI\3TERM\inf3\nacitanieZoSuboru\Debug\nacitanieZoSuboru.exe
